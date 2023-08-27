@@ -1,0 +1,20 @@
+@import '../../../variables.scss';
+
+#basic-texts-heading {
+    margin-bottom: 30px;
+}
+
+#content-container .basic-text-container {
+  text-align: center;
+}
+
+#content-container .basic-text {
+  width: 90%;
+  max-width: 345px;
+}
+
+#content-container .basic-text-description {
+  margin-top: 25px;
+  margin-bottom: 35px;
+  text-align: left;
+}

@@ -1,0 +1,35 @@
+<div id="quick-search" class="float-right">
+  <div id="quick-search-title">Quick Search</div>
+  <form id="quick-search-form" [formGroup]="quickSearchForm" (ngSubmit)="onSubmit(quickSearchForm.value)">
+    <div id="qs-type-wrap">
+      <mat-form-field id="qs-meeting-type-form-field">
+        <mat-select id="meeting-type" class="form-select-input qs-field" #meetingTypeSelect formControlName="meetingType" disableOptionCentering panelClass="qs-selectPanel" multiple>
+          <mat-option value="all" (onSelectionChange)="meetingTypeChange($event)">All meetings</mat-option>
+          <mat-option *ngFor="let type of types" [value]="type.id" (onSelectionChange)="meetingTypeChange($event)">
+            {{type.name}} ({{type.shortName}})
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div id="qs-day-wrap">
+      <mat-form-field id="qs-meeting-day-form-field">
+        <mat-select id="meeting-day" class="form-select-input qs-field" #meetingDaySelect formControlName="meetingDay" disableOptionCentering panelClass="qs-selectPanel" multiple>
+          <mat-option value="all" (onSelectionChange)="meetingDayChange($event)">Any day</mat-option>
+          <mat-option *ngFor="let day of days" [value]="day.id" (onSelectionChange)="meetingDayChange($event)">
+            {{day.name}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+    <div id="qs-location-wrap">
+      <mat-form-field id="qs-meeting-location-form-field">
+        <input matInput id="meeting-location" class="form-text-input" type="text"  placeholder="{{isIreland === 'true' ? 'Enter town or city' : 'Enter town or postcode'}}" formControlName="meetingLocation">
+      </mat-form-field>
+    </div>
+    <div id="qs-search-wrap">
+      <mat-card-actions id="qs-meeting-search-button">
+        <button mat-raised-button id="meeting-search" type="submit" class="form-button">Go</button>
+      </mat-card-actions>
+    </div>
+  </form>
+</div>

@@ -1,0 +1,130 @@
+﻿[
+  {
+    "Id": 1,
+    "Name": "Alcoholics Anonymous",
+    "ShortName": "AA",
+    "Url": "https://aa.org/",
+    "Namespace": "AA",
+    "Color": "#253679",
+    "Websites": [
+      {
+        "Id": 1,
+        "Name": "Great Britain",
+        "Url": "https://www.alcoholics-anonymous.org.uk/AA-Meetings/Find-a-Meeting",
+        "Namespace": "GB",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": true
+      },
+      {
+        "Id": 2,
+        "Name": "Ireland",
+        "Url": "https://www.alcoholicsanonymous.ie/find-meeting",
+        "Namespace": "Ireland",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      }
+    ]
+  },
+  {
+    "Id": 2,
+    "Name": "Cocaine Anonymous",
+    "ShortName": "CA",
+    "Url": "https://ca.org/",
+    "Namespace": "CA",
+    "Color": "#000000",
+    "Websites": [
+      {
+        "Id": 1,
+        "Name": "UK",
+        "Url": "https://meetings.cocaineanonymous.org.uk/meetings",
+        "Namespace": "UK",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": true
+      },
+      {
+        "Id": 2,
+        "Name": "Ireland",
+        "Url": "https://www.caireland.live/meetings",
+        "Namespace": "Ireland",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      },
+      {
+        "Id": 3,
+        "Name": "Scotland",
+        "Url": "https://www.cascotland.org.uk/meetings",
+        "Namespace": "Scotland",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": true
+      }
+    ]
+  },
+  {
+    "Id": 3,
+    "Name": "Narcotics Anonymous",
+    "ShortName": "NA",
+    "Url": "https://na.org/",
+    "Namespace": "NA",
+    "Color": "#ff2701",
+    "Websites": [
+      {
+        "Id": 1,
+        "Name": "Great Britain",
+        "Url": "https://meetings.ukna.org/meeting/search",
+        "Namespace": "GB",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": true
+      },
+      {
+        "Id": 2,
+        "Name": "Ireland",
+        "Url": "https://www.na-ireland.org/na-meetings/search-by-day/",
+        "Namespace": "Ireland",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      } 
+    ]
+  },
+  {
+    "Id": 4,
+    "Name": "Overeaters Anonymous",
+    "ShortName": "OA",
+    "Url": "https://oa.org/",
+    "Namespace": "OA",
+    "Color": "#22b14d",
+    "Websites": [
+      {
+        "Id": 1,
+        "Name": "England",
+        "Url": "https://oa.org/find-a-meeting",
+        "Namespace": "England",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      },
+      {
+        "Id": 2,
+        "Name": "Ireland",
+        "Url": "https://oa.org/find-a-meeting",
+        "Namespace": "Ireland",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      },
+      {
+        "Id": 3,
+        "Name": "Scotland",
+        "Url": "https://oa.org/find-a-meeting",
+        "Namespace": "Scotland",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      },
+      {
+        "Id": 4,
+        "Name": "Wales",
+        "Url": "https://oa.org/find-a-meeting",
+        "Namespace": "Wales",
+        "GeoLocationNamespace": "UK",
+        "HasDetailsPage": false
+      }
+    ]
+  }
+]
