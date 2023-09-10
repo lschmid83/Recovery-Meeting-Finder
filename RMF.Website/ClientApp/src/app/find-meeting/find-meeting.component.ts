@@ -25,9 +25,9 @@ export class FindMeetingComponent extends PageWithMainMenu {
     var regionName = this.router.getCurrentNavigation().extras.state.regionName;
     var location = this.router.getCurrentNavigation().extras.state.location;
     if (regionName != null)
-      this.setPageDescription(this.toTitleCase(regionName) + ' recovery meetings for Alcoholics Anonymous(AA), Narcotics Anonymous(NA) and other 12 - Step fellowships.');
+      this.setPageDescription(this.toTitleCase(regionName) + ' recovery meetings for Alcoholics Anonymous(AA), Narcotics Anonymous(NA) and other 12-Step fellowships.');
     else if (location != null)
-      this.setPageDescription(this.toTitleCase(location) + ' recovery meetings for Alcoholics Anonymous(AA), Narcotics Anonymous(NA) and other 12 - Step fellowships.');
+      this.setPageDescription(this.toTitleCase(location) + ' recovery meetings for Alcoholics Anonymous(AA), Narcotics Anonymous(NA) and other 12-Step fellowships.');
     else
       this.setPageDescription('Need a meeting? Use our interactive meeting finder map to find recovery meetings for Alcoholics Anonymous (AA), Narcotics Anonymous (NA) and other 12-Step fellowships.');
   }
