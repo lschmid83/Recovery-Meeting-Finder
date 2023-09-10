@@ -21,7 +21,15 @@ export class FindMeetingComponent extends PageWithMainMenu {
     document.body.style.overflowY = 'auto';
 
     this.setPageTitle('Find a Meeting - Search for 12-Step Meetings of Alcoholics Anonymous (AA), Cocaine Anonymous (CA), Narcotics Anonymous (NA) and Overeaters Anonymous (OA) in the United Kingdom');
-    this.setPageDescription('Need a meeting? Use our interactive meeting finder map to find recovery meetings for Alcoholics Anonymous (AA), Narcotics Anonymous (NA) and other 12-Step fellowships.');
+
+    var regionName = this.router.getCurrentNavigation().extras.state.regionName;
+    var location = this.router.getCurrentNavigation().extras.state.location;
+    if (regionName != null)
+      this.setPageDescription(this.toTitleCase(regionName) + ' recovery meetings for Alcoholics Anonymous(AA), Narcotics Anonymous(NA) and other 12 - Step fellowships.');
+    else if (location != null)
+      this.setPageDescription(this.toTitleCase(location) + ' recovery meetings for Alcoholics Anonymous(AA), Narcotics Anonymous(NA) and other 12 - Step fellowships.');
+    else
+      this.setPageDescription('Need a meeting? Use our interactive meeting finder map to find recovery meetings for Alcoholics Anonymous (AA), Narcotics Anonymous (NA) and other 12-Step fellowships.');
   }
 
   // Scroll to top on load page.
@@ -48,4 +56,14 @@ export class FindMeetingComponent extends PageWithMainMenu {
   public scrollTo(elementId: string): void {
     document.querySelector('#' + elementId).scrollIntoView();
   }
+
+  public toTitleCase(str) {
+    return str.replace(
+      /\w\S*/g,
+      function (txt) {
+        return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();
+      }
+    );
+  }
 }
+
