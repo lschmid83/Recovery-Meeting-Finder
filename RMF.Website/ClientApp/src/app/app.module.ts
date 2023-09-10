@@ -301,6 +301,9 @@ registerLocaleData(localePt);
         pathMatch: 'full',
         runGuardsAndResolvers: 'always',
       },
+      {
+        path: '**', redirectTo: '/'
+      }
     ], { onSameUrlNavigation: 'reload' }),
     BrowserAnimationsModule,
     MatFormFieldModule,
