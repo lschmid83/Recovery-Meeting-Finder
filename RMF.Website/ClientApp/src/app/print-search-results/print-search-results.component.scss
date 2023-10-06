@@ -5,18 +5,8 @@ html, body {
   height: 100%;
 }
 
-@page :first {
-  margin-top: 0.75in !important;
-  margin-bottom: 0.75in;
-  margin-left: 0.75in;
-  margin-right: 1.5in;
-}
-
 @page {
-  margin-top: 1.1in !important;
   margin-bottom: 1.1in !important;
-  margin-left: 0.75in;
-  margin-right: 1.5in;
 }
 
 #print-search-results-container {
@@ -24,42 +14,41 @@ html, body {
   position: absolute;
 }
 
-  #print-search-results-container h1 {
-    font-size: 24px;
-  }
+#print-search-results-container h1 {
+  font-size: 24px;
+}
 
-  #print-search-results-container .results-groups-wrap {
-    margin-top: 10px;
-  }
+#print-search-results-container .results-groups-wrap {
+  margin-top: 10px;
+}
 
-    #print-search-results-container .results-groups-wrap .result-count {
-      display: inline-block;
-      text-align: center;
-      border-radius: 15px;
-      padding: 5px 10px 5px 10px;
-      margin-right: 7px;
-      margin-bottom: 20px;
-    }
+#print-search-results-container .results-groups-wrap .result-count {
+  display: inline-block;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 7px;
+  margin-bottom: 20px;
+}
 
-  #print-search-results-container .result-count a {
-    color: $secondary-text-color;
-    text-decoration: none;
-  }
+#print-search-results-container .result-count a {
+  color: $secondary-text-color;
+  text-decoration: none;
+}
 
 #print-search-results {
   margin-left: 16px;
 }
 
-  #print-search-results .search-results-title {
-    margin-top: 10px;
-    margin-bottom: 10px;
-  }
+#print-search-results .search-results-title {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
 
-    #print-search-results .search-results-title h1 {
-      font-size: 24px;
-    }
+#print-search-results .search-results-title h1 {
+  font-size: 24px;
+}
 
-    #print-search-results .meeting-result {
-      display: table
-    }
-
+#print-search-results .meeting-result {
+  display: table
+}
