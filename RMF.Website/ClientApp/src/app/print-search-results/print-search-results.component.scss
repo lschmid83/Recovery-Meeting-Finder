@@ -5,7 +5,13 @@ html, body {
   height: 100%;
 }
 
+@page :first {
+  margin-top: 0.75in !important;
+  margin-bottom: 0.75in;
+}
+
 @page {
+  margin-top: 1.1in !important;
   margin-bottom: 1.1in !important;
 }
 
