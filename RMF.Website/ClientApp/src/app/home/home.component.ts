@@ -79,7 +79,7 @@ export class HomeComponent extends PageWithMainMenu {
     document.body.style.overflowY = 'auto';
 
     this.setPageTitle('Recovery Meeting Finder - Alcoholics Anonymous (AA) and other 12-Step fellowships meeting finder');
-    this.setPageDescription('Need a meeting? Use our interactive meeting finder map to find recovery meetings for Alcoholics Anonymous (AA), Narcotics Anonymous (NA) and other 12-Step fellowships.');
+    this.setPageDescription('Need a meeting? Use our interactive meeting finder map to find recovery meetings for Alcoholics Anonymous (AA), Narcotics Anonymous (NA), Cocaine Anonymous (CA) and Overeaters Anonymous (OA).');
   }
 
   // Check if location is allowed.
