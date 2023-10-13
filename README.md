@@ -31,6 +31,8 @@ This project was developed in Visual Studio 2022 using the C# and TypeScript lan
 
 First make sure you have Visual Studio 2022, Node.js and SQL Server installed.
 
+In this document $installPath will refer to the location of the repository source code. E.g. C:\source\repos\Recovery Meeting Finder
+
 # Installing Angular
 
 1) Install Node.js from https://nodejs.org/en/download/current
@@ -48,10 +50,8 @@ First make sure you have Visual Studio 2022, Node.js and SQL Server installed.
 
 2) Enter the command:
    ```
-   cd C:\source\repos\Recovery Meeting Finder\RMF.Website\ClientApp\
+   cd $installPath\RMF.Website\ClientApp\
    ```
-   
-   Where 'C:\source\repos\Recovery Meeting Finder\' is the path to your Recovery Meeting Finder source code folder.
 
 3) Enter the command:
    ```	
@@ -83,15 +83,13 @@ When you checkout this project you will notice that there is a DataDump folder i
 1) Open the RMF.DataInserter project in SolutionExplorer edit Program.cs.
 
 2) Set the DataDumpPath const variable line.26 to the path of the database dump in your solution folder:   
-   `C:\source\repos\Recovery Meeting Finder\DataDump\`
- 
-   Where 'C:\source\repos\Recovery Meeting Finder\' is the path to your Recovery Meeting Finder source code folder.
+   `$installPath\DataDump\`
 
 3) Set the WebDataDumpPath const variable line.27 to the output path of the website project: 
-   `C:\source\repos\Recovery Meeting Finder\RMF.Website\wwwroot\data-dump\`
+   `$installPath\RMF.Website\wwwroot\data-dump\`
 
 4) Set the DbBackupFilePath const variable line.29 to the output path of the database backup:
-   `C:\source\repos\Recovery Meeting Finder\DataDump\rmf.bak`
+   `$installPath\DataDump\rmf.bak`
 
 5) Right click on the 'C:\source\repos\Recovery Meeting Finder\DataDump\' folder in Windows Explorer. Select the Security Tab and click Edit... Add the user NT Service\MSSQLSERVER with Write permissions so the SQL Server instance can create the .bak file in the specified folder.
 
@@ -106,9 +104,7 @@ When you checkout this project you will notice that there is a DataDump folder i
    Replace the data source, user id and password with your own database account credentials.
 
 2) Set the path of the Lucene Index directory. Open the RMF.WebAPI project and edit Startup.cs line.19 to your index path:
-   `C:\source\repos\Recovery Meeting Finder\DataDump\`
-
-   Where 'C:\source\repos\Recovery Meeting Finder\' is the path to your Recovery Meeting Finder source code folder.
+   `$installPath\DataDump\`
 
    In production the rmf_lucene_index folder should be placed within the main application folder on the server.
 
