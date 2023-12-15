@@ -4,7 +4,7 @@
   "scripts": {
     "ng": "ng",
     "start": "set NODE_OPTIONS=--openssl-legacy-provider && ng serve",
-    "build": "ng build",
+    "build": "set NODE_OPTIONS=--openssl-legacy-provider && ng build",
     "build:ssr": "ng run RMF.Website:server:dev",
     "test": "ng test",
     "lint": "ng lint",
