@@ -35,7 +35,7 @@ In this document $installPath will refer to the location of the repository sourc
 
 # Installing Angular
 
-1) Install Node.js from https://nodejs.org/en/download/current
+1) Install the latest version of Node.js from https://nodejs.org/en/download/current
 
 2) Select Tools -> NuGet Package Manager -> Package Manager Console
 
@@ -111,10 +111,6 @@ When you checkout this project you will notice that there is a DataDump folder i
 # Running the Project
 
 To run the website project in development mode you must first right click on the Solution Name in the Solution Explorer. In the Startup Project page you should select Multiple Startup Projects and change the Action for RMF.Website and RMF.WebAPI to Start. You can now click the run button and both projects will start.
-
-# Known Issues
-
-If you are running Node.js version less than v18 and get an error message which states `node: --openssl-legacy-provider is not allowed in NODE_OPTIONS` then edit RMF.Website angular.json and remove `set NODE_OPTIONS=--openssl-legacy-provider &&` from the "start" variable.
 
 
 
