@@ -18,6 +18,10 @@
         <div class="description"><h1>We have collected meeting information from 12-Step fellowships in the United Kingdom to make it easier for you to search for your nearest meeting.&nbsp;&nbsp;<i class="fa fa-info-circle info-icon" aria-hidden="true" title="View disclaimer" (click)="openDisclaimerDialog()"></i></h1></div>
         <div class="info"><h1>This website lists physical face to face meetings for AA, CA, NA and OA using an interactive map.</h1></div>
         <div class="statistics"><p>Last updated {{statistics.lastUpdated | date: 'dd/MM/yyyy'}} with {{statistics.total}} meetings across the UK.&nbsp;&nbsp;<i class="fa fa-chart-bar info-icon" aria-hidden="true" title="View statistics" (click)="navigateTo('/meetings/statistics')"></i></p></div>
+        <div class="donation">If you use this website please consider donating a small amount according to tradition seven.&nbsp;&nbsp;<i class="fa fa-info-circle donation-info" aria-hidden="true" title="View donations disclaimer" (click)="openDonationsDialog()"></i></div>
+        <!--<div class="paypal-donate">
+          <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GB6RRQPJ2VB5S&source=url" target="_blank"><img src="assets/images/paypal-donate.png" width="140" alt="Donate via PayPal" /></a>
+        </div>-->
       </div>
     </div>
     <div id="column2" class="col-sm-6">
@@ -74,10 +78,14 @@
           <br />
           <div class="info d-sm-none"><p>We list physical face to face 12-Step meetings for AA, CA, NA and OA.&nbsp;&nbsp;<i class="fa fa-info-circle info-icon" aria-hidden="true" title="View disclaimer" (click)="openDisclaimerDialog()"></i></p></div>
           <div class="statistics d-sm-none"><p>Last updated {{statistics.lastUpdated | date: 'dd/MM/yyyy'}} with {{statistics.total}} meetings across the UK.&nbsp;&nbsp;<i class="fa fa-chart-bar info-icon" aria-hidden="true" title="View statistics" (click)="navigateTo('/meetings/statistics')"></i></p></div>
+          <div class="donation d-sm-none">If you use this website please consider donating a small amount according to tradition seven.&nbsp;&nbsp;<i class="fa fa-info-circle donation-info" aria-hidden="true" title="View donations disclaimer" (click)="openDonationsDialog()"></i></div>
+          <!--<div class="paypal-donate d-sm-none">
+            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GB6RRQPJ2VB5S&source=url" target="_blank"><img src="assets/images/paypal-donate.png" width="140" alt="Donate via PayPal" /></a>
+          </div>-->
         </form>
       </div>
     </div>
   </div>
-  <a href="https://github.com/lschmid83/Recovery-Meeting-Finder" target="_blank" id="github-banner"><img decoding="async" loading="lazy" width="149" height="149" src="https://github.blog/wp-content/uploads/2008/12/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
+  <a href="https://github.com/lschmid83/Recovery-Meeting-Finder" target="_blank" id="github-banner"><img decoding="async" loading="lazy" width="149" height="149" src="assets/images/forkme_right_red_aa0000.png?resize=149%2C149" class="attachment-full size-full" alt="Fork me on GitHub" data-recalc-dims="1"></a>
   <app-cookie-consent></app-cookie-consent>
 </div>

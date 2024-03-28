@@ -26,6 +26,7 @@ import { TriStateCheckboxComponent } from './tri-state-checkbox/tri-state-checkb
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatDialogModule } from "@angular/material";
 import { DetailsDialogComponent } from './dialogs/details-dialog/details-dialog.component';
+import { DonationsDialogComponent } from './dialogs/donations-dialog/donations-dialog.component';
 import { MatIconModule } from '@angular/material/icon';
 import { LeafletMarkerClusterModule } from '@asymmetrik/ngx-leaflet-markercluster';
 import { CookieService } from 'ngx-cookie-service';
@@ -87,6 +88,7 @@ registerLocaleData(localePt);
     StatisticsComponent,
     TriStateCheckboxComponent,
     DetailsDialogComponent,
+    DonationsDialogComponent,
     CookieConsentComponent,
     DisclaimerDialogComponent,
     AccessibilityDialogComponent,
@@ -334,7 +336,7 @@ registerLocaleData(localePt);
     DeviceDetectorService,
   ],
   bootstrap: [AppComponent],
-  entryComponents: [DetailsDialogComponent, DisclaimerDialogComponent, AccessibilityDialogComponent]
+  entryComponents: [DisclaimerDialogComponent, DonationsDialogComponent, DetailsDialogComponent, AccessibilityDialogComponent]
 })
 
 export class AppModule {

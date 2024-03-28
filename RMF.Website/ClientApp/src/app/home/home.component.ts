@@ -15,6 +15,7 @@ import { SeoService } from '../seo.service';
 import { PageWithMainMenu } from '../page-with-main-menu';
 import { Title, Meta } from '@angular/platform-browser';
 import { PageWithMainSidebar } from '../page-with-main-sidebar';
+import { DonationsDialogComponent } from '../dialogs/donations-dialog/donations-dialog.component';
 
 // JQuery selector.
 declare var $: any;
@@ -39,9 +40,8 @@ export class HomeComponent extends PageWithMainMenu {
 
   @ViewChild('meetingTypeSelect', { static: false }) meetingTypeSelect: MatSelect;
   @ViewChild('meetingDaySelect', { static: false }) meetingDaySelect: MatSelect;
-     
-  constructor(private route: ActivatedRoute, private router: Router, private seoService: SeoService, title: Title, meta: Meta, private dialog: MatDialog, private overlay: Overlay, private rmfService: RmfService)
-  {
+
+  constructor(private route: ActivatedRoute, private router: Router, private seoService: SeoService, title: Title, meta: Meta, private dialog: MatDialog, private overlay: Overlay, private rmfService: RmfService) {
     super(title, meta);
 
     // Get route resolver variables.
@@ -94,7 +94,7 @@ export class HomeComponent extends PageWithMainMenu {
   // Initialize main-sidebar events.
   ngAfterViewInit() {
     var pageWithMainSidebar = new PageWithMainSidebar();
-    pageWithMainSidebar.initMainSidebarJQuery();  
+    pageWithMainSidebar.initMainSidebarJQuery();
   }
 
   // Navigate to home.
@@ -103,7 +103,7 @@ export class HomeComponent extends PageWithMainMenu {
   }
 
   // Submits form and navigates to the find-a-meeting page.
-  public onSubmit(findMeetingForm: any) : void {
+  public onSubmit(findMeetingForm: any): void {
 
     // Add location and query parameters to route.
     var routeParams = '';
@@ -147,7 +147,7 @@ export class HomeComponent extends PageWithMainMenu {
   }
 
   // Meeting type dropdown select value change event.
-  public meetingTypeChange(event: any) : void {
+  public meetingTypeChange(event: any): void {
     if (event.isUserInput) {
       var meetingType = event.source.value;
       if (meetingType === 'all') {
@@ -168,7 +168,7 @@ export class HomeComponent extends PageWithMainMenu {
   }
 
   // Meeting day dropdown select value change event.
-  public meetingDayChange(event: any) : void {
+  public meetingDayChange(event: any): void {
     if (event.isUserInput) {
       var meetingDay = event.source.value;
       if (meetingDay === 'all') {
@@ -219,6 +219,17 @@ export class HomeComponent extends PageWithMainMenu {
       restoreFocus: false,
       panelClass: 'custom-dialog-container',
       scrollStrategy: this.overlay.scrollStrategies.noop()
+    });
+  }
+
+  // Opens donations dialog box.
+  public openDonationsDialog(): void {
+    this.dialog.open(DonationsDialogComponent, {
+      width: '600px',
+      height: 'auto',
+      autoFocus: false,
+      restoreFocus: false,
+      panelClass: 'custom-dialog-container',
     });
   }
 
