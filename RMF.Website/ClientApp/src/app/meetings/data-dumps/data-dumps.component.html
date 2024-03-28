@@ -4,7 +4,8 @@
   <div class="list-group border-0 text-xs-left">
     <a href="#data-dumps" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="true">Monthly Data Dumps</a>
     <div id="data-dumps" class="collapse show" data-parent="#sidebar">
-      <a href="javascript:void(0)" (click)="scrollTo('monthly-data-dumps')" class="list-group-item">All Statistics</a>
+      <a href="javascript:void(0)" (click)="scrollTo('all-statistics')" class="list-group-item">All Statistics</a>
+      <a href="javascript:void(0)" (click)="scrollTo('meeting-corrections')" class="list-group-item">Meeting Corrections</a>
       <a *ngFor="let dataDump of dataDumps.dataDumps" href="javascript:void(0)" (click)="scrollTo(dataDump.date)" class="list-group-item">{{dataDump.date}}</a>
     </div>
   </div>
@@ -30,7 +31,8 @@
     </div>
     <div class="row">
       <div class="col-12">
-        <a href="{{dataDumps.path}}{{dataDumps.statistics}}">All statistics</a>
+        <p>The statistics for the overall number of meetings can be found <a id="all-statistics" href="{{dataDumps.path}}{{dataDumps.statistics}}">here.</a></p>
+        <p>Any corrections to the meeting data can be found <a id="meeting-corrections" href="{{dataDumps.path}}meeting-corrections.csv">here.</a></p>
         <div class="content-text">
           <div *ngFor="let dataDump of dataDumps.dataDumps">
             <h2 id="{{dataDump.date}}">{{dataDump.date}}</h2>
