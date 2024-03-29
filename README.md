@@ -31,7 +31,7 @@ This project was developed in Visual Studio 2022 using the C# and TypeScript lan
 
 Here are some screenshots of the website:
 
-<img align='left' src='https://drive.google.com/uc?id=1Y8Pxm8x_xFCtiJOVqXNv8Y-MeRziCX_n' width='240'>
+<img align='left' src='https://drive.google.com/uc?id=1I5iyCg3a7-hvdZxm8HZytZeHzGLnFn9g' width='240'>
 <img align='left' src='https://drive.google.com/uc?id=1OA8HZj4RkU6lLBII5Mg0uUvrrNhT7ZXr' width='240'>
 <img src='https://drive.google.com/uc?id=1WD1agXY3alFBEMK1CkDzkMOluCND8mYa' width='240'>
 
