@@ -32,7 +32,7 @@ This project was developed in Visual Studio 2022 using the C# and TypeScript lan
 Here are some screenshots of the website:
 
 <img align='left' src='https://drive.google.com/uc?id=18bRzQllb0elTCDECR9HkTCZMSt0mAbSd' width='240'>
-<img align='left' src='https://drive.google.com/uc?id=1OA8HZj4RkU6lLBII5Mg0uUvrrNhT7ZXr' width='240'>
+<img align='left' src='https://drive.google.com/uc?id=1RyZfyfbhBcONh7sHv6SJc_mVe3emAJrM' width='240'>
 <img src='https://drive.google.com/uc?id=1WD1agXY3alFBEMK1CkDzkMOluCND8mYa' width='240'>
 
 First make sure you have Visual Studio 2022, Node.js and SQL Server installed.
