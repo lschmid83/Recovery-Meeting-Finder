@@ -33,7 +33,7 @@ Here are some screenshots of the website:
 
 <img align='left' src='https://drive.google.com/uc?id=18bRzQllb0elTCDECR9HkTCZMSt0mAbSd' width='240'>
 <img align='left' src='https://drive.google.com/uc?id=1RyZfyfbhBcONh7sHv6SJc_mVe3emAJrM' width='240'>
-<img src='https://drive.google.com/uc?id=1wYHuPUxOa5TzRQdZwkber2tekVMAiye5' width='240'>
+<img src='https://drive.google.com/uc?id=1GXGQwrMRzwgjbL8GIYRwpHFS5h3hbvVt' width='240'>
 
 First make sure you have Visual Studio 2022, Node.js and SQL Server installed.
 
