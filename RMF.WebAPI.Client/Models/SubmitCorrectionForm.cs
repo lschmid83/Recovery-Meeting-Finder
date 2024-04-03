@@ -14,7 +14,7 @@ namespace RMF.WebAPI.Client.Models
         public string MeetingTitle { get; set; }
         public string MeetingAddress { get; set; }
         public string MeetingTime { get; set; }
-        public int MeetingDay { get; set; }
+        public string MeetingDay { get; set; }
         public string MeetingCorrectionDetails { get; set; }
     }
 }

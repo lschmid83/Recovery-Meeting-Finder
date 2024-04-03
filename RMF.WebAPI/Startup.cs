@@ -11,6 +11,8 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using System;
 using Lucene.Net.Store;
+using RMF.WebAPI.SMTP;
+using RMF.WebAPI.SearchIndex;
 
 namespace RMF.WebAPI
 {

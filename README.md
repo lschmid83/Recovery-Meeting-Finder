@@ -109,7 +109,7 @@ When you checkout this project you will notice that there is a DataDump folder i
 
    Replace the data source, user id and password with your own database account credentials.
 
-2) Set the path of the Lucene Index directory. Open the RMF.WebAPI project and edit Startup.cs line.19 to your index path:
+2) Set the path of the Lucene Index directory. Open the RMF.WebAPI project and edit Startup.cs line.21 to your index path:
    `$installPath\DataDump\`
 
    In production the rmf_lucene_index folder should be placed within the main application folder on the server.

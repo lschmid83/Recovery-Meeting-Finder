@@ -34,8 +34,6 @@ namespace RMF.WebAPI.Controllers
             if (String.IsNullOrEmpty(submitCorrectionForm.Email))
                 return BadRequest();
 
-            var day = DayRepo.GetAll().Result.Where(x => x.Id == submitCorrectionForm.MeetingDay).FirstOrDefault().Name;
-
             var mail = new MailMessage()
             {
                 From = new MailAddress(SmtpSettings.Address),
@@ -50,7 +48,7 @@ namespace RMF.WebAPI.Controllers
                         "Meeting Title:" + "<br/><br/>" + submitCorrectionForm.MeetingTitle + "<br/><br/>" +
                         "Meeting Address:" + "<br/><br/>" + submitCorrectionForm.MeetingAddress + "<br/><br/>" +
                         "Meeting Time:" + "<br/><br/>" + submitCorrectionForm.MeetingAddress + "<br/><br/>" +
-                        "Meeting Day:" + "<br/><br/>" + day + "<br/><br/>" +
+                        "Meeting Day:" + "<br/><br/>" + submitCorrectionForm.MeetingDay + "<br/><br/>" +
                         "Meeting Correction Details:" + "<br/><br/>" + submitCorrectionForm.MeetingAddress;
 
             var client = new SmtpClient(SmtpSettings.Host, SmtpSettings.Port)

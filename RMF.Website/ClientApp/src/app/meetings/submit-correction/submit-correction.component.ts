@@ -92,6 +92,7 @@ export class SubmitCorrectionComponent extends PageWithSidebar {
       form.value.telephone.length > 0 && !isNaN(form.value.telephone) &&
       form.value.meetingAddress.length > 0 &&
       form.value.meetingTime.length > 0 &&
+      form.value.meetingDay.length > 0 &&
       form.value.meetingCorrectionDetails.length > 0) {
       this.sending = true;
       this.http.post(environment.apiUrl + '/submit-correction/send',
