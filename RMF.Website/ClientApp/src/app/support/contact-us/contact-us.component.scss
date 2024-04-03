@@ -1,0 +1,37 @@
+@import '../../../variables.scss';
+
+#content-container h2 {
+  padding-top: 0px;
+  scroll-margin-top: 12px;
+}
+
+#form-container {
+    margin-bottom: -40px;
+}
+
+#contact-form #name-group {
+  width: 500px;
+}
+
+#contact-form #email-group {
+  width: 500px;
+}
+
+#contact-form #message-group {
+  margin-top: -10px;
+}
+
+@media only screen and (max-width: 1125px) {
+
+  #contact-form #name-group {
+    width: 100%;
+  }
+
+  #contact-form #email-group {
+    width: 100%;
+  }
+
+  #contact-form #message-group {
+    width: 100%;
+  }
+}

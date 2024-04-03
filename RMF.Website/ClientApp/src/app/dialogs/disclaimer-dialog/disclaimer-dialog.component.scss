@@ -1,0 +1,50 @@
+@import '../../../variables.scss';
+
+.modal-header {
+  height: 70px;
+}
+
+  .modal-header .close-dialog {
+    color: #808080
+  }
+
+.modal-header .mat-dialog-title {
+  padding-left: 2px;
+  padding-top: 5px;
+  color: $secondary-color;
+}
+
+.modal-content {
+  padding: 18px;
+  padding-bottom: 10px;
+  border: none;
+  max-height: 69vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+.modal-content h3 {
+  font-size: 1rem;
+}
+
+.modal-content a {
+    margin-bottom: 18px;
+}
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  margin-bottom: 5px;
+}
+
+.modal-footer .close-button {
+    margin-right: 15px;
+}
+
+#disclaimer-dialog a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+#disclaimer-dialog a:hover {
+  text-decoration: none;
+}

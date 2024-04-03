@@ -1,0 +1,24 @@
+<app-page-header class="fixed"></app-page-header>
+<app-page-main-menu class="fixed"></app-page-main-menu>
+
+<div id="page-content" class="container-fluid">
+  <div class="row">
+    <div id="content-title-wrap" class="col-12">
+      <h1 id="search-results-title" class="content-title">Search Results</h1>
+      <h1 id="search-term-title" *ngIf="!emptyResultSet()" class="content-title">"{{searchResults.searchTerm}}"</h1>
+      <p *ngIf="!emptyResultSet()">Click on a link below for more information.</p>
+      <p *ngIf="emptyResultSet()">There were no results found for the search term.</p>
+    </div>
+  </div>
+  <div class="row">
+    <div id="search-results" class="col-12" *ngIf="!emptyResultSet()">
+      <div class="search-result"  *ngFor="let searchResult of searchResults.results">
+        <a class="search-result-title" href="{{searchResult.path}}">{{searchResult.title}}</a>
+        <p class="search-result-content" [innerHTML]="searchResult.content"></p>
+      </div>
+    </div>
+    <div id="search-results-total" class="col-12">Total results: {{searchResults.totalResults}}</div>
+  </div>
+</div>
+
+

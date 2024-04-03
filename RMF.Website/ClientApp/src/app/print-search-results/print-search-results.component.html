@@ -1,0 +1,29 @@
+<app-print-header></app-print-header>
+<div id="print-search-results-container" class="container-fluid" style="position: absolute">
+  <div class="row">
+    <div class="col-sm-12 text-center">
+      <h1>Search Results - {{searchTerm}}</h1>
+    </div>
+  </div>
+  <div class="row justify-content-center" *ngIf="!emptyResultSet()">
+    <div *ngFor="let type of types" class="results-groups-wrap justify-content-center">
+      <div class="result-count" [ngStyle]="{'background-color':type.color}" *ngIf="meetingTypeSelected(type.id)">
+        <a href="javascript:void(0)" (click)="scrollTo(type.shortName)">{{type.shortName}} ({{meetingTypeCount(type.shortName)}})</a>
+      </div>
+    </div>
+  </div>
+  <div id="print-search-results" class="container-fluid" *ngIf="!emptyResultSet()">
+    <div class="meeting-types" *ngFor="let meetingType of searchResults.meetingTypes; let i = index;">
+      <div class="row">
+        <div class="col-sm-12 search-results-title">
+          <h1>{{meetingType.type.name}} ({{meetingType.type.shortName}})</h1>
+        </div>
+      </div>
+      <div class="row meeting-result">
+        <div class="col-sm-12" *ngFor="let meeting of meetingType.meetings">
+          <p><b [ngStyle]="{'color':meeting.type.color}" *ngIf="meeting.postcode !== null">{{splitPostcode(meeting)}}, </b>{{meeting.time | date: 'HH:mm'}}, {{meeting.day.name}}, <span *ngIf="meeting.venue !== null">{{meeting.venue}}, </span>{{formatCsv(meeting.address)}}, <span *ngIf="meeting.postcode !== null">{{meeting.postcode}}, </span>{{meeting.distance}} miles</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
