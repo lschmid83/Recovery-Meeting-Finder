@@ -1,0 +1,194 @@
+<app-page-header class="fixed"></app-page-header>
+<app-page-main-menu class="fixed"></app-page-main-menu>
+<div id="sidebar" class="show">
+  <div class="list-group border-0 text-xs-left">
+    <a href="javascript:void(0)" (click)="scrollTo('rmf-contact-us')" class="list-group-item d-inline-block">Contact Us</a>
+    <a href="#aa-contact-us" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="true">Alcoholics Anonymous (AA)</a>
+    <div id="aa-contact-us" class="collapse show" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('aa-contact-us-gb')" class="list-group-item">Great Britain</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-contact-us-ireland')" class="list-group-item">Ireland</a>
+    </div>
+    <a href="#ca-contact-us" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Cocaine Anonymous (CA)</a>
+    <div id="ca-contact-us" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('ca-contact-us-uk')" class="list-group-item">United Kingdom</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-contact-us-ireland')" class="list-group-item">Ireland</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-contact-us-scotland')" class="list-group-item">Scotland</a>
+    </div>
+    <a href="#na-contact-us" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Narcotics Anonymous (NA)</a>
+    <div id="na-contact-us" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('na-contact-us-uk')" class="list-group-item">United Kingdom</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-contact-us-ireland')" class="list-group-item">Ireland</a>
+    </div>
+    <a href="#oa-contact-us" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Overeaters Anonymous (OA)</a>
+    <div id="oa-contact-us" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('oa-contact-us-gb')" class="list-group-item">Great Britain</a>
+    </div>
+  </div>
+</div>
+<div id="content-container">
+  <div id="content" class="container-fluid">
+    <div class="row">
+      <div id="content-title-wrap" class="col-12">
+        <h1 id="rmf-contact-us" class="content-title">Contact Us</h1>
+        <button id="sidebar-toggle" class="navbar-toggler navbar-light" title="Toggle sidebar" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="content-description">
+          <p>Complete the form below to send us an email.</p>
+        </div>
+        <div id="form-container">
+          <form id="contact-form" #form="ngForm" class="row g-3 needs-validation" (ngSubmit)="submit(form)" novalidate>
+            <label for="name" class="form-label">Name</label>
+            <div id="name-group" class="input-group has-validation">
+              <input id="name" [(ngModel)]="name" name="name" type="text" class="form-control" aria-describedby="inputGroupPrepend" title="Please enter your name." required>
+              <div class="invalid-feedback">
+                Please enter a valid name.
+              </div>
+            </div>
+            <label for="email" class="form-label">Email address</label>
+            <div id="email-group" class="input-group has-validation">
+              <input id="email" [(ngModel)]="email" name="email" type="email" class="form-control email" aria-describedby="inputGroupPrepend" title="Please enter your email address." required>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <label for="message" class="form-label">Message</label>
+            <div id="message-group" class="input-group has-validation">
+              <textarea id="message" [(ngModel)]="message" name="message" type="text" rows="8" cols="20" class="form-control" aria-describedby="inputGroupPrepend" title="Please enter your message." required></textarea>
+              <div class="invalid-feedback">
+                Please enter a message to send to us.
+              </div>
+            </div>
+            <div class="col-12">
+              <button id="submit" class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+            <div class="col-12" id="send-result-group">
+              <p id="message-sent" [style.visibility]="sent ? 'visible' : 'hidden'">Message delivered successfully.</p>
+              <p id="message-failed" [style.visibility]="invalidSendAddress ? 'visible' : 'hidden'">Please check your email address.</p>
+              <p id="message-sending" [style.visibility]="sending ? 'visible' : 'hidden'"><img id="message-sending-icon" src="assets/images/loading.svg" alt="Loading" />Sending email message...</p>
+            </div>
+          </form>
+        </div>
+        <div class="content-header">
+          <h1 id="contact-us-aa">Alcoholics Anonymous (AA)</h1>
+          <a href="https://www.alcoholics-anonymous.org.uk" target="_blank"><img src="assets/images/aa-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <h2 id="aa-contact-us-gb">Great Britain</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.alcoholics-anonymous.org.uk" target="_blank">https://www.alcoholics-anonymous.org.uk</a><br /><br />
+            <b>Call or email us</b><br />
+            If you need help with a drinking problem either phone our national help line<br />
+            on 0800 9177 650 or contact us by email: <a href="mailto:help@aamail.org" target="_blank">help@aamail.org</a><br /><br />
+            <b>By post</b><br />
+            Or for more general queries about AA you can write to:<br /><br />
+            <b>General Service Office (GSO)</b><br />
+            Alcoholics Anonymous,<br />
+            PO Box 1, 10 Toft Green, York YO1 7NJ.<br />
+            Tel. 01904 644026 (Monday to Thursday 9am to 5pm - Friday 9am to 4.30pm)<br />
+            Email: <a href="mailto:aainformation@gsogb.org.uk" target="_blank">aainformation@gsogb.org.uk</a><br /><br />
+            <b>AA Southern Service Office (SSO)</b><br />
+            1 Raven Wharf 14 Lafone Street, London SE1 2LR<br />
+            For enquiries Tel. 020 7407 9217 (Monday to Friday 9am to 5pm) or Email: <a href="mailto:sso@gsogb.org.uk" target="_blank">sso@gsogb.org.uk</a><br /><br />
+            <b>AA Northern Service Office (NSO)</b><br />
+            Room 101, Baltic Chambers, 50 Wellington Street, Glasgow G2 6HJ<br />
+            Tel. 0141 226 2214 (Monday to Friday 9am to 5pm)
+          </p>
+          <h2 id="aa-contact-us-ireland">Ireland</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.alcoholicsanonymous.ie" target="_blank">https://www.alcoholicsanonymous.ie</a><br /><br />
+            <b>General Service Office</b><br />
+            Unit 2, Block C, Santry Business Park, Swords Road, Dublin 9, D09 H58<br /><br />
+            Tel: +353 1 842 0700<br />
+            Email: <a href="mailto:gso@alcoholicsanonymous.ie" target="_blank">gso@alcoholicsanonymous.ie</a>
+          </p>
+        </div>
+        <div class="content-header">
+          <h1 id="contact-us-ca">Cocaine Anonymous (CA)</h1>
+          <a href="https://www.cocaineanonymous.org.uk" target="_blank"><img src="assets/images/ca-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <h2 id="ca-contact-us-uk">United Kingdom</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.cocaineanonymous.org.uk" target="_blank">https://www.cocaineanonymous.org.uk/</a><br /><br />
+            <b>Address:</b><br />
+            CAUK<br />
+            P.O. Box 1337<br />
+            Enfield<br />
+            EN1 9AS<br /><br />
+            If you think you have a problem with any mind-altering substance, please contact the Helpline:<br /><br />
+            <b>Call: </b>0800 612 0225 and speak to a member of Cocaine Anonymous, from 10:00 to 22:00, 7 days a week. You can leave a message 24/7, and we’ll call you back as soon as we can.<br /><br />
+            <b>Email: </b><a href="mailto:helpline@cauk.org.uk" target="_blank">helpline@cauk.org.uk</a><br /><br />
+          </p>
+          <h2 id="ca-contact-us-ireland">Ireland</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.caireland.live" target="_blank">https://www.caireland.live</a><br /><br />
+            <b>Call Our Helpline: </b>087 317 4989  (8am - 10pm)<br /><br />
+            <b>Instagram: </b><a href="https://www.instagram.com/cocaine_anonymous_ireland" target="_blank">https://www.instagram.com/cocaine_anonymous_ireland</a>
+          </p>
+          <h2 id="ca-contact-us-scotland">Scotland</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.cascotland.org.uk" target="_blank">https://www.cascotland.org.uk</a><br /><br />
+            <b>Helpline</b>
+            The Helpline is manned from 8 am to 11 pm, 7 days a week by recovered addicts who will assist you in finding a meeting or just talk with you. If you think you have a problem with any mind altering substance please call the Helpline.<br /><br />
+            <b>Call Our Helpline: </b>0141 959 6363
+          </p>
+        </div>
+        <div class="content-header">
+          <h1 id="na-contact-us">Narcotics Anonymous (NA)</h1>
+          <a href="https://ukna.org" target="_blank"><img src="assets/images/na-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <h2 id="na-contact-us-uk">United Kingdom</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://ukna.org" target="_blank">https://ukna.org</a><br /><br />
+            For general enquiries:<br /><br />
+            <b>Call: </b> 0300 999 1212<br />
+            <b>Email: </b> <a href="mailto:pi@ukna.org" target="_blank">pi@ukna.org</a>
+          </p>
+          <h2 id="na-contact-us-ireland">Ireland</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.na-ireland.org" target="_blank">https://www.na-ireland.org</a><br /><br />
+            <b>Address:</b><br />
+            PO Box 13033<br />
+            14b Upper Kevin Street<br />
+            Dublin 8<br /><br />
+            <b>Call: </b>+353 (0)1-6728000 (Information line only)<br />
+            <b>Email: </b><a href="mailto:info@na-ireland.org" target="_blank">info@na-ireland.org</a>
+          </p>
+        </div>
+        <div class="content-header">
+          <h1 id="oa-contact-us">Overeaters Anonymous (OA)</h1>
+          <a href="https://www.oagb.org.uk" target="_blank"><img src="assets/images/oa-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <h2 id="oa-contact-us-gb">Great Britain</h2>
+          <p>
+            <b>Website</b><br />
+            <a href="https://www.oagb.org.uk" target="_blank">https://www.oagb.org.uk</a><br /><br />
+            <b>Address:</b><br />
+            OAGB Ltd.,<br />
+            483 Green Lanes,<br />
+            London,<br />
+            N13 4BS<br /><br />
+            <b>Call: </b>07798 587802
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

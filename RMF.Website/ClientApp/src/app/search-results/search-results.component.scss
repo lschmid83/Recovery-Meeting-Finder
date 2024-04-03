@@ -1,0 +1,299 @@
+@import '../../variables.scss';
+
+#loading {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#search-results-title-wrap {
+  float: none;
+  margin: 0 auto;
+}
+
+#search-results-title-wrap h2 {
+  font-size: 30px;
+  color: $primary-color;
+  text-align: center;
+  margin-top: 15px;
+}
+
+#search-results-title-wrap #sort-search-results-icon {
+  display: none;
+  float: right;
+  margin-top: 22px;
+  margin-right: -200px;
+}
+
+#search-results-title-wrap .result-arrow {
+  float: right;
+  cursor: pointer;
+  margin-top: -130px;
+  margin-right: 10px;
+  color: $secondary-text-color;
+}
+
+#search-results-title-wrap #sort-search-results-form {
+  float: right;
+  margin-top: -58px;
+  margin-right: 203px;
+  width: 100%;
+}
+
+#search-results-title-wrap #sort-search-results-form #sort-search-results-form-field {
+  margin-right: 0px;
+  margin-top: -4px;
+  text-align: right;
+  float: right;
+  width: 165px;
+}
+
+#search-results-title-wrap #sort-search-results-form .form-select-input {
+  font-size: 1rem;
+}
+
+
+#search-results-title-wrap #print-search-results {
+  float: right;
+  margin-top: -43px;
+  margin-right: 130px;
+  cursor: pointer;
+}
+
+#search-results-title-wrap #print-search-results a {
+  color: black;
+  text-decoration: none;
+}
+
+#search-results-title-wrap #print-search-results .print-search-results-icon {
+  margin-left: 20px;
+  margin-top: -3px;
+  margin-right: 5px;
+  width: 20px;
+  cursor: pointer;
+}
+
+#search-results-title-wrap #download-search-results {
+  float: right;
+  margin-top: -43px;
+  margin-right: 12px;
+  cursor: pointer;
+}
+
+#search-results-title-wrap #download-search-results a {
+  color: black;
+  text-decoration: none;
+}
+
+#search-results-title-wrap #download-search-results .download-search-results-icon {
+  margin-left: 20px;
+  margin-top: -3px;
+  margin-right: 5px;
+  width: 20px;
+  cursor: pointer;
+}
+
+#search-results-empty {
+  margin-top: 5px;
+  margin-bottom: 80px;
+  text-align: center;
+  font-size: 26px;
+}
+
+#search-results-empty p {
+  font-size: 19px;
+  width: 80%;
+  text-align: left;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#search-results-empty p:not(:first-child) {
+  margin-top: 20px;
+}
+
+#search-results-empty ul li {
+  font-size: 19px;
+  width: 80%;
+  text-align: left;
+  margin: auto;
+  margin-top: 10px;
+}
+
+#search-results-groups-wrap {
+  margin-bottom: 12px;
+}
+
+#search-results-groups-wrap #search-results-count {
+  display: inline-block;
+  text-align: center;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  margin-right: 7px;
+  margin-bottom: 7px;
+  margin-top: 10px;
+}
+
+#search-results-groups-wrap #search-results-count a {
+  color: $secondary-text-color;
+}
+
+#search-results .back-to-top-btn {
+  float: right;
+  margin-top: -44px;
+  margin-right: 0px;
+  padding: 8px;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  font-size: 17px;
+}
+
+.small-back-to-top-btn {
+  font-size: 10px;
+  margin-top: 5px;
+  margin-bottom: 6px;
+}
+
+#search-results-group-title-wrap h2 {
+  font-size: 30px;
+  color: $primary-color;
+  text-align: center;
+  margin-top: 5px;
+  margin-bottom: 17px;
+
+}
+
+.search-result-type {
+  scroll-margin-top: 15px;
+}
+
+#search-results-tiles-wrap {
+  margin-top: 15px;
+}
+
+#search-results-tiles-wrap .search-results-tile {
+  max-width: 460px;
+  padding-left: 10px;
+  padding-right: 10px;
+  padding-bottom: 20px;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner {
+  background-color: $search-result-tile-color;
+  padding: 30px;
+  min-height: 405px;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .title {
+  color: $secondary-color;
+  border-bottom: 1px solid $secondary-color;
+  padding-bottom: 5px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .venue {
+  margin-bottom: 0px;
+}
+
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .day {
+  font-weight: bold;
+  color: $primary-color;
+  margin-bottom: 20px;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .time {
+  color: $primary-text-color;
+}
+
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .time span:first-child {
+  color: $secondary-color;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .distance {
+  color: $primary-text-color;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .distance span {
+  color: $secondary-color;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .postcode {
+  margin: 0 0 60px 0;
+  color: $primary-text-color;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner .postcode span {
+  color: $secondary-color;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-inner a {
+  color: $primary-color;
+  border-bottom: 1px solid transparent;
+  font-weight: bold;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-icon-wrap {
+  text-align: right;
+  min-height: 32px;
+}
+
+#search-results-tiles-wrap .search-results-tile .search-results-tile-icon-wrap .icon {
+  margin-left: 5px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+#search-results-tiles-wrap .chit-icon {
+  position: relative;
+  top: 2px;
+  left: 3px;
+  font-size: 19px;
+  color: #505963
+}
+
+#search-results-tiles-wrap .hearing-aid-icon {
+  position: relative;
+  top: -2px;
+}
+
+@media only screen and (max-width: 1170px) {
+  .fa-arrow-circle-down:before {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 1020px) {
+
+  #sort-search-results-form-field {
+    visibility: hidden;
+  }
+
+  #search-results-title-wrap #sort-search-results-icon {
+    display: block;
+    margin-right: -355px !important;
+  }
+
+  #search-results-title-wrap #print-search-results {
+    display: none;
+  }
+
+  #search-results-title-wrap #download-search-results {
+    display: none;
+  }
+}
+
+
+@media only screen and (max-width: 768px) {
+  #search-results-empty p {
+    width: 90%;
+  }
+
+  #search-results-empty ul li {
+    width: 90%;
+  }
+}

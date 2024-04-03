@@ -1,0 +1,111 @@
+<app-page-header class="fixed"></app-page-header>
+<app-page-main-menu class="fixed"></app-page-main-menu>
+<div id="sidebar" class="show">
+  <div class="list-group border-0 text-xs-left">
+    <a href="javascript:void(0)" (click)="scrollTo('submit-a-correction-information')" class="list-group-item d-inline-block">Information</a>
+    <a href="javascript:void(0)" (click)="scrollTo('submit-a-correction-form')" class="list-group-item d-inline-block">Submit a Correction</a>
+  </div>
+</div>
+<div id="content-container">
+  <div id="content" class="container-fluid">
+    <div class="row">
+      <div id="content-title-wrap" class="col-12">
+        <h1 id="submit-a-correction-information" class="content-title">Submit a Correction</h1>
+        <button id="sidebar-toggle" class="navbar-toggler navbar-light" title="Toggle sidebar" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="content-description">
+          <p>If you notice any incorrect meeting listings please report them to us here we will do our best to correct them. It may take up to a month for us to make amendments to the database. We will send you an email to confirm we are looking into the changes when you submit the form below.</p>
+          <p>We need enough information to find the meeting you want corrected. The name, email, telephone, address, time, day and details fields are required.</p>
+          <p>For venues which have more than one meeting on different days and times you will need to submit multiple corrections for each meeting.</p>
+          <p>Please make sure you give the exact details of what you want updated in the details box and enter a valid email so we can reply to you.</p>
+        </div>
+        <div id="form-container">
+          <form id="submit-a-correction-form" #form="ngForm" class="row g-3 needs-validation" (ngSubmit)="submit(form)" novalidate>
+            <label for="validationName" class="form-label">Name</label>
+            <div id="name-group" class="input-group has-validation">
+              <input id="name" [(ngModel)]="name" name="name" type="text" class="form-control" aria-describedby="inputGroupPrepend" title="Please enter your name." required>
+              <div class="invalid-feedback">
+                Please enter a valid name.
+              </div>
+            </div>
+            <label for="validationEmail" class="form-label">Email</label>
+            <div id="email-group" class="input-group has-validation">
+              <input id="email" [(ngModel)]="email" name="email" type="email" class="form-control" aria-describedby="inputGroupPrepend" title="Please enter your email address." required>
+              <div class="invalid-feedback">
+                Please enter a valid email address.
+              </div>
+            </div>
+            <label for="validationTelephone" class="form-label">Telephone number</label>
+            <div id="telephone-group" class="input-group has-validation">
+              <input id="telephone" [(ngModel)]="telephone" name="telephone" type="tel" class="form-control" aria-describedby="inputGroupPrepend" title="Please enter your telephone number. We will only contact you if we need to verify the meeting details." pattern="^[0-9]*$" required>
+              <div class="invalid-feedback">
+                Please enter a valid telephone number.
+              </div>
+            </div>
+            <label class="form-label">Meeting Title</label>
+            <div class="input-group">
+              <input id="meeting-title" [(ngModel)]="meetingTitle" name="meetingTitle" type="text" class="form-control" title="Please enter the title of the meeting as displayed in search results.">
+            </div>
+            <label for="validationAddress" class="form-label">Meeting Address</label>
+            <div class="input-group has-validation">
+              <textarea id="meeting-address" [(ngModel)]="meetingAddress" name="meetingAddress" type="text" class="form-control" rows="3" cols="20" aria-describedby="inputGroupPrepend" title="Please enter the full address of the meeting." required></textarea>
+              <div class="invalid-feedback">
+                Please enter a valid meeting address.
+              </div>
+            </div>
+            <label for="validationTime" class="form-label">Meeting Time</label>
+            <div id="meeting-time-group" class="input-group has-validation">
+              <input id="meeting-time" [(ngModel)]="meetingTime" name="meetingTime" type="time" aria-describedby="inputGroupPrepend" class="input-time-form-control form-control" title="Please enter the start time of the meeting." required />
+              <div class="invalid-feedback">
+                Please enter a valid meeting time.
+              </div>
+              <i class="fa-regular fa-clock input-time-form-control-icon"></i>
+            </div>
+            <label class="form-label">Meeting Day</label>
+            <div id="meeting-day-group" class="input-group">
+              <select id="meeting-day" [(ngModel)]="meetingDay" name="meetingDay" class="form-control input-option-form-control" aria-label="Default select example" title="Please enter the day of the week of the meeting." required>
+                <option disabled selected value>Select a day</option>
+                <option value="1" selected>Monday</option>
+                <option value="2">Tuesday</option>
+                <option value="3">Wednesday</option>
+                <option value="4">Thursday</option>
+                <option value="5">Friday</option>
+                <option value="6">Saturday</option>
+                <option value="7">Sunday</option>
+              </select>
+              <i class="fa fa-chevron-down"></i>
+              <div class="invalid-feedback">
+                Please enter a valid day.
+              </div>
+            </div>
+            <label for="validationDetails" class="form-label">Details of what needs to be corrected</label>
+            <div id="meeting-correction-details-group" class="input-group has-validation">
+              <textarea id="meeting-correction-details" [(ngModel)]="meetingCorrectionDetails" name="meetingCorrectionDetails" type="text" class="form-control" rows="5" cols="20" aria-describedby="inputGroupPrepend" title="Please enter some details of what you want corrected for the meeting." required></textarea>
+              <div class="invalid-feedback">
+                Please enter some details of what needs to be corrected.
+              </div>
+            </div>
+            <div class="col-12" id="submit-group">
+              <re-captcha id="re-captcha" (resolved)="resolved($event)" siteKey=""></re-captcha>
+              <button id="submit" class="btn btn-primary" type="submit">Submit form</button>
+            </div>
+            <div class="col-12" id="send-result-group">
+              <p id="message-sent" [style.visibility]="sent ? 'visible' : 'hidden'">Message delivered successfully.</p>
+              <p id="message-failed" [style.visibility]="invalidSendAddress ? 'visible' : 'hidden'">Please check your email address.</p>
+              <p id="captcha-failed" [style.visibility]="failedCaptcha ? 'visible' : 'hidden'">Please complete the reCAPTCHA.</p>
+              <p id="message-sending" [style.visibility]="sending ? 'visible' : 'hidden'"><img id="message-sending-icon" src="assets/images/loading.svg" alt="Loading" />Sending email message...</p>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+

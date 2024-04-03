@@ -1,7 +1,5 @@
 # Recovery Meeting Finder
 
-Sorry this repository is temporarily down check back in a weeks time.
-
 Thank you for taking an interest in www.recoverymeetingfinder.com
 
 Recovery Meeting Finder is a 12-Step meeting finder and information website which I developed for Alcoholics Anonymous and other fellowships. It can be used to search for the nearest recovery meetings in the United Kingdom using the users location, town or postcode and displays the results on an interactive map.

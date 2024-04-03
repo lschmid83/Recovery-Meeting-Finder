@@ -1,0 +1,124 @@
+﻿Name,Area,Latitude,Longitude,Zoom
+Bournemouth District,South West,50.7461661,-1.827507019,13
+Cornwall,South West,50.47289459,-4.9476215,9
+Devon Central,South West,50.89725735,-3.605298,9
+Plymouth,South West,50.38200705,-4.147725105,14
+Poole and District,South West,50.75155586,-1.9477895,12
+Somerset,South West,51.18070476,-2.9671435,9
+South Devon,South West,50.44010043,-3.6380595,10
+West Dorset,South West,50.83278386,-2.447339,10
+Bristol and District,South Midlands,51.46905909,-2.64169693,12
+Chiltern and Thames,South Midlands,51.64100399,-0.735546,11
+Severn,South Midlands,51.85148312,-2.274856567,10
+South Midlands,South Midlands,51.82825145,-1.3416875,10
+Thames Valley,South Midlands,51.47517336,-1.0636525,11
+Wiltshire and Bath,South Midlands,51.40565213,-2.093582153,10
+East Herts or West Essex,Eastern,51.76253242,0.030461,11
+Essex,Eastern,51.73000393,0.701065063,10
+Fenland,Eastern,52.38860901,0.056991577,10
+Lea Valley,Eastern,51.73637847,-0.4398675,11
+Milton Keynes,Eastern,52.03968833,-0.74791,12
+North East Anglian,Eastern,52.51294374,1.064359,9
+North Herts and North Beds,Eastern,51.98288624,-0.2231075,10
+North Thames,Eastern,51.55666233,0.3350405,11
+South Bedfordshire,Eastern,51.9134507,-0.503826141,12
+South East Anglian,Eastern,52.16133447,0.992889404,9
+Birmingham,Midlands,52.47117244,-1.900463104,12
+Black Country,Midlands,52.55151558,-2.098731995,11
+Coventry and Warwickshire,Midlands,52.40483446,-1.566317,10
+Derbyshire,Midlands,52.96310035,-1.61567688,10
+Lincolnshire,Midlands,53.16902124,-0.240325928,9
+Northamptonshire,Midlands,52.30994617,-0.862083435,11
+Nottinghamshire or Leicestershire,Midlands,52.94853752,-1.175022125,12
+Potteries and District,Midlands,52.97200329,-2.334816,10
+"Blackpool, Fylde and Wyre",North West,53.79831896,-2.971973419,12
+Cheshire East,North West,53.37371775,-2.25528717,11
+Chester City,North West,53.19404501,-2.8860285,13
+East Lancs,North West,53.73409406,-2.3256035,10
+Liverpool City,North West,53.41843167,-2.940731049,12
+Manchester,North West,53.46689634,-2.24275589,12
+Merseyside and South West Lancs,North West,53.46884232,-2.824172974,10
+North East Wales,North West,53.16283245,-3.34602356,10
+North West,North West,54.14111527,-2.894210815,10
+Wirral,North West,53.34747302,-3.057289124,11
+Durham and Cleveland,North East,54.67010253,-1.383765,10
+Hull and East Riding,North East,53.88369713,-0.534896851,10
+North Yorkshire,North East,54.13963154,-1.3968695,9
+Northumberland,North East,55.24896329,-1.713180542,10
+South Yorkshire and North East Derbyshire,North East,53.39602781,-1.402130127,10
+Sunderland and District,North East,54.87491731,-1.392688751,12
+Tyne and Northumbria,North East,54.9695364,-1.578941345,11
+West Riding,North East,53.7675744,-1.543235779,11
+West Yorkshire,North East,53.75865789,-1.826820374,11
+Brighton Area,South East,50.82508252,-0.15329361,13
+East Kent,South East,51.21247016,1.071853638,10
+East Sussex,South East,50.85558071,0.152778625,11
+Hastings and Rother,South East,50.85644759,0.577919483,15
+Mid Surrey,South East,51.29423846,-0.584163666,12
+North East Surrey,South East,51.28393651,-0.102825165,12
+Northdown,South East,51.16858356,-1.229782104,10
+Solent,South East,50.83347136,-1.525382996,11
+Southdown,South East,50.84344722,-1.046104431,11
+West Kent,South East,51.27867252,0.504684448,10
+West Sussex,South East,50.99133918,-0.2879495,10
+City Of London,London (North),51.51650036,-0.088641644,15
+East London,London (North),51.5635123,0.033817291,12
+London Chelsea,London (North),51.48959665,-0.1607535,14
+London Kensington and Fulham,London (North),51.48728584,-0.198483467,14
+London North,London (North),51.56905103,-0.149517059,12
+London North East,London (North),51.55217669,-0.1141119,14
+London North Middlesex,London (North),51.57434943,-0.414476395,13
+London North West,London (North),51.53773508,-0.191488266,13
+London South Middlesex,London (North),51.47507579,-0.408039093,12
+London West End,London (North),51.51789655,-0.131964684,14
+London Westway,London (North),51.5046557,-0.23255825,14
+London Croydon Epsom and Sutton,London (South),51.35018618,-0.182218552,13
+London North Kent,London (South),51.42148314,0.1022425,12
+London South,London (South),51.44357606,-0.135612488,13
+London South East (East),London (South),51.45502182,-0.022315979,13
+London South East (West),London (South),51.4766362,-0.094413757,13
+London South West,London (South),51.42163733,-0.270881653,13
+Cardiff and District,Wales and Borders,51.46994217,-3.20766449,12
+North West Wales,Wales and Borders,53.08777627,-4.1063295,10
+Shropshire,Wales and Borders,52.55840173,-2.688903809,10
+South East Wales,Wales and Borders,51.75466148,-3.175048828,10
+Swansea and District,Wales and Borders,51.61269165,-3.932418823,11
+Welsh Borders,Wales and Borders,52.07403099,-2.820739746,10
+West Wales,Wales and Borders,52.03136729,-4.400024414,9
+Borders and East Lothian,Scotland,55.80710666,-2.662811279,10
+Cumbernauld and District,Scotland,55.94710916,-4.006919861,14
+Edinburgh and Midlothian,Scotland,55.94290403,-3.213329315,13
+Forth Valley,Scotland,56.09138361,-3.79234314,11
+Lanarkshire,Scotland,55.78749287,-4.016532898,12
+West Lothian,Scotland,55.90746425,-3.589782715,11
+Aberdeen and District,East of Scotland,57.24516091,-2.4154505,9
+Angus and District,East of Scotland,56.58793648,-2.720131,10
+Dundee and Area,East of Scotland,56.46569985,-3.001526,14
+Fife,East of Scotland,56.19410242,-3.144836426,10
+Argyll,Highland and Islands,56.42808375,-5.54397583,12
+Inverness and District,Highland and Islands,57.78466676,-4.339599609,8
+Lochaber,Highland and Islands,56.83112987,-5.484237671,11
+Moray and District,Highland and Islands,57.63272125,-3.282852173,11
+Western Isles,Highland and Islands,58.20994224,-6.385813951,18
+Ayrshire and South West Scotland,South West Scotland,55.17180215,-4.196777344,9
+Dumbarton,South West Scotland,55.97660839,-4.650768,12
+Inverclyde,South West Scotland,55.89485688,-4.8729975,11
+North and East Ayrshire,South West Scotland,55.69171231,-4.622497559,11
+Paisley and District,South West Scotland,55.85730245,-4.477272034,12
+Clydebank and District,Glasgow,55.91625672,-4.4437705,13
+Glasgow East,Glasgow,55.84135114,-4.171199799,13
+Glasgow North West,Glasgow,55.89037002,-4.3166595,13
+Glasgow South,Glasgow,55.82426184,-4.300062,13
+Monklands,Glasgow,55.86283778,-4.008464813,13
+Antrim,Northern Ireland,54.77392676,-6.081619263,11
+Armagh,Northern Ireland,54.36096407,-6.469573975,10
+Derry,Northern Ireland,54.99644635,-7.320971489,14
+Down,Northern Ireland,54.36055555,-5.940856934,9
+Fermanagh,Northern Ireland,54.29318949,-7.4074095,12
+Tyrone,Northern Ireland,54.6178089,-7.073822021,10
+Cork,Republic of Ireland,51.89041846,-8.467025757,13
+Donegal,Republic of Ireland,54.86475329,-7.852478027,9
+Dublin,Republic of Ireland,53.36628319,-6.275939941,11
+Galway,Republic of Ireland,53.31076155,-8.871459961,10
+Kerry,Republic of Ireland,52.24880671,-9.060974121,9
+Wicklow,Republic of Ireland,53.00067894,-6.2897037,10

@@ -1,0 +1,83 @@
+.custom-dialog-container .mat-dialog-container {
+  padding: 0px !important;
+}
+
+.modal-header {
+  height: 70px;
+}
+
+.modal-content {
+    max-height: 50vh;
+    overflow-y: auto;
+    overflow-x: auto;
+}
+
+  .modal-header .close-dialog {
+    color: #808080
+  }
+
+.modal-header .mat-dialog-title {
+  padding-left: 2px;
+  padding-top: 5px;
+  color: #5397c1;
+}
+
+.modal-content {
+    padding: 18px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+  .modal-content p {
+    word-wrap: break-word;
+  }
+
+  .modal-content .title {
+    font-size: 24px;
+    color: #5397c1;
+  }
+
+  .modal-content .day {
+    color: #203177;
+  }
+
+  .modal-content .address {
+      margin-top: 5px;
+      margin-bottom: 2px;
+  }
+
+  .modal-content .venue {
+    margin-top: 5px;
+    margin-bottom: -3px;
+
+  }
+
+  .modal-content .start-time {
+      margin-bottom: 5px;
+  }
+
+  .modal-content .open {
+    margin-bottom: 5px;
+  }
+
+  .modal-content .disability {
+    margin-bottom: 5px;
+  }
+
+  .modal-content .format {
+    margin-bottom: 5px;
+  }
+
+  .modal-content .meeting-guide {
+      margin-top: 10px;
+      font-size: 1em;
+  }
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  margin-bottom: 5px;
+}
+
+.modal-footer .close-button {
+    margin-right: 15px;
+}
