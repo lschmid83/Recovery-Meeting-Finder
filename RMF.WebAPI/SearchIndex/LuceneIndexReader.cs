@@ -16,7 +16,7 @@ namespace RMF.WebAPI.SearchIndex
             var indexName = "rmf_lucene_index";
             var indexPath = Path.Combine(Environment.CurrentDirectory, indexName);
             if (inDevelopment)
-                indexPath = Path.Combine(@"c:\data\", indexName);
+                indexPath = Path.Combine(Startup.LuceneIndexPath, indexName);
 
             using Lucene.Net.Store.Directory indexDir = FSDirectory.Open(indexPath);
 

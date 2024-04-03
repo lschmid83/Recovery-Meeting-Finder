@@ -11,29 +11,13 @@ using Newtonsoft.Json;
 using Microsoft.AspNetCore.Http;
 using System;
 using Lucene.Net.Store;
-using RMF.WebAPI.SMTP;
-using RMF.WebAPI.SearchIndex;
 
 namespace RMF.WebAPI
 {
-    /// <summary>
-    /// Change log:
-    /// 
-    /// 10/06/2022
-    /// 
-    /// I have noticed there have been reports from users visiting the website that it does not display the homepage and that on checking
-    /// the JavaScript console there is an error "net:ERR_TOO_MANY_REDIRECTS" when requesting API methods.
-    /// 
-    /// I have researched this issue and it appears to be prodominently a hosting issue as the website works fine for most people. There
-    /// is an easy workaround for the problem as documented here:
-    /// 
-    /// https://stackoverflow.com/questions/71690717/net-6-blazor-app-usehttpsredirection-is-causing-many-redirects
-    /// 
-    /// I have commented out the line app.UseHttpsRedirection(); in the Configure method and this has resolved the issue.
-    /// 
-    /// </summary>
     public class Startup
     {
+        public const string LuceneIndexPath = @"C:\source\repos\Recovery Meeting Finder\DataDump\";
+
         public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
@@ -93,7 +77,6 @@ namespace RMF.WebAPI
             services.AddScoped<IStatisticRepo, StatisticRepo>();
             services.AddScoped<IPageIndexRepo, PageIndexRepo>();
             services.AddScoped<IDataDumpRepo, DataDumpRepo>();
-            var serviceProvider = services.BuildServiceProvider();
 
             // Add SmtpSettings.
             var smtpSupportSettings = new SmtpSupportSettings();
@@ -107,8 +90,8 @@ namespace RMF.WebAPI
             // Build Lucene Index.
             var isDevelopment = Environment.GetEnvironmentVariable("ASPNETCORE_ENVIRONMENT") == "Development";
             if (isDevelopment)
-                new LuceneIndexWriter(serviceProvider.GetService<IPageIndexRepo>()).WriteIndex();
-            
+                new LuceneIndexWriter(new PageIndexRepo()).WriteIndex();
+
             // Read Lucene Index.
             var luceneIndex = new LuceneIndexReader().ReadIndex(isDevelopment);
             services.AddSingleton(luceneIndex);
