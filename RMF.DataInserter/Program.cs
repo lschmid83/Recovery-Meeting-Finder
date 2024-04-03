@@ -2,8 +2,6 @@
 using CsvHelper;
 using CsvHelper.Configuration;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
-using Microsoft.Extensions.DependencyInjection;
 using MoreLinq;
 using NetTopologySuite.Algorithm;
 using NetTopologySuite.Geometries;
@@ -25,10 +23,10 @@ namespace RMF.DataInserter
 {
     class Program
     {
-        private const string DataDumpPath = @"c:\data\data dump\";
-        private const string WebDataDumpPath = @"C:\Users\Lawrence\source\repos\Recovery Meeting Finder\RMF.Website\wwwroot\data-dump\";
+        private const string DataDumpPath = @"C:\source\repos\Recovery Meeting Finder\DataDump\";
+        private const string WebDataDumpPath = @"C:\source\repos\Recovery Meeting Finder\RMF.Website\wwwroot\data-dump\";
         private static string LatestDataDumpDate = String.Empty;
-        private const string DbBackupFilePath = @"C:\data\rmf.bak";
+        private const string DbBackupFilePath = @"C:\source\repos\Recovery Meeting Finder\DataDump\rmf.bak";
         private static MeetingContext dbContext = new MeetingContext();
         private static readonly string[] UseOrganisations = new string[] { "AA", "CA", "NA", "OA" };
 
