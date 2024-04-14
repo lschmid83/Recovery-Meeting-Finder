@@ -1,0 +1,763 @@
+@import '../../variables.scss';
+
+#advanced-search-row {
+  margin-left: -10px !important;
+  margin-right: -2px !important;
+}
+
+#advanced-search .form-select-input {
+  font-size: 16px !important;
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+  padding-top: 11px;
+}
+
+#advanced-search .form-text-input {
+  font-size: 16px !important;
+  padding-left: 9px !important;
+  --font-family-sans-serif: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+  --font-family-monospace: SFMono-Regular,Menlo,Monaco,Consolas,"Liberation Mono","Courier New",monospace;
+}
+
+#advanced-search mat-select {
+  margin-top: -21px
+}
+
+#advanced-search .advanced-search-form {
+  margin-top: 4px !important;
+}
+
+#advanced-search #as-type-label {
+  padding-top: 1px;
+}
+
+#advanced-search #as-meeting-type-form-field {
+  width: 230px;
+  margin-top: 20px;
+}
+
+#advanced-search #as-distance-basic-wrap {
+    display: none;
+}
+
+#advanced-search #as-distance-wrap {
+  margin-top: 60px !important;
+  margin-left: -328px !important;
+}
+
+#advanced-search #as-distance-label {
+  padding-top: 1px;
+}
+
+#advanced-search #as-distance-basic-label {
+  padding-top: 1px;
+}
+
+#advanced-search #as-location-wrap {
+  margin-top: 6px !important;
+}
+
+
+  #advanced-search #as-location-wrap input[type=text] {
+    width: 240px !important;
+  }
+
+
+#advanced-search #as-where-label {
+  padding-top: 6px;
+}
+
+#advanced-search #meeting-location {
+    padding-right: 39px;
+}
+
+#advanced-search #as-meeting-location-form-field {
+    margin-top: -6px;
+    z-index: 0;
+}
+
+#as-gps-location-wrapper {
+  color: #757575;
+  font-size: 25px;
+  cursor: pointer;
+  position: absolute;
+  margin-top: -40px;
+  right: -1px;
+  height: 40px;
+  width: 40px;
+  z-index: 1;
+}
+
+  #as-gps-location-wrapper #as-gps-location-button {
+    padding-left: 8px;
+    padding-top: 7px;
+    height: 40px;
+    width: 40px;
+    z-index: 1;
+  }
+
+#advanced-search #as-or {
+    margin-left: 3px;
+}
+
+#advanced-search #as-region-wrap {
+    margin-top: 20px;
+}
+
+#advanced-search #as-when-wrap {
+    margin-top: 18px;
+    margin-left: 5px !important;
+}
+
+
+#advanced-search #as-when-label {
+    padding-bottom: 27px;
+}
+
+#advanced-search #as-accessibility-wrap {
+  margin-top: -3px !important;
+}
+
+#advanced-search #as-accessibility-label {
+    padding-bottom: 27px;
+}
+
+#advanced-search #as-open-wrap {
+  margin-top: -3px !important;
+}
+
+#advanced-search #as-meeting-location-form-field {
+  width: 240px;
+}
+
+#advanced-search #as-meeting-region-form-field {
+  width: 230px;
+}
+
+#advanced-search #as-meeting-day-form-field {
+  width: 210px;
+}
+
+#advanced-search #as-meeting-distance-form-field {
+  width: 187px;
+  margin-top: 20px;
+}
+
+#advanced-search #as-meeting-distance-basic-form-field {
+  width: 187px;
+  margin-top: 20px;
+}
+
+#advanced-search #as-meeting-accessibility-form-field {
+  width: 230px;
+}
+
+#advanced-search .input-label {
+  margin-right: 28px;
+}
+
+#advanced-search #as-search-button-wrap {
+  margin-top: -7px !important;
+  margin-left: 226px !important;
+}
+
+#advanced-search-wrap {
+  background: $primary-color;
+}
+
+  #advanced-search-wrap > .container {
+    min-width: 1350px;
+  }
+
+#loading {
+  margin-left: -340px;
+  margin-top: 78px;
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
+
+#loading-basic {
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  display: none;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (max-width: 1420px) {
+
+  #advanced-search-wrap > .container {
+    min-width: 1000px;
+    max-width: 1000px;
+  }
+
+  #advanced-search #as-location-wrap {
+    margin-left: -54px !important;
+  }
+
+  #advanced-search #type {
+    margin-left: 16px !important;
+  }
+
+  #advanced-search #where {
+    margin-left: 10px !important;
+  }
+
+  #advanced-search #as-location-wrap {
+    margin-top: -134px !important;
+    margin-left: 344px !important;
+  }
+
+  #advanced-search #as-or {
+    margin-top: -115px;
+    margin-left: 687px !important;
+    margin-left: 100px !important;
+  }
+
+  #advanced-search #as-region-wrap {
+    margin-top: -120px !important;
+    margin-left: 728px !important;
+  }
+
+  #advanced-search #as-when-wrap {
+    margin-left: 4px !important;
+    margin-top: -62px !important;
+  }
+
+
+  #advanced-search #as-distance-wrap {
+    margin-left: 10px !important;
+    margin-top: 60px !important;
+  }
+
+  #advanced-search #as-meeting-distance-form-field {
+      width: 250px;
+  }
+
+  #advanced-search #as-meeting-distance-basic-form-field {
+    width: 250px;
+  }
+
+  #advanced-search #as-accessibility-wrap {
+    margin-top: -2px !important;
+    margin-left: -322px !important;
+    margin-bottom: -5px !important;
+  }
+
+  #advanced-search #as-open-wrap {
+    margin-top: -1px !important;
+    margin-left: 8px !important;
+  }
+
+  #advanced-search #as-search-button-wrap {
+    margin-top: -62px !important;
+    margin-left: 830px !important;
+    margin-bottom: 25px !important;
+  }
+
+  #loading {
+    margin-top: 139px;
+    margin-left: -331px;
+  }
+}
+
+@media only screen and (max-width: 1090px) {
+
+  #as-gps-location-wrapper {
+    right: 0px;
+  }
+
+  #advanced-search-wrap > .container {
+    margin-left: 0px !important;
+    margin-right: 0px !important;
+    min-width: 100%;
+    max-width: 100%;
+    width: auto;
+  }
+
+  #advanced-search #as-distance-wrap {
+      display: none;
+  }
+
+  #advanced-search #as-distance-basic-wrap {
+      display: inline;
+  }
+
+  #advanced-search #advanced-search-form {
+      height: 353px !important;
+  }
+
+  #advanced-search-wrap #as-type-wrap {
+    width: 100%;
+    margin-top: 3px;
+  }
+
+  #advanced-search-wrap #as-meeting-type-form-field {
+    margin-top: -2px;
+    width: 518px;
+  }
+
+  #advanced-search-wrap #as-type-wrap > .input-label {
+    width: 100%;
+    margin-left: 3px;
+  }
+
+  #advanced-search-wrap #as-location-wrap {
+    margin-top: -22px !important;
+    margin-left: 10px !important;
+    width: 100% !important;
+  }
+
+    #advanced-search-wrap #as-location-wrap input[type=text] {
+      width: 100% !important;
+    }
+ 
+
+  #advanced-search-wrap #as-meeting-location-form-field {
+    margin-top: -22px;
+    margin-left: -12px;
+    width: 518px !important;
+  }
+
+    #advanced-search-wrap #as-meeting-location-form-field #meeting-location {
+      margin-top: -1px;
+      width: 518px;
+    }
+
+  #advanced-search-wrap #as-location-wrap > .input-label {
+    width: 100%;
+    margin-left: -2px !important;
+  }
+
+  #advanced-search-wrap #as-region-wrap {
+    display: none;
+  }
+
+  #advanced-search-wrap #as-distance-wrap {
+    display: none;
+  }
+
+  #advanced-search #as-or {
+    display: none;
+  }
+
+  #advanced-search-wrap .format-wrap {
+    display: none;
+  }
+
+  #advanced-search-wrap #as-accessibility-wrap {
+    display: none;
+  }
+
+  #advanced-search-wrap #as-open-wrap {
+    display: none;
+  }
+
+  #advanced-search-wrap #as-when-wrap {
+    width: 100%;
+    margin-top: -4px !important;
+    margin-bottom: -36px;
+  }
+
+  #advanced-search-wrap #as-meeting-day-form-field {
+    width: 518px;
+  }
+
+  #advanced-search #meeting-day {
+      margin-top: -20px !important;
+  }
+
+  #advanced-search-wrap #as-when-wrap > .input-label {
+    width: 100%;
+    margin-left: 3px !important;
+    padding-bottom: 8px !important;
+  }
+
+  #advanced-search-wrap #as-when-wrap #when {
+    width: 518px;
+    margin-top: 12px;
+    margin-left: 35px !important;
+  }
+
+  #advanced-search-wrap #as-distance-basic-wrap {
+    margin-top: -22px !important;
+    margin-left: 10px !important;
+    width: 100%;
+  }
+
+  #advanced-search-wrap #as-distance-basic-wrap > .input-label {
+    width: 100%;
+  }
+
+  #advanced-search-wrap #as-meeting-distance-form-field {
+    width: 518px;
+    margin-left: 4px !important;
+  }
+
+  #advanced-search-wrap #as-meeting-distance-basic-form-field {
+    width: 518px;
+    margin-left: 4px !important;
+  }
+
+  #advanced-search-wrap #as-distance-basic-wrap > .input-label {
+    padding-top: 21px !important;
+    margin-left: -3px !important;
+    height: 45px !important;
+  }
+
+  #advanced-search-wrap #as-meeting-distance-form-field #meeting-distance {
+    width: 518px;
+    margin-top: -20px;
+    margin-left: 3px;
+  }
+
+  #advanced-search-wrap #as-meeting-distance-basic-form-field #meeting-distance {
+    width: 518px;
+    margin-top: -20px;
+    margin-left: 3px;
+  }
+
+
+  #advanced-search-wrap #as-search-button-wrap {
+    margin-top: -17px !important;
+    width: 100%;
+  }
+
+    #advanced-search-wrap #as-search-button-wrap #meeting-search {
+      width: 518px;
+      margin-left: -1652px;
+      margin-top: 22px;
+      margin-bottom: 0px !important;
+      padding-left: 70px;
+      padding-top: 10px;
+    }
+
+  #loading {
+    display: none;
+  }
+
+  #loading-basic {
+    width: 23px;
+    margin-top: -6px;
+    margin-left: 15px;
+    display: inline;
+  }
+}
+
+@media only screen and (max-width: 767px) {
+
+  #advanced-search-wrap > .container {
+    margin-top: -30px !important;
+  }
+
+  #advanced-search #advanced-search-form {
+      padding-top: 10px;
+  }
+
+  #advanced-search #as-meeting-type-form-field {
+    margin-top: -3px !important;
+  }
+
+  #advanced-search #as-location-wrap {
+      margin-top: -21px !important;
+  }
+
+  #advanced-search #as-meeting-location-form-field {
+      margin-top: -23px !important;
+  }
+
+  #advanced-search #as-when-wrap {
+      margin-top: -3px !important;
+  }
+
+  #advanced-search #as-meeting-day-form-field {
+    margin-top: -1px !important;
+  }
+
+  #advanced-search-wrap #as-search-button-wrap {
+    margin-top: -16px !important;
+    width: 100%;
+  }
+}
+
+  @media only screen and (max-width: 600px) {
+
+    #advanced-search-wrap #as-type-wrap > .input-label {
+      margin-left: -8px !important;
+    }
+
+    #advanced-search-wrap #as-meeting-type-form-field {
+      margin-top: -3px;
+      width: 100%;
+    }
+
+    #advanced-search-wrap #as-location-wrap {
+      margin-top: -21px !important;
+    }
+
+    #advanced-search-wrap #as-type-wrap #type {
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+
+    #advanced-search-wrap #as-location-wrap {
+      margin-left: 4px !important;
+    }
+
+    #advanced-search-wrap #as-meeting-location-form-field {
+      width: 100% !important;
+      margin-left: 0px;
+    }
+
+      #advanced-search-wrap #as-meeting-location-form-field #meeting-location {
+        width: 100% !important;
+      }
+
+    #advanced-search-wrap #as-location-wrap > .input-label {
+      width: 100%;
+      margin-left: -5px !important;
+    }
+
+    #advanced-search-wrap #as-location-wrap #where {
+      width: 100%;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+
+    #advanced-search-wrap #as-meeting-day-form-field {
+      margin-top: -18px;
+      width: 100%;
+    }
+
+    #advanced-search-wrap #as-when-wrap > .input-label {
+      width: 100%;
+      margin-left: -5px !important;
+    }
+
+    #advanced-search-wrap #as-when-wrap #when {
+      width: 100%;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+
+    #advanced-search-wrap #as-distance-basic-wrap > .input-label {
+      width: 100% !important;
+      margin-left: -5px !important;
+    }
+
+    #advanced-search-wrap #as-distance-basic-wrap #meeting-distance {
+      width: 100% !important;
+      margin-left: 0px !important;
+      margin-right: 0px !important;
+    }
+
+    #advanced-search-wrap #as-meeting-distance-basic-form-field {
+      width: 100% !important;
+      margin-left: 0px;
+    }
+
+    #advanced-search-wrap #as-search-button-wrap {
+      margin-left: 4px !important;
+      margin-right: 0px !important;
+      margin-top: -19px !important;
+    }
+
+      #advanced-search-wrap #as-search-button-wrap #meeting-search {
+        width: 100%;
+        margin-top: 25px;
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+      }
+
+    #advanced-search-wrap #as-distance-basic-wrap > .input-label {
+      padding-top: 21px !important;
+      margin-left: -10px !important;
+      height: 45px !important;
+    }
+
+  }
+
+  #advanced-search {
+    text-align: center;
+    background: $primary-color;
+  }
+
+    #advanced-search > .advanced-search-form {
+      margin-bottom: 0px;
+      padding-bottom: 0px;
+      margin-top: 25px;
+    }
+
+      #advanced-search > .advanced-search-form h2 {
+        display: inline-block;
+        color: $secondary-color;
+        font-weight: 600;
+        font-size: 24px;
+        margin: 0 10px;
+        line-height: 5px;
+      }
+
+    #advanced-search #as-or {
+      color: $secondary-text-color;
+      padding: 0 10px;
+      font-weight: 600;
+    }
+
+    #advanced-search input[type=text] {
+      font-size: 16px;
+      width: 220px;
+    }
+
+    #advanced-search select {
+      font-size: 16px;
+    }
+
+    #advanced-search input[type=submit] {
+      height: 40px;
+      border: 0;
+      margin-left: 20px;
+      background: $secondary-color;
+      outline: 0;
+      cursor: pointer;
+      font-weight: 700;
+      letter-spacing: 1px;
+      padding: 8px 30px 8px 30px;
+      font-size: 16px;
+      color: $secondary-text-color;
+      text-transform: uppercase;
+      vertical-align: middle;
+    }
+
+  .input-label {
+    vertical-align: middle;
+    display: inline-block;
+    color: $secondary-color;
+    font-weight: 600;
+    font-size: 24px;
+    margin: 0 10px;
+    padding-bottom: 10px;
+  }
+
+  .input-span {
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  #advanced-search #as-type-wrap {
+    float: left;
+    margin-left: 4px;
+  }
+
+  #advanced-search #type {
+    margin-left: 29px;
+    width: 230px;
+  }
+
+  #as-or {
+    float: left;
+    margin-left: -5px;
+    margin-top: 28px;
+    font-weight: 700 !important;
+  }
+
+  #advanced-search #as-location-wrap {
+    float: left;
+    margin-left: 4px;
+  }
+
+  #advanced-search #where {
+    width: 230px;
+  }
+
+  #advanced-search #as-region-wrap {
+    float: left;
+    margin-left: 4px;
+  }
+
+  #advanced-search #region {
+    width: 230px;
+  }
+
+  #advanced-search #as-when-wrap {
+    float: left;
+    margin-left: 4px;
+  }
+
+  #advanced-search #when {
+    width: 230px;
+    margin-right: 20px;
+  }
+
+  #advanced-search .format-wrap {
+    float: left;
+    margin-left: 2px;
+    margin-top: 20px;
+    margin-bottom: 25px;
+  }
+
+  #advanced-search #format {
+    width: 230px;
+    margin-left: 5px;
+  }
+
+
+  #advanced-search #as-distance-wrap {
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+  }
+
+
+  #advanced-search #as-accessibility-wrap {
+    float: left;
+    margin-top: 20px;
+    margin-left: 5px;
+  }
+
+  #advanced-search #accessibility {
+    width: 230px;
+  }
+
+  #advanced-search #as-open-wrap {
+    float: left;
+    margin-left: 5px;
+    margin-top: 24px;
+  }
+
+  #advanced-search #as-search-button-wrap {
+    float: left;
+  }
+
+  .search-button {
+    text-transform: uppercase;
+    font: 400 15px Arial;
+    cursor: pointer;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 8px 30px 8px 30px;
+  }
+
+@media print {
+  #advanced-search-wrap {
+    display: none !important;
+  }
+}

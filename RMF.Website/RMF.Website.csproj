@@ -1,0 +1,181 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <AspNetCoreHostingModel>OutOfProcess</AspNetCoreHostingModel>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Rewrite" Version="2.2.0" />
+    <PackageReference Include="Microsoft.AspNetCore.SpaServices.Extensions" Version="3.1.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Compile Remove="ClientApp\dist\**" />
+    <Content Remove="$(SpaRoot)**" />
+    <Content Remove="ClientApp\dist\**" />
+    <EmbeddedResource Remove="ClientApp\dist\**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Remove="ClientApp\dist\**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\dist\3rdpartylicenses.txt" />
+    <None Remove="ClientApp\dist\assets\images\aa-logo.png" />
+    <None Remove="ClientApp\dist\assets\images\aa.svg" />
+    <None Remove="ClientApp\dist\assets\images\about\12-concepts\alcoholics-anonymous\the-twelve-concepts-illustrated.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-concepts\narcotics-anonymous\the-twelve-concepts.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-concepts\overeaters-anonymous\twelve-concepts-of-service.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-traditions\alcoholics-anonymous\the-twelve-traditions-illustrated.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-traditions\cocaine-anonymous\the-12-traditions.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-traditions\narcotics-anonymous\traditions-book-project.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-traditions\overeaters-anonymous\the-twelve-traditions-of-overeaters-anonymous.png" />
+    <None Remove="ClientApp\dist\assets\images\about\12-traditions\twelve-steps-and-twelve-tradions.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\alcoholics-anonymous-big-book-first-edition.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\alcoholics-anonymous-general-service-office.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\bill-wilson.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\dr-bob-smith.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\grace-o.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\grapevine-magazine.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\alcoholics-anonymous\william-duncan-silkworth.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\cocaine-anonymous\sobriety-chip.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\narcotics-anonymous\basic-text.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\narcotics-anonymous\james-patrick-kinnon.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\overeaters-anonymous\basic-text.png" />
+    <None Remove="ClientApp\dist\assets\images\about\history\overeaters-anonymous\beyond-our-wildest-dreams.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\a-brief-guide-to-aa.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\growing-into-service.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\questions-and-answers-on-sponsorship.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\the-aa-group.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\the-god-word.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\understanding-anonymity.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\alcoholics-anonymous\who-me.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\a-higher-power.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\anonymity.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\being-of-service.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\choosing-your-sponsor.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\the-first-30-days.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\the-home-group.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\what-is-ca.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\cocaine-anonymous\yes-you-can-start-a-ca-meeting.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\narcotics-anonymous\an-introduction-to-na-meetings.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\narcotics-anonymous\anonymity.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\narcotics-anonymous\sponsorship.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\narcotics-anonymous\the-group.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\narcotics-anonymous\welcome-to-narcotics-anonymous.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\anonymity-the-meaning-and-application-of-tradition-elevel-and-twelve.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\how-to-help-your-oa-group-carry-the-message.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\if-god-spoke-to-oa.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\sponsoring-through-the-twelve-steps.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\the-tools-of-recovery.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\the-twelve-concepts-of-oa-service.png" />
+    <None Remove="ClientApp\dist\assets\images\about\meeting-types\overeaters-anonymous\where-do-i-start.png" />
+    <None Remove="ClientApp\dist\assets\images\about\newcomers\alcoholics-anonymous\a-newcomer-asks.png" />
+    <None Remove="ClientApp\dist\assets\images\about\newcomers\cocaine-anonymous\to-the-newcomer.png" />
+    <None Remove="ClientApp\dist\assets\images\about\newcomers\narcotics-anonymous\for-the-newcomer.png" />
+    <None Remove="ClientApp\dist\assets\images\about\newcomers\overeaters-anonymous\where-do-i-start.png" />
+    <None Remove="ClientApp\dist\assets\images\basic-texts\alcoholics-anonymous-fourth-edition.png" />
+    <None Remove="ClientApp\dist\assets\images\basic-texts\daily-reflections.png" />
+    <None Remove="ClientApp\dist\assets\images\basic-texts\living-sober.png" />
+    <None Remove="ClientApp\dist\assets\images\basic-texts\narcotics-anonymous-sixth-edition.png" />
+    <None Remove="ClientApp\dist\assets\images\basic-texts\overeaters-anonymous-third-edition.png" />
+    <None Remove="ClientApp\dist\assets\images\basic-texts\twelve-steps-and-twelve-traditions.png" />
+    <None Remove="ClientApp\dist\assets\images\ca-logo.png" />
+    <None Remove="ClientApp\dist\assets\images\ca.svg" />
+    <None Remove="ClientApp\dist\assets\images\excel-button.svg" />
+    <None Remove="ClientApp\dist\assets\images\home-background.jpg" />
+    <None Remove="ClientApp\dist\assets\images\loading.gif" />
+    <None Remove="ClientApp\dist\assets\images\loading.svg" />
+    <None Remove="ClientApp\dist\assets\images\logo.png" />
+    <None Remove="ClientApp\dist\assets\images\na-logo.png" />
+    <None Remove="ClientApp\dist\assets\images\na.svg" />
+    <None Remove="ClientApp\dist\assets\images\oa-logo.png" />
+    <None Remove="ClientApp\dist\assets\images\oa.svg" />
+    <None Remove="ClientApp\dist\assets\images\paypal-donate.png" />
+    <None Remove="ClientApp\dist\assets\images\print-button.svg" />
+    <None Remove="ClientApp\dist\assets\images\print-logo.png" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.674f50d287a8c48dc19b.eot" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.912ec66d7572ff821749.svg" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.af7ae505a9eed503f8b8.woff2" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.b06871f281fee6b241d6.ttf" />
+    <None Remove="ClientApp\dist\fontawesome-webfont.fee66e712a8a08eef580.woff" />
+    <None Remove="ClientApp\dist\index.html" />
+    <None Remove="ClientApp\dist\layers-2x.4f0283c6ce28e888000e.png" />
+    <None Remove="ClientApp\dist\layers.a6137456ed160d760698.png" />
+    <None Remove="ClientApp\dist\main.01da1e9db100ff293371.js" />
+    <None Remove="ClientApp\dist\marker-icon.2273e3d8ad9264b7daa5.png" />
+    <None Remove="ClientApp\dist\polyfills-es5.dd756ad7fbe80ff7689e.js" />
+    <None Remove="ClientApp\dist\polyfills.9fd3ca0ee59725d0d9ee.js" />
+    <None Remove="ClientApp\dist\runtime.1720a40670866f12654e.js" />
+    <None Remove="ClientApp\dist\scripts.091d3f4f3258ad6e9f29.js" />
+    <None Remove="ClientApp\dist\styles.7a1293959e5d8eb97b0c.css" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update=".htaccess">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="robots.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="ClientApp\src\daily-image\" />
+    <Folder Include="wwwroot\page-index\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="wwwroot\sitemap-main.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\sitemap-postcodes.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\sitemap-regions.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Update="wwwroot\sitemap-towns.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+        <ExcludeFromSingleFile>true</ExcludeFromSingleFile>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

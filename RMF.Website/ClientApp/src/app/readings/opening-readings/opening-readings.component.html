@@ -1,0 +1,288 @@
+<app-page-header class="fixed"></app-page-header>
+<app-page-main-menu class="fixed"></app-page-main-menu>
+<div id="sidebar" class="show">
+  <div class="list-group border-0 text-xs-left">
+    <a href="#aa-opening-readings" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="true">Alcoholics Anonymous (AA)?</a>
+    <div id="aa-opening-readings" class="collapse show" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('aa-the-preamble')" class="list-group-item">The Preamble</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-how-it-works')" class="list-group-item">How it Works</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-more-about-alcoholism')" class="list-group-item">More about Alcoholism</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-just-for-today')" class="list-group-item">Just for Today</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-self-support-7th-tradition')" class="list-group-item">Self-Support / 7th Tradition</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-open-meeting-statement')" class="list-group-item">Open Meeting Statement</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-closed-meeting-statement')" class="list-group-item">Closed Meeting Statement</a>
+    </div>
+    <a href="#ca-opening-readings" class="list-group-item d-inline-block drop-down" data-toggle="collapse" aria-expanded="false">Cocaine Anonymous (CA)?</a>
+    <div id="ca-opening-readings" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('ca-the-preamble')" class="list-group-item">The Preamble</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-we-can-recover')" class="list-group-item">We Can Recover</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-who-is-a-cocaine-addict')" class="list-group-item">Who is a Cocaine Addict?</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-who-is-a-ca-member')" class="list-group-item">Who is a CA Member?</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-alcohol')" class="list-group-item">Alcohol</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-unity')" class="list-group-item">Unity</a>
+    </div>
+    <a href="#na-opening-readings" class="list-group-item d-inline-block drop-down" data-toggle="collapse" aria-expanded="false">Narcotics Anonymous (NA)?</a>
+    <div id="na-opening-readings" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('na-who-is-an-addict')" class="list-group-item">Who Is an Addict?</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-what-is-the-na-program')" class="list-group-item">What Is the NA Program?</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-why-are-we-here')" class="list-group-item">Why Are We Here?</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-how-it-works')" class="list-group-item">How It Works?</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-we-do-recover')" class="list-group-item">We Do Recover</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-just-for-today')" class="list-group-item">Just for Today</a>
+    </div>
+    <a href="#oa-opening-readings" class="list-group-item d-inline-block drop-down" data-toggle="collapse" aria-expanded="false">Overeaters Anonymous (OA)?</a>
+    <div id="oa-opening-readings" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('oa-the-preamble')" class="list-group-item">The Preamble</a>
+      <a href="javascript:void(0)" (click)="scrollTo('oa-our-invitation-to-you')" class="list-group-item">Our Invitation to You</a>
+      <a href="javascript:void(0)" (click)="scrollTo('oa-promise')" class="list-group-item">Promise</a>
+      <a href="javascript:void(0)" (click)="scrollTo('oa-members-in-relapse')" class="list-group-item">Members in Relapse</a>
+    </div>
+    <a href="javascript:void(0)" (click)="scrollTo('the-promises')" class="list-group-item">The Promises</a>
+  </div>
+</div>
+<div id="content-container">
+  <div id="content" class="container-fluid">
+    <div class="row">
+      <div id="content-title-wrap" class="col-12">
+        <h1 class="content-title">Opening Readings</h1>
+        <button id="sidebar-toggle" class="navbar-toggler navbar-light" title="Toggle sidebar" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="content-header">
+          <h1 id="opening-readings-aa">Alcoholics Anonymous (AA)</h1>
+          <a href="https://www.alcoholics-anonymous.org.uk" target="_blank"><img src="assets/images/aa-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <a href="/meeting-formats/aa-suggested-meeting-format.pdf" target="_blank" class="suggested-meeting-format">Suggested AA Meeting Formats</a>
+          <h2 id="aa-the-preamble">The Preamble</h2>
+          <p>Alcoholics Anonymous is a fellowship of people who share their experience, strength and hope with each other that they may solve their common problem and help others to recover from alcoholism. The only requirement for membership is a desire to stop drinking.</p>
+          <p>There are no dues or fees for A.A. membership; we are self-supporting through our own contributions. A.A. is not allied with any sect, denomination, politics, organization or institution; does not wish to engage in any controversy; neither endorses nor opposes any causes.</p>
+          <p>Our primary purpose is to stay sober and help other alcoholics to achieve sobriety.</p>
+          <h2 id="aa-how-it-works">How it Works</h2>
+          <p>Rarely have we seen a person fail who has thoroughly followed our path. Those who do not recover are people who cannot or will not completely give themselves to this simple program, usually men and women who are constitutionally incapable of being honest with themselves. There are such unfortunates. They are not at fault; they seem to have been born that way. They are naturally incapable of grasping and developing a manner of living which demands rigorous honesty. Their chances are less than average. There are those, too, who suffer from grave emotional and mental disorders, but many of them do recover if they have the capacity to be honest.</p>
+          <p>Our stories disclose in a general way what we used to be like, what happened, and what we are like now. If you have decided you want what we have and are willing to go to any length to get it — then you are ready to take certain steps.</p>
+          <p>At some of these we balked. We thought we could find an easier, softer way. But we could not. With all the earnestness at our command, we beg of you to be fearless and thorough from the very start. Some of us have tried to hold on to our old ideas and the result was nil until we let go absolutely.</p>
+          <p>Remember that we deal with alcohol — cunning, baffling, powerful! Without help it is too much for us. But there is One who has all power — that One is God. May you find Him now!</p>
+          <p>Half measures availed us nothing. We stood at the turning point. We asked His protection and care with complete abandon.</p>
+          <p>Here are the steps we took, which are suggested as a program of recovery:</p>
+          <ol>
+            <li>We admitted we were powerless over alcohol — that our lives had become unmanageable.</li>
+            <li>Came to believe that a Power greater than ourselves could restore us to sanity.</li>
+            <li>Made a decision to turn our will and our lives over to the care of God as we understood Him.</li>
+            <li>Made a searching and fearless moral inventory of ourselves.</li>
+            <li>Admitted to God, to ourselves, and to another human being the exact nature of our wrongs.</li>
+            <li>Were entirely ready to have God remove all these defects of character.</li>
+            <li>Humbly asked Him to remove our shortcomings.</li>
+            <li>Made a list of all persons we had harmed, and became willing to make amends to them all.</li>
+            <li>Made direct amends to such people wherever possible, except when to do so would injure them or others.</li>
+            <li>Continued to take personal inventory and when we were wrong promptly admitted it.</li>
+            <li>Sought through prayer and meditation to improve our conscious contact with God as we understood Him, praying only for knowledge of His will for us and the power to carry that out.</li>
+            <li>Having had a spiritual awakening as the result of these steps, we tried to carry this message to alcoholics, and to practice these principles in all our affairs.</li>
+          </ol>
+          <p>Many of us exclaimed, "What an order! I can’t go through with it." Do not be discouraged. No one among us has been able to maintain anything like perfect adherence to these principles. We are not saints. The point is, that we are willing to grow along spiritual lines. The principles we have set down are guides to progress. We claim spiritual progress rather than spiritual perfection.</p>
+          <p>Our description of the alcoholic, the chapter to the agnostic, and our personal adventures before and after make clear three pertinent ideas:</p>
+          <ol type="a">
+            <li>That we were alcoholic and could not manage our own lives.</li>
+            <li>That probably no human power could have relieved our alcoholism. </li>
+            <li>That God could and would if He were sought.</li>
+          </ol>
+          <h2 id="aa-more-about-alcoholism">More about Alcoholism</h2>
+          <p>Most of us have been unwilling to admit we were real alcoholics. No person likes to think he is bodily and mentally different from his fellows. Therefore, it is not surprising that our drinking careers have been characterized by countless vain attempts to prove we could drink like other people. The idea that somehow, someday he will control and enjoy his drinking is the great obsession of every abnormal drinker. The persistence of this illusion is astonishing. Many pursue it into the gates of insanity or death.</p>
+          <p>We learned that we had to fully concede to our innermost selves that we were alcoholics. This is the first step in recovery. The delusion that we are like other people, or presently may be, has to be smashed.</p>
+          <p>We alcoholics are men and women who have lost the ability to control our drinking. We know that no real alcoholic ever recovers control. All of us felt at times that we were regaining control, but such intervals usually brief were inevitably followed by still less control, which led in time to pitiful and incomprehensible demoralization. We are convinced to a man that alcoholics of our type are in the grip of a progressive illness. Over any considerable period we get worse, never better.</p>
+          <p>We are like men who have lost their legs; they never grow new ones. Neither does there appear to be any kind of treatment which will make alcoholics of our kind like other men. We have tried every imaginable remedy. In some instances there has been brief recovery, followed always by a still worse relapse. Physicians who are familiar with alcoholism agree there is no such thing as making a normal drinker out of an alcoholic. Science may one day accomplish this, but it hasn't done so yet.</p>
+          <p>Despite all we can say, many who are real alcoholics are not going to believe they are in that class. By every form of self-deception and experimentation, they will try to prove themselves exceptions to the rule, therefore non-alcoholic. If anyone who is showing inability to control his drinking can do the right-about-face and drink like a gentleman, our hats are off to him. Heaven knows, we have tried hard enough and long enough to drink like other people!</p>
+          <p>Here are some of the methods we have tried: Drinking beer only, limiting the number of drinks, never drinking alone, never drinking in the morning, drinking only at home, never having it in the house, never drinking during business hours, drinking only at parties, switching from scotch to brandy, drinking only natural wines, agreeing to resign if ever drunk on the job, taking a trip, not taking a trip, swearing off forever (with and without a solemn oath), taking more physical exercise, reading inspirational books, going to health farms and sanatoriums, accepting voluntary commitment to asylums we could increase the list ad infinitum.</p>
+          <h2 id="aa-just-for-today">Just for Today</h2>
+          <p>Just for today I will try to live through this day only, and not tackle my whole life problem at once. I can do something for twelve hours that would appal me if I felt that I had to keep it up for a lifetime.</p>
+          <p>Just for today I will be happy. Most folks are as happy as they make up their minds to be.</p>
+          <p>Just for today I will adjust myself to what is, and not try to adjust everything to my own desires. I will take my 'luck' as it comes, and fit myself to it.</p>
+          <p>Just for today I will try to strengthen my mind. I will study. I will learn something useful. I will not be a mental loafer. I will read something that requires effort, thought and concentration.</p>
+          <p>Just for today I will exercise my soul in three ways: I will do somebody a good turn, and not get found out; if anybody knows of it, it will not count. I will do at least two things I don't want to do — just for exercise. I will not show anyone that my feelings are hurt; they may be hurt, but today I will not show it.</p>
+          <p>Just for today I will be agreeable. I will look as well as I can, dress becomingly, talk low, act courteously, criticise not one bit, not find fault with anything and not try to improve or regulate anybody except myself.</p>
+          <p>Just for today I will have a programme. I may not follow it exactly, but I will have it. I will save myself from two pests: hurry and indecision.</p>
+          <p>Just for today I will have a quiet half hour all by myself, and relax. During this half hour, sometime, I will try to get a better perspective of my life.</p>
+          <p>Just for today I will be unafraid. Especially I will not be afraid to enjoy what is beautiful, and to believe that as I give to the world, so the world will give to me.</p>
+          <h2 id="aa-self-support-7th-tradition">Self-Support / 7th Tradition</h2>
+          <p>The Seventh Tradition states that Alcoholics Anonymous is self-supporting through our own contributions. The contributions help to cover the group's expenses. But the Seventh Tradition is more than simply paying for rent and other group expenses. It is both a privilege and a responsibility of individual groups and members to ensure that our organization, at every level, remains forever self-supporting and free of outside influences that might divert us from our primary purpose. </p>
+          <p>The monetary amount of each contribution is secondary to the spiritual connection that joins us in unity with A.A. groups around the world.</p>
+          <h2 id="aa-open-meeting-statement">Open Meeting Statement</h2>
+          <p>This is an open meeting of Alcoholics Anonymous. We are glad you are all here — especially newcomers. In keeping with our singleness of purpose and our Third Tradition which states that “The only requirement for A.A. membership is a desire to stop drinking,” we ask that all who participate confine their discussion to their problems with alcohol.</p>
+          <h2 id="aa-closed-meeting-statement">Closed Meeting Statement</h2>
+          <p>This is a closed meeting of Alcoholics Anonymous. In support of A.A’s singleness of purpose, attendance at closed meetings is limited to persons who have a desire to stop drinking. If you think you have a problem with alcohol, you are welcome to attend this meeting. We ask that when discussing our problems, we confine ourselves to those problems as they relate to alcoholism.</p>
+        </div>
+      </div>
+      <div class="content-header">
+        <h1 id="opening-reading-ca">Cocaine Anonymous (CA)</h1>
+        <a href="https://www.cocaineanonymous.org.uk" target="_blank"><img src="assets/images/ca-logo.png" /></a>
+      </div>
+      <div class="content-text">
+        <a href="/meeting-formats/ca-suggested-meeting-format.pdf" target="_blank" class="suggested-meeting-format">Suggested CA Meeting Formats</a>
+        <h2 id="ca-the-preamble">The Preamble</h2>
+        <p>Cocaine Anonymous is a Fellowship of men and women who share their experience, strength and hope with each other that they may solve their common problem and help others recover from their addiction. The only requirement for membership is a desire to stop using cocaine and all other mind-altering substances.</p>
+        <p>There are no dues or fees for membership; we are fully self-supporting through our own contributions. We are not allied with any sect, denomination, politics, organization, or institution. We do not wish to engage in any controversy and we neither endorse nor oppose any causes.</p>
+        <p>Our primary purpose is to stay free from cocaine and all other mind-altering substances, and to help others achieve the same freedom.</p>
+        <h2 id="ca-we-can-recover">We Can Recover</h2>
+        <p>Welcome to Cocaine Anonymous. We are all here for the same reason – our inability to stop using cocaine and all other mind– altering substances. The first step towards solving any problem is admitting that there is a problem.</p>
+        <p>The problem, as we see it, consists of an obsession of the mind and an allergy of the body. The obsession is a continued and irresistible thought of cocaine and the next high. The allergy creates an absolute inability to stop using once we begin.</p>
+        <p>We wish to assure you that there is a solution and that recovery is possible. It begins with abstinence and continues with practicing the Twelve Steps of recovery, one day at a time. Our program, the twelve steps of Cocaine Anonymous, is the means by which we move from the problem of drug addiction to the solution of recovery.</p>
+        <ol>
+          <li>We admitted that we were powerless over cocaine and all other mind-altering substances-that our lives had become unmanageable.</li>
+          <li>Came to believe that a Power greater than ourselves could restore us to sanity.</li>
+          <li>Made a decision to turn our will and our lives over to the care of God, as we understood Him.</li>
+          <li>Made a searching and fearless moral inventory of ourselves.</li>
+          <li>Admitted to God, to ourselves, and to another human being the exact nature of our wrongs.</li>
+          <li>Were entirely ready to have God remove all these defects of character.</li>
+          <li>Humbly asked Him to remove our shortcomings.</li>
+          <li>Made a list of all people we had harmed and became willing to make amends to them all.</li>
+          <li>Made direct amends to such people wherever possible, except when to do so would injure them or others.</li>
+          <li>Continued to take personal inventory and when we were wrong promptly admitted it.</li>
+          <li>Sought through prayer and meditation to improve our conscious contact with God as we understood Him, praying only for the knowledge of His will for us and the power to carry that out.</li>
+          <li>Having had a spiritual awakening as the result of these steps, we tried to carry this message to addicts and to practice these principles in all our affairs.</li>
+        </ol>
+        <p>Cocaine Anonymous is a spiritual program, not a religious one. In C.A. we believe each individual can choose a Higher Power of his or her own. In short, a God of his or her own understanding.</p>
+        <p>No one comes to Cocaine Anonymous to find God. We came into these rooms to get rid of a terrifying drug habit. Look around this room. You are surrounded by people who came as a last resort. We came into these rooms emotionally, financially, and spiritually bankrupt. We have experienced all sorts of tragedies as a result of cocaine, drugs, and/or alcohol. We have lived many of the same horrors you have, yet today we are free from the misery, terror, and pain of addiction. Maybe some of us were worse off than you; maybe some of us didn’t hit as low a bottom as you. Still the fact remains that, those of us who are recovering have come to believe that a Higher Power of our own understanding can restore us to sanity.</p>
+        <p>There is a solution; we can recover from addiction. One day at a time, it is possible to live a life filled with hope, faith and courage.</p>
+        <h2 id="ca-who-is-a-cocaine-addict">Who is a Cocaine Addict?</h2>
+        <p>Some of us can answer without hesitation, "I am." Others aren't so sure. Cocaine Anonymous believes that no one can decide for another whether he or she is addicted. One thing is sure, though: every single one of us has denied being an addict. For months, for years, we who now freely admit that we are cocaine addicts thought that we could control cocaine when in fact it was controlling us.</p>
+        <p>
+          “I only use on weekends,” or<br />
+          “It hardly ever interferes with work,” or<br />
+          “I can quit, it’s only psychologically addicting, right?” or<br />
+          “I only snort, I don’t base or shoot,” or<br />
+          “It’s this relationship that’s messing me up.”<br />
+        </p>
+        <p>Many of us are still perplexed to realize how long we went on, never getting the same high we got at the beginning, yet still insisting, and believing — so distorted was our reality — that we were getting from cocaine what actually always eluded us.</p>
+        <p>We went to any lengths to get away from being just ourselves. The lines got fatter; the grams went faster — the week’s stash was all used up today. We found ourselves scraping envelopes and baggies with razor blades, scratching the last flakes from the corners of brown bottles, snorting or smoking any white speck from the floor when we ran out. We who prided ourselves on our fine-tuned state of mind! Nothing mattered more to us than the straw, the pipe, the needle. Even if it made us feel miserable we had to have it.</p>
+        <p>Some of us mixed cocaine with alcohol or pills, and found temporary relief in the change, but in the end it only compounded our problems. We tried quitting by ourselves, finally, and managed to do so for periods of time. After a month we imagined we were in control. We thought our system was cleaned out and we could get the old high again using half as much. This time, we'd be careful not to go overboard. But we only found ourselves back where we were before, and worse.</p>
+        <p>We never left the house without using first. We didn't make love without using. We didn't talk on the phone without coke. We couldn't fall asleep, sometimes it seemed we couldn't even breathe without cocaine. We tried changing jobs, apartments, cities, lovers-believing that our lives were being screwed up by circumstances, places and people. Perhaps we saw a cocaine friend die of respiratory arrest, and still we went on using! But eventually we had to face facts. We had to admit that cocaine was a serious problem in our lives, that we were addicts.</p>
+        <h2 id="ca-who-is-a-ca-member">Who is a CA Member?</h2>
+        <p>While the name "Cocaine Anonymous" may sound drug-specific, we wish to assure you that our program is not. Many of our members did a lot of cocaine; others used only a little, and some never even tried coke. We have members who drank only on occasion, those who casually referred to themselves as drunks, and others who were full-blown alcoholics. Lots of us used a wide variety of mind-altering substances. Whether we focused on a specific substance or used whatever we could get our hands on, we had one thing in common: eventually we all reached a point where we could not stop.</p>
+        <p>According to C.A.'s Third Tradition, the only requirement for membership is a desire to stop using cocaine and all other mind-altering substances. <b><i>Whatever you may have been using, if it led you to this meeting, you’re probably in the right place. </i></b>Over time, virtually every single one of us has realized that our real problem is not cocaine or any specific drug; it is the disease of addiction.</p>
+        <p>It can be tempting to focus on our differences rather than our similarities, but this can blind us to potential sources of support in our recovery. As we hear other members' stories, the most important question to ask ourselves is not, "Would I have partied with these people?" but rather, "Do these people have a solution that can help me stay sober?" We encourage you to stick around and listen with an open mind.</p>
+        <p>With its all-inclusive Third Tradition and First Step, Cocaine Anonymous welcomes anyone with a drug or alcohol problem and offers a solution. C.A.’s Twelve Steps are not drug-specific, and Cocaine Anonymous is not a drug-specific Fellowship. It doesn’t matter to us if you drank or what type of drugs you used; if you have a desire to stop, you are welcome here!</p>
+        <h2 id="ca-reaching-out">Reaching Out</h2>
+        <p>I made it into this Program because someone else worked their Twelfth Step on me. Someone passed it on to me. Someone was out there after they got clean and sober, caring about others. I need to never, ever forget that. Had they simply gone on with their lives and forgotten about people like me who were still using and suffering, I wouldn’t be here today. My gratitude begins with that fact. It is with gratitude in mind that I reach out to others, especially the newcomers. I need to have them in my life. That is where my spirituality begins.</p>
+        <p>For me, spirituality comes from caring about others. I have found that the more I focus on improving the quality of the lives of others, the less I am into myself and my will. I feel a freedom and peace from within. The gifts I am beginning to receive in my life are greater than I could have ever imagined.</p>
+        <p>Something else I have done is that I have forgiven myself. I have forgiven myself for being an addict. I have forgiven myself for all the damage I did to my life, to my physical health, and to my career and finances. But most of all, I have forgiven myself for all of the: horrible, negative and unloving things I have felt about myself. It was not until I offered and accepted my own forgiveness; that I was truly able to grow in my sobriety.</p>
+        <h2 id="ca-alcohol">Alcohol</h2>
+        <p>Alcohol is a mind-altering substance in liquid form. Many people don’t realize it is no different from cocaine or other drugs in its ability to lead to addiction. One drink is never enough, just as one hit, fix, pill or snort is never enough. We are masters at combining and substituting one drug for another to get high. Many of us never felt that alcohol was part of our problem.</p>
+        <h2 id="ca-unity">Unity</h2>
+        <p><b>Unity</b> is a common bond that transcends all differences. We’ve discovered no matter how different our circumstances or the paths that brought us here, we all suffer from the same disease: addiction.</p>
+        <p>We admitted our lack of power and accepted that we could not recover alone. The strength and direction of our recovery is found in our unity.</p>
+        <p>We are people who might never have mixed. Addiction and recovery are the threads that bind us. We relate to such feelings as grandiosity, insecurity, jealousy, and false pride and are reminded we are all alike. By sharing our experience with other addicts and working the Twelve Steps of C.A., we come to know humility, security, acceptance, and self-worth.</p>
+        <p>Through applying the Twelve Steps and the Twelve Traditions, we grow in love, tolerance, and respect for each other. This spiritual growth allows us to rise above prejudice, regardless of religion, ethnicity, economic status, age, gender, or sexual orientation, to carry the C.A. message. Though we are different, we are the same. Regardless of the author, we share the same story.</p>
+        <p>Recovery is possible — together.</p>
+        <p><b>Unity</b> preserves our C.A. Fellowship.</p>
+        <p><b>Unity</b> preserves our legacy of Hope, Faith, and Courage.</p>
+        <p><b>Unity</b> preserves our personal recovery, our reunited families, and our rediscovered dreams.</p>
+        <p>Simple steps toward unity include:</p>
+        <p>Carrying the C.A. message;</p>
+        <ul>
+          <li>Encouraging the practice of love and tolerance of others;</li>
+          <li>Sponsoring workshops, activities, and functions that promote unity;</li>
+          <li>Enhancing communication among members by emphasizing principles before personalities;</li>
+          <li>Encouraging participation in service by all members;</li>
+          <li>Encouraging greeters to welcome newcomers at all levels;</li>
+          <li>Encouraging group inventories</li>
+        </ul>
+      </div>
+      <div class="content-header">
+        <h1 id="opening-reading-na">Narcotics Anonymous (NA)</h1>
+        <a href="https://ukna.org" target="_blank"><img src="assets/images/na-logo.png" /></a>
+      </div>
+      <div class="content-text">
+        <a href="/meeting-formats/na-suggested-meeting-format.pdf" target="_blank" class="suggested-meeting-format">Suggested NA Meeting Formats</a>
+        <h2 id="na-who-is-an-addict">Who Is an Addict?</h2>
+        <p>Most of us do not have to think twice about this question. We know! Our whole life and thinking was centered in drugs in one form or another — the getting and using and finding ways and means to get more. We lived to use and used to live. Very simply, an addict is a man or woman whose life is controlled by drugs. We are people in the grip of a continuing and progressive illness whose ends are always the same: jails, institutions, and death.</p>
+        <h2 id="na-what-is-the-na-program">What Is the NA Program?</h2>
+        <p>NA is a nonprofit fellowship or society of men and women for whom drugs had become a major problem. We are recovering addicts who meet regularly to help each other stay clean. This is a program of complete abstinence from all drugs. There is only one requirement for membership, the desire to stop using. We suggest that you keep an open mind and give yourself a break. Our program is a set of principles written so simply that we can follow them in our daily lives. The most important thing about them is that they work.</p>
+        <p>There are no strings attached to NA. We are not affiliated with any other organizations. We have no initiation fees or dues, no pledges to sign, no promises to make to anyone. We are not connected with any political, religious, or law enforcement groups, and are under no surveillance at any time. Anyone may join us regardless of age, race, sexual identity, creed, religion, or lack of religion.</p>
+        <p>We are not interested in what or how much you used or who your connections were, what you have done in the past, how much or how little you have, but only in what you want to do about your problem and how we can help. The newcomer is the most important person at any meeting, because we can only keep what we have by giving it away. We have learned from our group experience that those who keep coming to our meetings regularly stay clean.</p>
+        <h2 id="na-why-are-we-here">Why Are We Here?</h2>
+        <p>Before coming to the Fellowship of NA, we could not manage our own lives. We could not live and enjoy life as other people do. We had to have something different and we thought we had found it in drugs. We placed their use ahead of the welfare of our families, our wives, husbands, and our children. We had to have drugs at all costs. We did many people great harm but most of all we harmed ourselves. Through our inability to accept personal responsibilities we were actually creating our own problems. We seemed to be incapable of facing life on its own terms.</p>
+        <p>Most of us realized that in our addiction we were slowly committing suicide, but addiction is such a cunning enemy of life that we had lost the power to do anything about it. Many of us ended up in jail or sought help through medicine, religion, and psychiatry. None of these methods was sufficient for us. Our disease always resurfaced or continued to progress until in desperation we sought help from each other in Narcotics Anonymous.</p>
+        <p>After coming to NA, we realized we were sick people. We suffered from a disease from which there is no known cure. It can, however, be arrested at some point and recovery is then possible.</p>
+        <h2 id="na-how-it-works">How It Works</h2>
+        <p>If you want what we have to offer, and are willing to make the effort to get it, then you are ready to take certain steps. These are the principles that made our recovery possible:</p>
+        <ol>
+          <li>We admitted that we were powerless over our addiction, that our lives had become unmanageable.</li>
+          <li>We came to believe that a Power greater than ourselves could restore us to sanity.</li>
+          <li>We made a decision to turn our will and our lives over to the care of God as we understood Him.</li>
+          <li>We made a searching and fearless moral inventory of ourselves.</li>
+          <li>We admitted to God, to ourselves, and to another human being the exact nature of our wrongs.</li>
+          <li>We were entirely ready to have God remove all these defects of character.</li>
+          <li>We humbly asked Him to remove our shortcomings.</li>
+          <li>We made a list of all persons we had harmed and became willing to make amends to them all.</li>
+          <li>We made direct amends to such people wherever possible, except when to do so would injure them or others.</li>
+          <li>We continued to take personal inventory and when we were wrong promptly admitted it.</li>
+          <li>We sought through prayer and meditation to improve our conscious contact with God as we understood Him, praying only for knowledge of His will for us and the power to carry that out.</li>
+          <li>Having had a spiritual awakening as a result of these steps, we tried to carry this message to addicts, and to practice these principles in all our affairs.</li>
+        </ol>
+        <p>This sounds like a big order, and we can’t do it all at once. We didn’t become addicted in one day, so remember — easy does it.</p>
+        <p>There is one thing more than anything else that will defeat us in our recovery; this is an attitude of indifference or intolerance toward spiritual principles. Three of these that are indispensable are honesty, open-mindedness, and willingness. With these we are well on our way.</p>
+        <p>We feel that our approach to the disease of addiction is completely realistic, for the therapeutic value of one addict helping another is without parallel. We feel that our way is practical, for one addict can best understand and help another addict. We believe that the sooner we face our problems within our society, in everyday living, just that much faster do we become acceptable, responsible, and productive members of that society.</p>
+        <p>The only way to keep from returning to active addiction is not to take that first drug. If you are like us you know that one is too many and a thousand never enough. We put great emphasis on this, for we know that when we use drugs in any form, or substitute one for another, we release our addiction all over again.</p>
+        <p>Thinking of alcohol as different from other drugs has caused a great many addicts to relapse. Before we came to NA, many of us viewed alcohol separately, but we cannot afford to be confused about this. Alcohol is a drug. We are people with the disease of addiction who must abstain from all drugs in order to recover.</p>
+        <h2 id="na-we-do-recover">We Do Recover</h2>
+        <p>When at the end of the road we find that we can no longer function as a human being, either with or without drugs, we all face the same dilemma. What is there left to do? There seems to be this alternative: either go on as best we can to the bitter ends — jails, institutions or death — or find a new way to live. In years gone by, very few addicts ever had this last choice.</p>
+        <p>Those who are addicted today are more fortunate. For the first time in man’s entire history, a simple way has been proving itself in the lives of many addicts. It is available to us all. This is a simple spiritual — not religious — program, known as Narcotics Anonymous.</p>
+        <h2 id="na-just-for-today">Just for Today</h2>
+        <p>Tell yourself:</p>
+        <p><b>JUST FOR TODAY</b> my thoughts will be on my recovery, living and enjoying life without the use of drugs. </p>
+        <p><b>JUST FOR TODAY</b> I will have faith in someone in NA who believes in me and wants to help me in my recovery.</p>
+        <p><b>JUST FOR TODAY</b> I will have a program. I will try to follow it to the best of my ability. </p>
+        <p><b>JUST FOR TODAY</b>, through NA, I will try to get a better perspective on my life.</p>
+        <p><b>JUST FOR TODAY</b> I will be unafraid. My thoughts will be on my new associations, people who are not using and who have found a new way of life. So long as I follow that way, I have nothing to fear.</p>
+      </div>
+      <div class="content-header">
+        <h1 id="opening-readings-aa">Overeaters Anonymous (OA)</h1>
+        <a href="https://www.oagb.org.uk" target="_blank"><img src="assets/images/oa-logo.png" /></a>
+      </div>
+      <div class="content-text">
+        <a href="/meeting-formats/oa-suggested-meeting-format.pdf" target="_blank" class="suggested-meeting-format">Suggested OA Meeting Formats</a>
+        <h2 id="oa-the-preamble">The Preamble</h2>
+        <p>Overeaters Anonymous is a Fellowship of individuals who, through shared experience, strength, and hope, are recovering from compulsive overeating.</p>
+        <p>We welcome everyone who wants to stop eating compulsively. There are no dues or fees for members; we are self-supporting through our own contributions, neither soliciting nor accepting outside donations. OA is not affiliated with any public or private organization, political movement, ideology, or religious doctrine; we take no position on outside issues.</p>
+        <p>Our primary purpose is to abstain from compulsive eating and compulsive food behaviours and to carry the message of recovery through the Twelve Steps of OA to those who still suffer.</p>
+        <h2 id="oa-our-invitation-to-you">Our Invitation to You</h2>
+        <p>We of Overeaters Anonymous have made a discovery. At the very first meeting we attended, we learned that we were in the clutches of a dangerous illness, and that willpower, emotional health and self-confidence, which some of us had once possessed, were no defence against it. We have learned that the reasons for the illness are unimportant. What deserves the attention of the still-suffering compulsive overeater is this: there is a proven, workable method by which we can arrest our illness.</p>
+        <p>The OA recovery program is patterned after that of Alcoholics Anonymous. As our personal stories attest, the Twelve-Step program of recovery works as well for compulsive overeaters as it does for alcoholics. Can we guarantee you this recovery? The answer is up to you. If you will honestly face the truth about yourself and the illness; if you will keep coming back to meetings to talk and listen to other recovering compulsive overeaters; if you will read our literature and that of Alcoholics Anonymous with an open mind; and, most important, if you are willing to rely on a power greater than yourself for direction in your life, and to take the Twelve Steps to the best of your ability, we believe you can indeed join the ranks of those who recover.</p>
+        <p>To remedy the emotional, physical and spiritual illness of compulsive eating we offer several suggestions, but keep in mind that the basis of the program is spiritual, as evidenced by the Twelve Steps. We are not a “diet” club. We do not endorse any particular plan of eating. In OA, abstinence is the act of refraining from compulsive eating and compulsive food behaviours while working towards or maintaining a healthy body weight. Once we become abstinent, the preoccupation with food diminishes and, in many cases, leaves us entirely. We then find that, to deal with our inner turmoil, we have to have a new way of thinking, of acting on life rather than reacting to it — in essence, a new way of living.</p>
+        <p>From this vantage point, we begin the Twelve Step program of recovery, moving beyond the food and the emotional havoc to a fuller living experience. As a result of practicing the Steps, the symptom of compulsive eating and compulsive food behaviours are removed on a daily basis, achieved through the process of surrendering to something greater than ourselves; the more total our surrender, the more fully realized our freedom from food obsession.</p>
+        <h2 id="oa-promise">Promise</h2>
+        <p>I put my hand in yours and together we can do what we could never do alone.</p>
+        <p>No longer is there a sense of hopelessness.</p>
+        <p>No longer must we each depend upon our own unsteady willpower.</p>
+        <p>We are all together now, reaching out our hands for power and strength greater than ours.</p>
+        <p>And as we join hands, we find love and understanding beyond our wildest dreams.</p>
+        <h2 id="oa-members-in-relapse">Members in Relapse</h2>
+        <p>We all need to be loved and accepted, not because we are abstinent, not because we are at goal weight, but just for who we are. This is especially true for OA members who are still suffering. They have been in the program for some time, perhaps for months, maybe even years, but either they have not yet obtained abstinence, or they are in relapse. When asked what helped them most, people who have gone through this painful experience agree on one thing: being loved and accepted, even when they are compulsively overeating, even when they were falling apart emotionally, even when they felt hopeless and unlovable, was the key to them eventually loving and accepting themselves, and from there, getting abstinent.  </p>
+        <h2 id="the-promises">The Promises</h2>
+        <p>If we are painstaking about this phase of our development, we will be amazed before we are half way through.</p>
+        <ol>
+          <li>We are going to know a new freedom and a new happiness.</li>
+          <li>We will not regret the past nor wish to shut the door on it.</li>
+          <li>We will comprehend the word serenity.</li>
+          <li>We will know peace.</li>
+          <li>No matter how far down the scale we have gone, we will see how our experience can benefit others.</li>
+          <li>That feeling of uselessness and self-pity will disappear.</li>
+          <li>We will lose interest in selfish things and gain interest in our fellows.</li>
+          <li>Self-seeking will slip away.</li>
+          <li>Our whole attitude and outlook on life will change.</li>
+          <li>Fear of people and economic insecurity will leave us.</li>
+          <li>We will intuitively know how to handle situations which used to baffle us.</li>
+          <li>We will suddenly realize that God is doing for us what we could not do for ourselves.</li>
+        </ol>
+        <p>Are these extravagant promises? We think not. They are being fulfilled among us — sometimes quickly, sometimes slowly. They will always materialize if we work for them.</p>
+      </div>
+    </div>
+    <app-footer></app-footer>
+  </div>
+</div>
+<app-cookie-consent></app-cookie-consent>
+

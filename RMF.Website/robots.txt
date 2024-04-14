@@ -1,0 +1,7 @@
+User-agent: *
+Disallow:
+
+Sitemap: http://www.recoverymeetingfinder.com/sitemap-main.xml
+Sitemap: http://www.recoverymeetingfinder.com/sitemap-regions.xml
+Sitemap: http://www.recoverymeetingfinder.com/sitemap-towns.xml
+Sitemap: http://www.recoverymeetingfinder.com/sitemap-postcodes.xml

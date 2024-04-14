@@ -1,0 +1,47 @@
+#print-info-container {
+  padding: 0px !important;
+}
+
+#print-info {
+  background-color: #feffcd;
+  padding: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+}
+
+@media print {
+  #print-info-container {
+    display: none;
+  }
+}
+
+#print-header {
+  float: left;
+}
+
+#print-header > #print-header-logo {
+  margin-top: 25px;
+  margin-left: 25px;
+  float: left;
+}
+
+  #print-header > #print-header-logo img {
+    width: 70px;
+  }
+
+#print-header > #print-header-title {
+  margin-left: 115px;
+  margin-top: 25px;
+  font-size: 25px;
+  font-weight: bold;
+  color: black;
+}
+
+#print-header > #print-header-title-sub-heading {
+  margin-left: 115px;
+  margin-top: -5px;
+  font-size: 20px;
+  font-weight: bold;
+  color: black;
+}
+

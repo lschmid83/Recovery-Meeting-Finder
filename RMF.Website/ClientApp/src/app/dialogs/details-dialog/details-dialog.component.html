@@ -1,0 +1,43 @@
+<div class="modal-header">
+  <h1 mat-dialog-title>Meeting Information</h1>
+  <button class="close-dialog" mat-icon-button aria-label="close dialog" (click)="close()" mat-dialog-close>
+    <mat-icon>close</mat-icon>
+  </button>
+</div>
+<div id="meeting-details-dialog" mat-dialog-content class="modal-content">
+  <h3 class="title">{{meeting.title}}<span *ngIf="meeting.title !== null" class="day">: {{meeting.day.name}}</span><span *ngIf="meeting.title === null" class="day">{{meeting.day.name}}</span></h3>
+  <p class="venue" *ngIf="meeting.venue !== null">{{meeting.venue}}</p>
+  <p class="address">{{formatCsv(meeting.address)}}</p>
+  <p class="postcode">{{meeting.postcode}}</p>
+  <p class="what3words">what3words: <a href="https://what3words.com/{{meeting.what3Words}}" target="_blank">///{{meeting.what3Words}}</a></p>
+  <p class="start-time">Start time: {{meeting.time | date: 'HH:mm'}} <span *ngIf="meeting.duration">- duration {{meeting.duration}}</span></p>
+  <p class="open" *ngIf="meeting.openFormat && meeting.type.shortName !== 'OA'">Open: {{meeting.openFormat}}</p>
+  <p class="open" *ngIf="!meeting.openFormat || meeting.type.shortName === 'OA'">Open: <span *ngIf="meeting.open">This is an open meeting, anyone may attend.</span><span *ngIf="!meeting.open">This is a closed meeting, only people with an addiction and a desire to stop can attend.</span></p>
+  <p class="accessibility" *ngIf="meeting.wheelchair || meeting.hearing || meeting.chit">Accesibility: <span *ngIf="meeting.wheelchair">Wheelchair accessible.&nbsp;</span><span *ngIf="meeting.hearing">Induction loop system.&nbsp;</span><span *ngIf="meeting.chit">Chit system available.&nbsp;</span></p>
+  <p class="format" *ngIf="meeting.format">Format: {{formatCsv(meeting.format)}}</p>
+  <p class="notes" *ngIf="notes">Notes:</p>
+  <div class="notes" *ngIf="notes && notes.length === 1">
+    <p [innerHTML]="urlReplace(notes[0])"></p>
+  </div>
+  <div class="notes" *ngIf="notes && notes.length > 1">
+    <p *ngFor="let note of notes" [innerHTML]="urlReplace(note)"></p>
+  </div>
+  <div class="share" [ngStyle]="{'margin-top': notes ? '-16px' : '-3px'}">
+    Share:
+    <a [href]="getSmsLink()" *ngIf="isMobileDevice"><fa-icon class="share-icon share-text-icon" title="Share by text message" [icon]="['far', 'comment']"></fa-icon></a>
+    <a [href]="getEmailLink()"><fa-icon class="share-icon share-email-icon" [ngStyle]="{'margin-left': isMobileDevice ? '20px' : '10px'}" title="Share by email" [icon]="['far', 'envelope']"></fa-icon></a>
+    <a [href]="getWhatsAppLink()"><fa-icon class="share-icon share-whatsapp-icon" title="Share by Whatsapp" [icon]="['fab', 'whatsapp']"></fa-icon></a>
+    <img src="assets/images/print-button.svg" *ngIf="!isMobileDevice" (click)="printMeetingDetails()" class="share-print-icon" title="Print details" alt="Print details" />
+    <a [routerLink]="" (click)="getMeetingsAtLocation()" id="all-meetings">All meetings at location</a>
+  </div>
+  <div id="details-map-container" class="container-fluid">
+    <div class="row">
+      <div class="col-sm-12">
+        <div id="details-map"></div>
+      </div>
+    </div>
+  </div>
+</div>
+<div mat-dialog-actions class="modal-footer">
+  <button class="close-button" (click)="close()" mat-button mat-dialog-close>Close</button>
+</div>
