@@ -40,6 +40,8 @@ namespace RMF.WebAPI.Controllers
                     Filenames = new List<string>()
                     {
                         "meetings-" + dataDumpDate + ".csv",
+                        "meetings-added-" + dataDumpDate + ".csv",
+                        "meetings-removed-" + dataDumpDate + ".csv",
                         "regions-" + dataDumpDate + ".csv",
                         "statistics-" + dataDumpDate + ".csv"
                     } 

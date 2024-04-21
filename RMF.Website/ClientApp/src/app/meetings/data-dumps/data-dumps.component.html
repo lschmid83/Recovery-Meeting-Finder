@@ -37,9 +37,7 @@
           <div *ngFor="let dataDump of dataDumps.dataDumps">
             <h2 id="{{dataDump.date}}">{{dataDump.date}}</h2>
             <ul>
-              <li><a href="{{dataDumps.path}}{{dataDump.date}}/meetings-{{dataDump.date}}.csv">meetings-{{dataDump.date}}.csv</a></li>
-              <li><a href="{{dataDumps.path}}{{dataDump.date}}/regions-{{dataDump.date}}.csv">regions-{{dataDump.date}}.csv</a></li>
-              <li><a href="{{dataDumps.path}}{{dataDump.date}}/statistics-{{dataDump.date}}.csv">statistics-{{dataDump.date}}.csv</a></li>
+              <li *ngFor="let filename of dataDump.filenames"><a href="{{dataDumps.path}}{{dataDump.date}}/{{filename}}">{{filename}}</a></li>
             </ul>
           </div>
         </div>
