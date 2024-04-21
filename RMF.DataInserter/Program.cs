@@ -8,9 +8,8 @@ using NetTopologySuite.Geometries;
 using NetTopologySuite.Geometries.Prepared;
 using RMF.DAL;
 using RMF.DAL.Entities;
+using RMF.DAL.Entities.Interfaces;
 using RMF.DAL.Repos;
-using RMF.MeetingWebsiteScraper.Files;
-using RMF.WebAuth.Enums;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -56,10 +55,8 @@ namespace RMF.DataInserter
             CreateDayTable();
             CreateFormatTable();
             CreateMeetingTables();
-            CreateMeetingRegionTable();
+            CreateMeetingRegionTables();
             CreateMeetingFormatTable();
-            CreateMeetingAddedTable();
-            CreateMeetingRemovedTable();
             CreateStatisticTable();
             CreateDataDumpTable();
 
@@ -156,7 +153,7 @@ namespace RMF.DataInserter
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     // Read all CSV records.
-                    var records = csv.GetRecords<MeetingWebsiteScraper.Models.Meeting>().ToList();
+                    var records = csv.GetRecords<Meeting>().ToList();
 
                     // Check field lengths.
                     if (!CheckFieldLengths(records))
@@ -170,10 +167,10 @@ namespace RMF.DataInserter
                     // Create AutoMapper configuration. Ignore missing fields.
                     var config = new MapperConfiguration(cfg =>
                     {
-                        cfg.CreateMap<MeetingWebsiteScraper.Models.Meeting, TMeetingDataDumpTable>();
+                        cfg.CreateMap<Meeting, TMeetingDataDumpTable>();
                     });
                     var mapper = config.CreateMapper();
-                    meetingDataDump = mapper.Map<List<MeetingWebsiteScraper.Models.Meeting>, List<TMeetingDataDumpTable>>(records);
+                    meetingDataDump = mapper.Map<List<Meeting>, List<TMeetingDataDumpTable>>(records);
                     for (var i = 0; i < meetingDataDump.Count; i++)
                     {
                         meetingDataDump[i].Day = WebUtility.HtmlDecode(meetingDataDump[i].Day.Trim());
@@ -447,11 +444,13 @@ namespace RMF.DataInserter
             CreateMeetingTable(dbContext.MeetingDataDump, dbContext.Meeting);                  
             Console.WriteLine("Insert PreviousMeeting");
             CreateMeetingTable(dbContext.PreviousMeetingDataDump, dbContext.PreviousMeeting);
+            CreateMeetingAddedTable();
+            CreateMeetingRemovedTable();
         }
 
         private static void CreateMeetingTable<TMeetingDataDumpTable, TMeetingTable>(DbSet<TMeetingDataDumpTable> meetingDataDumpTable, DbSet<TMeetingTable> meetingTable) where TMeetingDataDumpTable : class, IMeetingDataDump where TMeetingTable : class, IMeeting
         {
-            var meetings = new List<Meeting>();
+            var meetings = new List<RMF.DAL.Entities.Meeting>();
 
             var days = dbContext.Day;
             var regions = dbContext.Region;
@@ -466,7 +465,7 @@ namespace RMF.DataInserter
                 var dayId = days.Where(x => x.Name == meetingData.Day).FirstOrDefault().Id;
 
                 // Add meeting to result set.
-                meetings.Add(new Meeting()
+                meetings.Add(new RMF.DAL.Entities.Meeting()
                 {
                     Guid = meetingData.Guid,
                     Title = !string.IsNullOrEmpty(meetingData.Title) ? meetingData.Title : null,
@@ -500,7 +499,7 @@ namespace RMF.DataInserter
                 cfg.CreateMap<Meeting, TMeetingTable>();
             });
             var mapper = config.CreateMapper();
-            var meetingsForTable = mapper.Map<List<Meeting>, List<TMeetingTable>>(meetings);
+            var meetingsForTable = mapper.Map<List<RMF.DAL.Entities.Meeting>, List<TMeetingTable>>(meetings);
 
             meetingTable.AddRange(meetingsForTable);
             dbContext.SaveChanges();
@@ -521,7 +520,7 @@ namespace RMF.DataInserter
             var mapper = config.CreateMapper();
             
             // Convert meeting type.
-            var meetingsForTable = mapper.Map<List<Meeting>, List<MeetingAdded>>(meetingsAdded);
+            var meetingsForTable = mapper.Map<List<RMF.DAL.Entities.Meeting>, List<MeetingAdded>>(meetingsAdded);
 
             // Add meetings to table.
             dbContext.Database.OpenConnection();
@@ -589,25 +588,47 @@ namespace RMF.DataInserter
             }
         }
 
-        private static void CreateMeetingRegionTable()
+        private static void CreateMeetingRegionTables()
         {
             Console.WriteLine("Insert MeetingRegion");
+            CreateMeetingRegionTable(dbContext.Meeting, dbContext.MeetingRegion);
+            Console.WriteLine("Insert MeetingAddedRegion");
+            CreateMeetingRegionTable(dbContext.MeetingAdded, dbContext.MeetingAddedRegion);
+            Console.WriteLine("Insert MeetingRemovedRegion");
+            // Drop MeetingRemovedRegion Meeting FK Constraint as they will not exist in Meeting table.
+            dbContext.Database.OpenConnection();
+            try
+            {
+                dbContext.Database.ExecuteSqlRaw("ALTER TABLE dbo.MeetingRemovedRegion NOCHECK CONSTRAINT FK_MeetingRemovedRegion_Meeting_MeetingId");
+                dbContext.SaveChanges();
+            }
+            finally
+            {
+                dbContext.Database.CloseConnection();
+            }
+            CreateMeetingRegionTable(dbContext.MeetingRemoved, dbContext.MeetingRemovedRegion);
+        }
 
+        private static void CreateMeetingRegionTable<TMeetingTable, TMeetingRegionTable>(DbSet<TMeetingTable> meetingTable, DbSet<TMeetingRegionTable> meetingRegionTable) where TMeetingTable : class, IMeeting where TMeetingRegionTable : class, IMeetingRegion
+        {
             var meetingRegions = new List<MeetingRegion>();
 
             var regions = dbContext.Region;
 
-            foreach (var meeting in dbContext.Meeting.Include(x => x.Type))
+            foreach (var meeting in meetingTable.Include(x => x.Type))
             {
                 // AA regions can be set automatically from the name as this is the main region select options.
                 if (meeting.Type.Namespace == "AA" && !String.IsNullOrEmpty(meeting.RegionName) && !String.IsNullOrEmpty(meeting.RegionArea) && meeting.RegionArea != "UK")
                 {
-                    var regionId = regions.Where(x => x.Name == meeting.RegionName).Select(x => x.Id).First();
-                    meetingRegions.Add(new MeetingRegion()
+                    var regionId = regions.Where(x => x.Name == meeting.RegionName).Select(x => x.Id).FirstOrDefault();
+                    if (regionId != 0)
                     {
-                        MeetingId = meeting.Id,
-                        RegionId = regionId
-                    });
+                        meetingRegions.Add(new MeetingRegion()
+                        {
+                            MeetingId = meeting.Id,
+                            RegionId = regionId
+                        });
+                    }
                 }
             
                 // Lookup region ID using convex hull contains algorithm.
@@ -629,7 +650,21 @@ namespace RMF.DataInserter
                     }
                 }
             }
-            dbContext.MeetingRegion.AddRange(meetingRegions.DistinctBy(x => new { x.MeetingId, x.RegionId }));
+
+            meetingRegions = meetingRegions.DistinctBy(x => new { x.MeetingId, x.RegionId }).ToList();
+
+            // Create AutoMapper configuration. Ignore missing fields.
+            var config = new MapperConfiguration(cfg =>
+            {
+                cfg.CreateMap<MeetingRegion, TMeetingRegionTable>();
+            });
+            var mapper = config.CreateMapper();
+
+            // Convert meeting type.
+            var meetingsForTable = mapper.Map<List<MeetingRegion>, List<TMeetingRegionTable>>(meetingRegions);
+
+            // Add meeting regions to table.
+            meetingRegionTable.AddRange(meetingsForTable);
             dbContext.SaveChanges();
         }
 
@@ -673,16 +708,16 @@ namespace RMF.DataInserter
 
             using (var reader = new StreamReader(DataDumpPath + "statistics.csv", Encoding.UTF8))
             {
-                var statistics = new List<Statistic>();
+                var statistics = new List<RMF.DAL.Entities.Statistic>();
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
                 {
                     // Read all CSV records.
                     csv.Context.RegisterClassMap<StatisticsCsvMap>();
-                    var statisticRecordsCsv = csv.GetRecords<MeetingWebsiteScraper.CLI.Statistic>().ToList();
+                    var statisticRecordsCsv = csv.GetRecords<Statistic>().ToList();
 
                     foreach(var statisticRecordCsv in statisticRecordsCsv)
                     {
-                        statistics.Add(new Statistic()
+                        statistics.Add(new RMF.DAL.Entities.Statistic()
                         {
                             TypeId = types.Where(x => x.ShortName == statisticRecordCsv.Type).FirstOrDefault().Id,
                             CountryId = countries.Where(x=> x.Name == statisticRecordCsv.Country).FirstOrDefault().Id,
@@ -743,22 +778,22 @@ namespace RMF.DataInserter
             var meetingDumpPath = WebDataDumpPath + LatestDataDumpDate + @"\meetings";
                         
             var outputPath =  meetingDumpPath + "-" + LatestDataDumpDate + ".csv";
-            CreateMeetingsDataDump(dbContext.Meeting, outputPath);
+            CreateMeetingsDataDump(dbContext.Meeting, dbContext.MeetingRegion, outputPath);
 
             outputPath = meetingDumpPath + "-added-" + LatestDataDumpDate + ".csv";
-            CreateMeetingsDataDump(dbContext.MeetingAdded, outputPath);
+            CreateMeetingsDataDump(dbContext.MeetingAdded, dbContext.MeetingAddedRegion, outputPath);
 
             outputPath = meetingDumpPath + "-removed-" + LatestDataDumpDate + ".csv";
-            CreateMeetingsDataDump(dbContext.MeetingRemoved, outputPath);
+            CreateMeetingsDataDump(dbContext.MeetingRemoved, dbContext.MeetingRemovedRegion, outputPath);
         }
 
-        private static void CreateMeetingsDataDump<TMeetingTable>(DbSet<TMeetingTable> meetingTable, string outputPath)  where TMeetingTable : class, IMeeting
+        private static void CreateMeetingsDataDump<TMeetingTable, TMeetingRegionTable>(DbSet<TMeetingTable> meetingTable, DbSet<TMeetingRegionTable> meetingRegionTable, string outputPath)  where TMeetingTable : class, IMeeting where TMeetingRegionTable : class, IMeetingRegion
         {
             // Create meetings dump from database.
             var meetingsCsv = new List<MeetingDumpCsv>();
             foreach (var meeting in meetingTable.Include(x => x.Day).Include(x => x.Type))
             {
-                var meetingRegion = dbContext.MeetingRegion.Where(x => x.MeetingId == meeting.Id).FirstOrDefault();
+                var meetingRegion = meetingRegionTable.Where(x => x.MeetingId == meeting.Id).FirstOrDefault();
                 Region region = null;
                 if (meetingRegion != null)
                     region = dbContext.Region.Where(x => x.Id == meetingRegion.RegionId).Include(x => x.Area).Include(x => x.Country).FirstOrDefault();
@@ -821,7 +856,7 @@ namespace RMF.DataInserter
             dbContext.Database.ExecuteSqlRaw(sqlCommand);
         }
 
-        private static bool CheckFieldLengths(IEnumerable<MeetingWebsiteScraper.Models.Meeting> records)
+        private static bool CheckFieldLengths(IEnumerable<Meeting> records)
         {
             var result = true;
             foreach (var meeting in records)

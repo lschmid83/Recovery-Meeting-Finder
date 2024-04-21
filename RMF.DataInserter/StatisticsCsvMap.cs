@@ -5,7 +5,7 @@ using System.Text;
 
 namespace RMF.DataInserter
 {
-    public class StatisticsCsvMap : ClassMap<MeetingWebsiteScraper.CLI.Statistic>
+    public class StatisticsCsvMap : ClassMap<Statistic>
     {
         public StatisticsCsvMap()
         {
