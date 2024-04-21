@@ -88,13 +88,13 @@ When you checkout this project you will notice that there is a DataDump folder i
 
 1) Open the RMF.DataInserter project in SolutionExplorer edit Program.cs.
 
-2) Set the DataDumpPath const variable line.26 to the path of the database dump in your solution folder:   
+2) Set the DataDumpPath const variable line.28 to the path of the database dump in your solution folder:   
    `$installPath\DataDump\`
 
-3) Set the WebDataDumpPath const variable line.27 to the output path of the website project: 
+3) Set the WebDataDumpPath const variable line.29 to the output path of the website project: 
    `$installPath\RMF.Website\wwwroot\data-dump\`
 
-4) Set the DbBackupFilePath const variable line.29 to the output path of the database backup:
+4) Set the DbBackupFilePath const variable line.33 to the output path of the database backup:
    `$installPath\DataDump\rmf.bak`
 
 5) Right click on the 'C:\source\repos\Recovery Meeting Finder\DataDump\' folder in Windows Explorer. Select the Security Tab and click Edit... Add the user NT Service\MSSQLSERVER with Write permissions so the SQL Server instance can create the .bak file in the specified folder.
