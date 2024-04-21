@@ -1,4 +1,5 @@
 ﻿using NetTopologySuite.Geometries;
+using RMF.DAL.Entities.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

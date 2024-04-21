@@ -13,7 +13,7 @@ using RMF.DAL;
 namespace RMF.DAL.Migrations
 {
     [DbContext(typeof(MeetingContext))]
-    [Migration("20240421101358_Initial")]
+    [Migration("20240421165915_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -333,6 +333,27 @@ namespace RMF.DAL.Migrations
                     b.ToTable("MeetingAdded");
                 });
 
+            modelBuilder.Entity("RMF.DAL.Entities.MeetingAddedRegion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("MeetingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MeetingId");
+
+                    b.ToTable("MeetingAddedRegion");
+                });
+
             modelBuilder.Entity("RMF.DAL.Entities.MeetingDataDump", b =>
                 {
                     b.Property<int>("Id")
@@ -596,6 +617,27 @@ namespace RMF.DAL.Migrations
                     b.HasIndex("TypeId");
 
                     b.ToTable("MeetingRemoved");
+                });
+
+            modelBuilder.Entity("RMF.DAL.Entities.MeetingRemovedRegion", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<int>("MeetingId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("RegionId")
+                        .HasColumnType("int");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("MeetingId");
+
+                    b.ToTable("MeetingRemovedRegion");
                 });
 
             modelBuilder.Entity("RMF.DAL.Entities.PageIndex", b =>
@@ -1001,6 +1043,17 @@ namespace RMF.DAL.Migrations
                     b.Navigation("Type");
                 });
 
+            modelBuilder.Entity("RMF.DAL.Entities.MeetingAddedRegion", b =>
+                {
+                    b.HasOne("RMF.DAL.Entities.Meeting", "Meeting")
+                        .WithMany()
+                        .HasForeignKey("MeetingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Meeting");
+                });
+
             modelBuilder.Entity("RMF.DAL.Entities.MeetingFormat", b =>
                 {
                     b.HasOne("RMF.DAL.Entities.Format", "Format")
@@ -1040,6 +1093,17 @@ namespace RMF.DAL.Migrations
                     b.Navigation("Day");
 
                     b.Navigation("Type");
+                });
+
+            modelBuilder.Entity("RMF.DAL.Entities.MeetingRemovedRegion", b =>
+                {
+                    b.HasOne("RMF.DAL.Entities.Meeting", "Meeting")
+                        .WithMany()
+                        .HasForeignKey("MeetingId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Meeting");
                 });
 
             modelBuilder.Entity("RMF.DAL.Entities.PreviousMeeting", b =>

@@ -4,8 +4,8 @@ using RMF.DAL.Entities.Interfaces;
 
 namespace RMF.DAL.Entities
 {
-    [Table("MeetingRegion")]
-    public class MeetingRegion : EntityBase, IMeetingRegion
+    [Table("MeetingRemovedRegion")]
+    public class MeetingRemovedRegion : EntityBase, IMeetingRegion
     {
         [Required]
         public int MeetingId { get; set; }
@@ -15,5 +15,6 @@ namespace RMF.DAL.Entities
 
         [Required]
         public int RegionId { get; set; }
+
     }
 }

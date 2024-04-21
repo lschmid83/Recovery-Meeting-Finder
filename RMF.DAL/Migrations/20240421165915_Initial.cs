@@ -458,6 +458,26 @@ namespace RMF.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MeetingAddedRegion",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MeetingId = table.Column<int>(type: "int", nullable: false),
+                    RegionId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MeetingAddedRegion", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MeetingAddedRegion_Meeting_MeetingId",
+                        column: x => x.MeetingId,
+                        principalTable: "Meeting",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "MeetingRegion",
                 columns: table => new
                 {
@@ -471,6 +491,26 @@ namespace RMF.DAL.Migrations
                     table.PrimaryKey("PK_MeetingRegion", x => x.Id);
                     table.ForeignKey(
                         name: "FK_MeetingRegion_Meeting_MeetingId",
+                        column: x => x.MeetingId,
+                        principalTable: "Meeting",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MeetingRemovedRegion",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    MeetingId = table.Column<int>(type: "int", nullable: false),
+                    RegionId = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MeetingRemovedRegion", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MeetingRemovedRegion_Meeting_MeetingId",
                         column: x => x.MeetingId,
                         principalTable: "Meeting",
                         principalColumn: "Id",
@@ -503,6 +543,11 @@ namespace RMF.DAL.Migrations
                 column: "TypeId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MeetingAddedRegion_MeetingId",
+                table: "MeetingAddedRegion",
+                column: "MeetingId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MeetingFormat_FormatId",
                 table: "MeetingFormat",
                 column: "FormatId");
@@ -526,6 +571,11 @@ namespace RMF.DAL.Migrations
                 name: "IX_MeetingRemoved_TypeId",
                 table: "MeetingRemoved",
                 column: "TypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MeetingRemovedRegion_MeetingId",
+                table: "MeetingRemovedRegion",
+                column: "MeetingId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_PreviousMeeting_DayId",
@@ -567,6 +617,9 @@ namespace RMF.DAL.Migrations
                 name: "MeetingAdded");
 
             migrationBuilder.DropTable(
+                name: "MeetingAddedRegion");
+
+            migrationBuilder.DropTable(
                 name: "MeetingDataDump");
 
             migrationBuilder.DropTable(
@@ -577,6 +630,9 @@ namespace RMF.DAL.Migrations
 
             migrationBuilder.DropTable(
                 name: "MeetingRemoved");
+
+            migrationBuilder.DropTable(
+                name: "MeetingRemovedRegion");
 
             migrationBuilder.DropTable(
                 name: "PageIndex");

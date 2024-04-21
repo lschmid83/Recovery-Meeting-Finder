@@ -16,13 +16,14 @@ namespace RMF.DAL
         public DbSet<Region> Region { get; set; }
         public DbSet<Country> Country { get; set; }
         public DbSet<MeetingRegion> MeetingRegion { get; set; }
-        public DbSet<Day> Day { get; set; }
+        public DbSet<MeetingAddedRegion> MeetingAddedRegion { get; set; }
+        public DbSet<MeetingRemovedRegion> MeetingRemovedRegion { get; set; }
+         public DbSet<Day> Day { get; set; }
         public DbSet<Format> Format { get; set; }
         public DbSet<MeetingFormat> MeetingFormat { get; set; }
         public DbSet<Statistic> Statistic { get; set; }
         public DbSet<PageIndex> PageIndex { get; set; }
         public DbSet<DataDump> DataDump { get; set; }
-
         public MeetingContext()
         {
 
