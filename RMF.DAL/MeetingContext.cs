@@ -1,14 +1,16 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using Microsoft.IdentityModel.Protocols;
 using RMF.DAL.Entities;
-using Microsoft.Extensions.Configuration;
 
 namespace RMF.DAL
 {
     public class MeetingContext : DbContext
     {
+        public DbSet<PreviousMeetingDataDump> PreviousMeetingDataDump { get; set; }
         public DbSet<MeetingDataDump> MeetingDataDump { get; set; }
+        public DbSet<PreviousMeeting> PreviousMeeting { get; set; }
         public DbSet<Meeting> Meeting { get; set; }
+        public DbSet<MeetingAdded> MeetingAdded { get; set; }
+        public DbSet<MeetingRemoved> MeetingRemoved { get; set; }
         public DbSet<Type> Type { get; set; }
         public DbSet<Area> Area { get; set; }
         public DbSet<Region> Region { get; set; }
@@ -50,7 +52,7 @@ namespace RMF.DAL
             modelBuilder.Entity<Region>()
                 .HasIndex(p => new { p.AreaId, p.CountryId });
         }
-
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             if (!optionsBuilder.IsConfigured)

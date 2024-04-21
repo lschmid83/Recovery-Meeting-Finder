@@ -118,6 +118,43 @@ namespace RMF.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "PreviousMeetingDataDump",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Time = table.Column<string>(type: "nvarchar(5)", maxLength: 5, nullable: false),
+                    Duration = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: false),
+                    Postcode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Latitude = table.Column<double>(type: "float", nullable: false),
+                    Longitude = table.Column<double>(type: "float", nullable: false),
+                    Venue = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    What3Words = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Day = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false),
+                    Hearing = table.Column<bool>(type: "bit", nullable: false),
+                    Wheelchair = table.Column<bool>(type: "bit", nullable: false),
+                    Chit = table.Column<bool>(type: "bit", nullable: false),
+                    Open = table.Column<bool>(type: "bit", nullable: false),
+                    OpenFormat = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Format = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    Note = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: false),
+                    Code = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    Region = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    RegionArea = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    RegionAreaOrder = table.Column<int>(type: "int", nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    MeetingType = table.Column<string>(type: "nvarchar(50)", maxLength: 50, nullable: false),
+                    MeetingTypeNamespace = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PreviousMeetingDataDump", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Type",
                 columns: table => new
                 {
@@ -232,6 +269,147 @@ namespace RMF.DAL.Migrations
                 });
 
             migrationBuilder.CreateTable(
+                name: "MeetingAdded",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Time = table.Column<DateTime>(type: "datetime2", maxLength: 5, nullable: false),
+                    Duration = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: true),
+                    Postcode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Location = table.Column<Point>(type: "geography", nullable: false),
+                    Venue = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    What3Words = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    DayId = table.Column<int>(type: "int", nullable: false),
+                    Hearing = table.Column<bool>(type: "bit", nullable: false),
+                    Wheelchair = table.Column<bool>(type: "bit", nullable: false),
+                    Chit = table.Column<bool>(type: "bit", nullable: false),
+                    Open = table.Column<bool>(type: "bit", nullable: false),
+                    OpenFormat = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Format = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    TypeId = table.Column<int>(type: "int", nullable: false),
+                    RegionArea = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Hash = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MeetingAdded", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MeetingAdded_Day_DayId",
+                        column: x => x.DayId,
+                        principalTable: "Day",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MeetingAdded_Type_TypeId",
+                        column: x => x.TypeId,
+                        principalTable: "Type",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "MeetingRemoved",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Time = table.Column<DateTime>(type: "datetime2", maxLength: 5, nullable: false),
+                    Duration = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: true),
+                    Postcode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Location = table.Column<Point>(type: "geography", nullable: false),
+                    Venue = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    What3Words = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    DayId = table.Column<int>(type: "int", nullable: false),
+                    Hearing = table.Column<bool>(type: "bit", nullable: false),
+                    Wheelchair = table.Column<bool>(type: "bit", nullable: false),
+                    Chit = table.Column<bool>(type: "bit", nullable: false),
+                    Open = table.Column<bool>(type: "bit", nullable: false),
+                    OpenFormat = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Format = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    TypeId = table.Column<int>(type: "int", nullable: false),
+                    RegionArea = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Hash = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_MeetingRemoved", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_MeetingRemoved_Day_DayId",
+                        column: x => x.DayId,
+                        principalTable: "Day",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_MeetingRemoved_Type_TypeId",
+                        column: x => x.TypeId,
+                        principalTable: "Type",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "PreviousMeeting",
+                columns: table => new
+                {
+                    Id = table.Column<int>(type: "int", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Guid = table.Column<Guid>(type: "uniqueidentifier", nullable: false),
+                    Title = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Time = table.Column<DateTime>(type: "datetime2", maxLength: 5, nullable: false),
+                    Duration = table.Column<string>(type: "nvarchar(35)", maxLength: 35, nullable: true),
+                    Postcode = table.Column<string>(type: "nvarchar(10)", maxLength: 10, nullable: true),
+                    Location = table.Column<Point>(type: "geography", nullable: false),
+                    Venue = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Address = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: false),
+                    What3Words = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: false),
+                    DayId = table.Column<int>(type: "int", nullable: false),
+                    Hearing = table.Column<bool>(type: "bit", nullable: false),
+                    Wheelchair = table.Column<bool>(type: "bit", nullable: false),
+                    Chit = table.Column<bool>(type: "bit", nullable: false),
+                    Open = table.Column<bool>(type: "bit", nullable: false),
+                    OpenFormat = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Format = table.Column<string>(type: "nvarchar(250)", maxLength: 250, nullable: true),
+                    Note = table.Column<string>(type: "nvarchar(1500)", maxLength: 1500, nullable: true),
+                    Code = table.Column<string>(type: "nvarchar(100)", maxLength: 100, nullable: true),
+                    TypeId = table.Column<int>(type: "int", nullable: false),
+                    RegionArea = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    RegionName = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Country = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Hash = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_PreviousMeeting", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_PreviousMeeting_Day_DayId",
+                        column: x => x.DayId,
+                        principalTable: "Day",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_PreviousMeeting_Type_TypeId",
+                        column: x => x.TypeId,
+                        principalTable: "Type",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Statistic",
                 columns: table => new
                 {
@@ -315,6 +493,16 @@ namespace RMF.DAL.Migrations
                 column: "TypeId");
 
             migrationBuilder.CreateIndex(
+                name: "IX_MeetingAdded_DayId",
+                table: "MeetingAdded",
+                column: "DayId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MeetingAdded_TypeId",
+                table: "MeetingAdded",
+                column: "TypeId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_MeetingFormat_FormatId",
                 table: "MeetingFormat",
                 column: "FormatId");
@@ -328,6 +516,26 @@ namespace RMF.DAL.Migrations
                 name: "IX_MeetingRegion_MeetingId",
                 table: "MeetingRegion",
                 column: "MeetingId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MeetingRemoved_DayId",
+                table: "MeetingRemoved",
+                column: "DayId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_MeetingRemoved_TypeId",
+                table: "MeetingRemoved",
+                column: "TypeId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PreviousMeeting_DayId",
+                table: "PreviousMeeting",
+                column: "DayId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_PreviousMeeting_TypeId",
+                table: "PreviousMeeting",
+                column: "TypeId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Region_AreaId_CountryId",
@@ -356,6 +564,9 @@ namespace RMF.DAL.Migrations
                 name: "DataDump");
 
             migrationBuilder.DropTable(
+                name: "MeetingAdded");
+
+            migrationBuilder.DropTable(
                 name: "MeetingDataDump");
 
             migrationBuilder.DropTable(
@@ -365,7 +576,16 @@ namespace RMF.DAL.Migrations
                 name: "MeetingRegion");
 
             migrationBuilder.DropTable(
+                name: "MeetingRemoved");
+
+            migrationBuilder.DropTable(
                 name: "PageIndex");
+
+            migrationBuilder.DropTable(
+                name: "PreviousMeeting");
+
+            migrationBuilder.DropTable(
+                name: "PreviousMeetingDataDump");
 
             migrationBuilder.DropTable(
                 name: "Region");

@@ -5,7 +5,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 namespace RMF.DAL.Entities
 {
     [Table("MeetingDataDump")]
-    public class MeetingDataDump : EntityBase
+    public class MeetingDataDump : EntityBase, IMeetingDataDump
     {
         [Required]
         public Guid Guid { get; set; }

@@ -6,8 +6,8 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace RMF.DAL.Entities
 {
-    [Table("Meeting")]
-    public class Meeting : EntityBase, IMeeting
+    [Table("PreviousMeeting")]
+    public class PreviousMeeting : EntityBase, IMeeting
     {
         [Required]
         public Guid Guid { get; set; }

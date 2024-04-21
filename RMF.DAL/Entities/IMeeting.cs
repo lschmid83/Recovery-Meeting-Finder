@@ -1,14 +1,19 @@
-﻿using NetTopologySuite.Geometries;
-using System;
+﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.ComponentModel.DataAnnotations;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using NetTopologySuite.Geometries;
 
 namespace RMF.DAL.Entities
 {
-    [Table("Meeting")]
-    public class Meeting : EntityBase, IMeeting
+    public interface IMeeting
     {
+        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public int Id { get; set; }
+
         [Required]
         public Guid Guid { get; set; }
 
@@ -43,7 +48,7 @@ namespace RMF.DAL.Entities
         public int DayId { get; set; }
 
         [ForeignKey("DayId")]
-        public virtual Day Day { get; set; }
+        public Day Day { get; set; }
 
         [Required]
         public bool Hearing { get; set; }
@@ -73,7 +78,7 @@ namespace RMF.DAL.Entities
         public int TypeId { get; set; }
 
         [ForeignKey("TypeId")]
-        public virtual Type Type { get; set; }
+        public Type Type { get; set; }
 
         [Required]
         public string RegionArea { get; set; }
