@@ -18,7 +18,7 @@ namespace RMF.WebAPI
 {
     public class Startup
     {
-        public const string LuceneIndexPath = @"C:\source\repos\Recovery Meeting Finder\DataDump\";
+        public const string LuceneIndexPath = @"$installPath\DataDump\";
 
         public Startup(IConfiguration configuration)
         {
