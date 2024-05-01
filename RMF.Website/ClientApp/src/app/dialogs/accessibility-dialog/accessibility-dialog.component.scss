@@ -1,0 +1,98 @@
+@import '../../../variables.scss';
+
+.modal-header {
+  height: 70px;
+}
+
+.modal-content {
+  max-height: 30vh;
+  overflow-y: auto;
+  overflow-x: auto;
+}
+
+  .modal-header .close-dialog {
+    color: #808080
+  }
+
+.modal-header .mat-dialog-title {
+  padding-left: 2px;
+  padding-top: 5px;
+  color: $secondary-color;
+}
+
+.modal-content {
+    padding: 18px;
+    padding-bottom: 10px;
+    border: none;
+}
+
+.modal-content .icon {
+    margin-right: 10px;
+}
+
+  .modal-content .hearing-aid-icon {
+    position: relative;
+    left: -2px;
+  }
+
+  .modal-content .chit-icon {
+    position: relative;
+    left: 0px;
+    font-size: 19px;
+    color: #505963;
+    padding-right: 7px;
+  }
+
+  .modal-content p {
+    word-wrap: break-word;
+  }
+
+  .modal-content .title {
+    font-size: 24px;
+    color: $secondary-color;
+  }
+
+  .modal-content .day {
+    color: $primary-color;
+  }
+
+  .modal-content .address {
+      margin-top: 5px;
+      margin-bottom: 2px;
+  }
+
+  .modal-content .venue {
+    margin-top: 5px;
+    margin-bottom: -3px;
+
+  }
+
+  .modal-content .start-time {
+      margin-bottom: 5px;
+  }
+
+  .modal-content .open {
+    margin-bottom: 5px;
+  }
+
+  .modal-content .accessibility {
+    margin-bottom: 5px;
+  }
+
+  .modal-content .format {
+    margin-bottom: 5px;
+  }
+
+  .modal-content .meeting-guide {
+      margin-top: 10px;
+      font-size: 1em;
+  }
+
+.modal-footer {
+  border-top: 1px solid #dee2e6;
+  margin-bottom: 5px;
+}
+
+.modal-footer .close-button {
+    margin-right: 15px;
+}

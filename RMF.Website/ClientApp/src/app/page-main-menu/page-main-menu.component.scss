@@ -1,0 +1,154 @@
+@import '../../variables.scss';
+
+#main-menu-container {
+  background-color: $primary-color;
+  padding: 0px;
+  position: fixed;
+  top: 110px;
+}
+
+@if not($display-main-menu) {
+  #main-menu-container {
+    display: none;
+  }
+}
+
+:host-context(.relative) {
+  #main-menu-container {
+    top: 0px;
+    position: relative;
+  }
+}
+
+#main-menu {
+  padding: 0px !important;
+  background-color: $primary-color;
+  width: 100%;
+  margin-left: 15px;
+}
+
+#main-menu .main-menu-item {
+  float: left;
+  font-size: 16px;
+  color: #ffffff;
+  text-align: center;
+  padding: 13px 16px;
+  text-decoration: none;
+  width: auto;
+  min-width: 125px;
+  height: 53px;
+  cursor: pointer;
+}
+
+#main-menu .main-menu-item .fa-caret-down {
+  padding-left: 8px !important;
+}
+
+#main-menu #main-menu-faq {
+  min-width: 90px;
+}
+
+#main-menu-search {
+  float: right;
+  position: absolute;
+  right: 0px;
+  background-color: #586599;
+  color: $secondary-text-color;
+  margin-top: -2px;
+  width: 395px;
+  height: 55px;
+}
+
+#main-menu-search-input {
+  height: 44px;
+  padding-left: 15px;
+  font-size: 15px;
+  width: 340px;
+  display: inherit;
+  outline: none;
+  height: 40px;
+  margin-top: 3px;
+  padding-left: 18px;
+  margin-left: 2px;
+}
+
+#main-menu-search-icon {
+  font-size: 17px;
+  float: right;
+  margin-top: -28px;
+  margin-right: 19px;
+}
+
+#main-menu-search #searching-icon {
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(278deg) brightness(102%) contrast(102%);
+  -webkit-animation: spin 2s linear infinite;
+  -moz-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+  width: 19px;
+  position: absolute;
+  top: 22px;
+  left: 314px;
+}
+
+@-moz-keyframes spin {
+  100% {
+    -moz-transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  100% {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
+
+#main-menu-search #search-top {
+  background-color: #5397c1;
+  height: 9px;
+}
+
+.main-menu-subnav {
+  display: block;
+  background-color: $secondary-color;
+  padding-left: 40px;
+  width: 100%;
+  display: none;
+}
+
+.main-menu-subnav a {
+  cursor: pointer;
+  float: left;
+  font-size: 16px;
+  color: $secondary-text-color;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  width: auto;
+}
+
+.main-menu-subnav a:hover {
+  background-color: #eee;
+  color: $primary-text-color;
+}
+
+@media only screen and (max-width: $main-menu-breakpoint) {
+
+  #main-menu-container {
+    display: none;
+  }
+
+  #main-menu-search {
+    display: none;
+  }
+
+  .main-menu-subnav {
+    visibility: hidden;
+  }
+}

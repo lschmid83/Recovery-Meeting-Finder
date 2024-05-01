@@ -1,0 +1,90 @@
+@import '../../../variables.scss';
+
+#content-container h2 {
+  padding-top: 0px;
+  scroll-margin-top: 12px;
+}
+
+#submit-a-correction-form textarea {
+    margin-top: 0px;
+}
+
+#submit-a-correction-form #name-group {
+  width: 500px;
+}
+
+#submit-a-correction-form #email-group {
+  width: 500px;
+}
+
+#submit-a-correction-form #telephone-group {
+  width: 300px;
+}
+
+#submit-a-correction-form #meeting-email-group {
+  width: 500px !important;
+}
+
+#submit-a-correction-form #meeting-time-group {
+  width: 170px;
+}
+
+#submit-a-correction-form #meeting-day-group {
+  width: 180px;
+  margin-top: 0px;
+}
+
+#submit-a-correction-form #meeting-correction-details-group {
+  margin-top: 5px;
+}
+
+#submit-a-correction-form label {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+#submit-a-correction-form input {
+  margin-top: 10px;
+}
+
+#submit-a-correction-form #day {
+  width: 150px;
+  margin-top: 10px;
+}
+
+#submit-a-correction-form #submit-group {
+    margin-top: 20px;
+}
+
+#submit-a-correction-form #re-captcha {
+    float: left;
+}
+
+#submit-a-correction-form #submit {
+  margin-top: 37px;
+}
+
+#submit-a-correction-form #send-result-group {
+    margin-top: 55px;
+}
+
+@media only screen and (max-width: 485px) {
+  #submit-a-correction-form #submit {
+    margin-top: 10px;
+  }
+}
+
+@media only screen and (max-width: 1125px) {
+
+  #submit-a-correction-form #name {
+    width: 100%;
+  }
+
+  #submit-a-correction-form #email {
+    width: 100%;
+  }
+
+  #submit-a-correction-form #message {
+    width: 100%;
+  }
+}

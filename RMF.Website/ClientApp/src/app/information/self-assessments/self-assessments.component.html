@@ -1,0 +1,155 @@
+<app-page-header class="fixed"></app-page-header>
+<app-page-main-menu class="fixed"></app-page-main-menu>
+<div id="sidebar" class="show">
+  <div class="list-group border-0 text-xs-left">
+    <a href="javascript:void(0)" (click)="scrollTo('aa-self-assessment')" class="list-group-item d-inline-block">Alcoholics Anonymous (AA)</a>
+    <a href="javascript:void(0)" (click)="scrollTo('ca-self-assessment')" class="list-group-item d-inline-block">Cocaine Anonymous (CA)</a>
+    <a href="javascript:void(0)" (click)="scrollTo('na-self-assessment')" class="list-group-item d-inline-block">Narcotics Anonymous (NA)</a>
+    <a href="javascript:void(0)" (click)="scrollTo('oa-self-assessment')" class="list-group-item d-inline-block">Overeaters Anonymous (OA)</a>
+  </div>
+</div>
+<div id="content-container">
+  <div id="content" class="container-fluid">
+    <div class="row">
+      <div id="content-title-wrap" class="col-12">
+        <h1 class="content-title">Addiction Self Assessments</h1>
+        <button id="sidebar-toggle" class="navbar-toggler navbar-light" title="Toggle sidebar" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div id="content-description-wrap" class="content-text">
+          <p>Below you will find some self assessment questionaires that will help you decided whether you are suffering from addiction and if attending 12-Step meetings could help you.</p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="content-header">
+          <h1 id="aa-self-assessment">Alcoholics Anonymous - Self Test</h1>
+          <a href="https://www.alcoholics-anonymous.org.uk" target="_blank"><img src="assets/images/aa-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <p>Only you can decide whether you want to give A.A. a try and whether you think it can help you.  Below are some questions we tried to answer honestly.  See how you do.  There is no disgrace in facing up to the fact that you have a problem.</p>
+          <ol>
+            <li>Have you ever decided to give up drinking but only managed to last a few days?</li>
+            <li>Have you ever had a loss of memory because of drinking?</li>
+            <li>Have you ever tried switching from one kind of drink to another in an effort to control your drinking?</li>
+            <li>Do you often want to continue drinking after your friends say they have had enough?</li>
+            <li>Do you hide alcohol or drink in secret?</li>
+            <li>When drinking with other people do you try to have a few extra drinks which they don’t know about?</li>
+            <li>Do you crave alcohol, and have a sense of relief once you have had a drink?</li>
+            <li>Have you ever tried to stop your drinking and been unsuccessful?</li>
+            <li>After drinking have you ever felt remorseful and made a resolution not to drink again?</li>
+            <li>Do you drink to make you feel normal?</li>
+            <li>Have you ever tried to control your drinking?</li>
+            <li>Do you get to the point where you forget or don’t care about the negative consequences of drinking, or think ‘this time it will be different’?</li>
+          </ol>
+          <p>If you have answered YES to any one of the questions, you may be in trouble with alcohol, the more questions you answered YES to, the greater the chance that you could be an alcoholic.</p>
+          <p>Why do we say this? Because many members in AA have had these very experiences and found out the truth about their alcoholism.</p>
+        </div>
+        <div class="content-header">
+          <h1 id="ca-self-assessment">Cocaine Anonymous - Self Test</h1>
+          <a href="https://www.cocaineanonymous.org.uk" target="_blank"><img src="assets/images/ca-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <p>It is the collective experience of the members of Cocaine Anonymous that addiction is a problem not limited to cocaine or any other mind-altering substance. With this in mind, we suggest you answer the following questions:</p>
+          <ol>
+            <li>Have you ever used more cocaine, alcohol or other drugs than you planned?</li>
+            <li>Has the use of cocaine, alcohol or other drugs ever interfered with your job?</li>
+            <li>Is your use of cocaine, alcohol or other drugs causing problems within your relationships?</li>
+            <li>Do you ever feel depressed, guilty, or remorseful after using cocaine, alcohol or other drugs?</li>
+            <li>Do you use whatever cocaine, alcohol or other drugs you have, almost continually, until the supply is exhausted?</li>
+            <li>Have you ever experienced physical problems due to your use of cocaine, alcohol or other drugs?</li>
+            <li>Do you ever regret using cocaine, alcohol or other drugs for the first time?</li>
+            <li>Do you ever obsess about getting cocaine, alcohol or other drugs when you do not have any?</li>
+            <li>Are you experiencing financial difficulties due to your use of cocaine, alcohol or other drugs?</li>
+            <li>Do you experience an anticipation high when you are about to use cocaine, alcohol or other drugs?</li>
+            <li>Do you have difficulty sleeping without alcohol or other drugs?</li>
+            <li>Are you absorbed with the thought of using cocaine, alcohol or other drugs even while interacting with a friend or loved one?</li>
+            <li>Have you begun to use cocaine, alcohol or other drugs while you’re alone?</li>
+            <li>While using or drinking, do you ever have feelings that people are talking about you or watching you?</li>
+            <li>Do you have to use more cocaine, alcohol or other drugs to get the same effects you once experienced?</li>
+            <li>Have you tried to cut down on your use of cocaine, alcohol or other drugs only to find that you could not?</li>
+            <li>Have you tried to stop using cocaine, alcohol or other drugs only to find that you could not stay stopped?</li>
+            <li>Have any of your friends or family suggested that you may have a problem with cocaine, alcohol or other drugs?</li>
+            <li>Have you ever lied to or misled people about how much cocaine, alcohol or other drugs you use?</li>
+            <li>Have you ever lied to or misled people about how often you get high or drunk?</li>
+            <li>Do you use cocaine, alcohol or other drugs in your car, at work, in the bathroom, or in other public places?</li>
+            <li>Are you afraid that if you stop using cocaine, alcohol or other drugs, your work will suffer or you will not be able to function?</li>
+            <li>Do you spend time around people or go places you would normally stay away from if not for the availability of cocaine, alcohol or other drugs?</li>
+            <li>Have you ever stolen money, cocaine, alcohol, or other drugs from friends or family?</li>
+            <li>Has using and/or drinking cost you more than money?</li>
+          </ol>
+          <p>If you have answered “yes” to any of these questions, you may have a problem. There is an answer: Come to meetings of Cocaine Anonymous. While the name “Cocaine Anonymous” may sound drug-specific, we wish to assure you that our program is not. Many of our members did a lot of cocaine; others used only a little, and some never even tried coke. Whether we focused on a specific mind-altering substance or used whatever we could get our hands on, we had one thing in common: eventually we all reached a point where we could not stop. Over time, virtually every single one of us has realised that our real problem is not cocaine or any specific drug; it is the disease of addiction.</p>
+        </div>
+        <div class="content-header">
+          <h1 id="na-self-assessment">Narcotics Anonymous - Self Test</h1>
+          <a href="https://ukna.org" target="_blank"><img src="assets/images/na-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <p>The following questions were written by recovering addicts in Narcotics Anonymous. If you have doubts about whether or not you’re an addict, take a few moments to read the questions below and answer them as honestly as you can.</p>
+          <ol>
+            <li>Do you ever use alone?</li>
+            <li>Have you ever substituted one drug for another, thinking that one particular drug was the problem?</li>
+            <li>Have you ever manipulated or lied to a doctor to obtain prescription drugs?</li>
+            <li>Have you ever stolen drugs or stolen to obtain drugs?</li>
+            <li>Do you regularly use a drug when you wake up or when you go to bed?</li>
+            <li>Have you ever taken one drug to overcome the effects of another?</li>
+            <li>Do you avoid people or places that do not approve of you using drugs?</li>
+            <li>Have you ever used a drug without knowing what it was or what it would do to you?</li>
+            <li>Has your job or school performance ever suffered from the effects of your drug use?</li>
+            <li>Have you ever been arrested as a result of using drugs?</li>
+            <li>Have you ever lied about what or how much you use?</li>
+            <li>Do you put the purchase of drugs ahead of your financial responsibilities?</li>
+            <li>Have you ever tried to stop or control your using?</li>
+            <li>Have you ever been in a jail, hospital, or drug rehabilitation centre because of your using?</li>
+            <li>Does using interfere with your sleeping or eating?</li>
+            <li>Does the thought of running out of drugs terrify you?</li>
+            <li>Do you feel it is impossible for you to live without drugs?</li>
+            <li>Do you ever question your own sanity?</li>
+            <li>Is your drug use making life at home unhappy?</li>
+            <li>Have you ever thought you couldn’t fit in or have a good time without drugs?</li>
+            <li>Have you ever felt defensive, guilty, or ashamed about your using?</li>
+            <li>Do you think a lot about drugs?</li>
+            <li>Have you had irrational or indefinable fears?</li>
+            <li>Has using affected your sexual relationships?</li>
+            <li>Have you ever taken drugs you didn’t prefer?</li>
+            <li>Have you ever used drugs because of emotional pain or stress?</li>
+            <li>Have you ever overdosed on any drugs?</li>
+            <li>Do you continue to use despite negative consequences?</li>
+            <li>Do you think you might have a drug problem?</li>
+          </ol>
+          <p>"Am I an addict?" This is a question only you can answer. We found that we all answered different numbers of these questions "Yes." The actual number of "Yes" responses wasn’t as important as how we felt inside and how addiction had affected our lives.</p>
+          <p>Some of these questions don’t even mention drugs. This is because addiction is an insidious disease that affects all areas of our lives — even those areas which seem at first to have little to do with drugs. The different drugs we used were not as important as why we used them and what they did to us.</p>
+        </div>
+        <div class="content-header">
+          <h1 id="oa-self-assessment">Overeaters Anonymous - Self Test</h1>
+          <a href="https://www.oagb.org.uk" target="_blank"><img src="assets/images/oa-logo.png" /></a>
+        </div>
+        <div class="content-text">
+          <p>Now that you have found Overeaters Anonymous, you may want to make sure our program is right for you. Many of us have found it useful to answer the following questions to help determine if we have a problem with compulsive eating.</p>
+          <ol>
+            <li>Do I eat when I’m not hungry, or not eat when my body needs nourishment?</li>
+            <li>Do I go on eating binges for no apparent reason, sometimes eating until I’m stuffed or even feel sick?</li>
+            <li>Do I have feelings of guilt, shame, or embarrassment about my weight or the way I eat?</li>
+            <li>Do I eat sensibly in front of others and then make up for it when I am alone?</li>
+            <li>Is my eating affecting my health or the way I live my life?</li>
+            <li>When my emotions are intense — whether positive or negative — do I find myself reaching for food?</li>
+            <li>Do my eating behaviours make me or others unhappy?</li>
+            <li>Have I ever used laxatives, vomiting, diuretics, excessive exercise, diet pills, shots, or other medical interventions (including surgery) to try to control my weight?</li>
+            <li>Do I fast or severely restrict my food intake to control my weight?</li>
+            <li>Do I fantasize about how much better life would be if I were a different size or weight?</li>
+            <li>Do I need to chew or have something in my mouth all the time: food, gum, mints, candies, or beverages?</li>
+            <li>Have I ever eaten food that is burned, frozen, or spoiled; from containers in the grocery store; or out of the garbage?</li>
+            <li>Are there certain foods I can’t stop eating after having the first bite?</li>
+            <li>Have I lost weight with a diet or "period of control" only to be followed by bouts of uncontrolled eating and/or weight gain?</li>
+            <li>Do I spend too much time thinking about food, arguing with myself about whether or what to eat, planning the next diet or exercise cure, or counting calories?</li>
+          </ol>
+          <p>Have you answered "yes" to several of these questions? If so, it is possible that you have, or are well on your way to having, a compulsive eating or overeating problem.</p>
+        </div>
+      </div>
+    </div>
+    <app-page-footer></app-page-footer>
+  </div>
+</div>
+<app-cookie-consent></app-cookie-consent>
+
