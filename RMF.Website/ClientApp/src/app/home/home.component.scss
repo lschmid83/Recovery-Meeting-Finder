@@ -320,6 +320,12 @@ i {
   padding-bottom: 0px !important;
 }
 
+:host ::ng-deep #social-media {
+  margin-left: -15px !important;
+  margin-right: -15px !important;
+  padding-bottom: 0px !important;
+}
+
 @media only screen and (max-width: 1560px) {
 
   #column1 > #website-description {
