@@ -927,3 +927,13 @@ a {
     right: 17px;
   }
 }
+
+@media only screen and (max-width: 375px) {
+  .content-header img {
+    display: none;
+  }
+
+  #content-container .content-header h1 {
+      width: 100%;
+  }
+}
