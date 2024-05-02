@@ -187,7 +187,7 @@ export class MapComponent implements AfterViewInit {
       // Get min zoom level to display all markers in bounds.
       var zoomLevel = this.map.getZoom();
 
-      var minFoundMarkers = 5;
+      var minFoundMarkers = 10;
       if (this.region === 'all' || (this.meetingResults.region !== null && this.meetingResults.region.zoom === 0)) {
 
         // Loop through two levels of zoom to see if they contain at least min amount of markers.
