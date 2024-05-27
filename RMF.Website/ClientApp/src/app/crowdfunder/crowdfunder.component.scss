@@ -1,0 +1,10 @@
+#crowdfunder-screenshot img {
+  display: block;
+  margin: auto;
+}
+
+@media only screen and (max-width: 1150px) {
+  #crowdfunder-screenshot img {
+    width: 100%;
+  }
+}

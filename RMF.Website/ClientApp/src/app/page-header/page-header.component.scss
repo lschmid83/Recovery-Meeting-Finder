@@ -6,7 +6,11 @@
 
 :host-context(.fixed) #page-header-wrap {
   position: fixed;
-  top: 0px;
+  top: 44px;
+}
+
+:host::ng-deep .website-closed-banner {
+  padding-right: 32px !important;
 }
 
 #page-header-wrap {
@@ -59,7 +63,7 @@
 
 #page-header-wrap #main-sidebar-toggle {
   position: fixed;
-  top: 40px;
+  top: 84px;
   right: 412px;
 }
 
@@ -74,7 +78,7 @@
   }
 
   #page-header-wrap #main-sidebar-toggle {
-    top: 40px;
+    top: 84px;
     right: 26px;
   }
 }
@@ -115,8 +119,16 @@
   }
 
   #page-header-wrap #main-sidebar-toggle {
-    top: 40px;
+    top: 84px;
     right: 10px;
+  }
+}
+
+@media only screen and (max-width: 438px) {
+
+  :host-context(.fixed) #page-header-wrap {
+    position: fixed;
+    top: 40px;
   }
 }
 

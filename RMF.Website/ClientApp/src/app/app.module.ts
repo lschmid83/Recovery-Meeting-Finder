@@ -79,6 +79,7 @@ import { DataDumpResolve } from './data-dump.resolve';
 import { SubmitCorrectionComponent } from './meetings/submit-correction/submit-correction.component';
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { PageFooterComponent } from './page-footer/page-footer.component';
+import { CrowdfunderComponent } from './crowdfunder/crowdfunder.component';
 
 registerLocaleData(localePt);
 
@@ -126,7 +127,8 @@ registerLocaleData(localePt);
     ContactUsComponent,
     PageSearchComponent,
     SubmitCorrectionComponent,
-    PageFooterComponent
+    PageFooterComponent,
+    CrowdfunderComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -333,8 +335,13 @@ registerLocaleData(localePt);
         runGuardsAndResolvers: 'always',
       },
       {
+        path: 'crowdfunder',
+        component: CrowdfunderComponent,
+        pathMatch: 'full',
+      },
+      {
         path: '**', redirectTo: '/'
-      }
+      },
     ], { onSameUrlNavigation: 'reload' }),
     BrowserAnimationsModule,
     MatFormFieldModule,

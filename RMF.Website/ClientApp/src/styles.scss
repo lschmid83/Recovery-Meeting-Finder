@@ -42,24 +42,24 @@ html, body {
 @if $display-main-menu {
 
   #content-container {
-    top: 215px;
+    top: 259px;
   }
 }
 @else {
   #content-container {
-    top: 126px;
+    top: 166px;
   }
 }
 
 @if $display-main-menu {
-  #sidebar {
-    top: 215px;
+  #sidebar {     
+      top: 259px;
   }
 }
 
 @else {
   #sidebar {
-    top: 126px;
+    top: 166px;
   }
 }
 
@@ -558,6 +558,25 @@ a {
   margin-top: -12px !important;
 }
 
+.website-closed-banner {
+  text-align: center;
+  background-color: #0c2a5c;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  /*box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);*/
+  position: relative;
+  z-index: 1;
+}
+
+@media only screen and (max-width: 438px) {
+
+  .website-closed-banner {
+    font-size: 10pt;
+  }
+}
+
 /* Hide chart legend. */
 @media only screen and (max-width: 630px) {
 
@@ -565,10 +584,6 @@ a {
     visibility: hidden !important;
   }
 }
-
-
-
-
 
 /* Styles for content pages with sidebar */
 #sidebar {
@@ -673,7 +688,6 @@ a {
   overflow-x: hidden;
   width: calc(100vw - 340px);
 }
-
 
 @media only screen and (max-width: 768px) {
 
@@ -817,12 +831,14 @@ a {
 
 @if $display-main-menu {
   #sidebar-toggle {
-    top: calc(214px + 12px);
+    /* top: calc(214px + 12px); */
+    top: calc(258px + 12px);
   }
 }
 @else {
   #sidebar-toggle {
-    top: calc(126px + 12px);
+    /* top: calc(126px + 12px); */
+    top: calc(170px + 12px);
   }
 }
 
@@ -889,7 +905,7 @@ a {
   @media only screen and (max-width: $main-menu-breakpoint) {
 
     #sidebar {
-      top: 126px;
+      top: 170px;
     }
 
     #page-content {
@@ -900,12 +916,12 @@ a {
 
     #content-container {
       margin-top: 0px;
-      top: 126px;
+      top: 170px;
       height: calc(100vh - 126px);
     }
 
     #sidebar-toggle {
-      top: 138px;
+      top: 182px;
     }
 
     #sidebar .list-group {

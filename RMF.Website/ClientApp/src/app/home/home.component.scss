@@ -293,7 +293,7 @@ i {
 
 #column2 #main-sidebar-toggle {
   position: fixed;
-  top: 40px;
+  top: 84px;
   right: 130px;
 }
 
@@ -304,7 +304,7 @@ i {
 #github-banner {
   position: absolute;
   right: 0px;
-  top: 0px;
+  top: 44px;
 }
 
 :host ::ng-deep #footer {
@@ -376,31 +376,8 @@ i {
   }
 }
 
+
 @media only screen and (max-width: 970px) {
-
-  #column2 > #meeting-search > #find-meeting-form #meeting-location-form-field {
-    width: 280px;
-    float: left;
-    margin-right: 10px;
-  }
-
-  #column2 > #meeting-search > #find-meeting-form #meeting-day-form-field {
-    margin-top: -41px;
-  }
-
-  #column2 > #meeting-search > #find-meeting-form #meeting-search-button {
-    float: left;
-    margin-top: -4px;
-    margin-left: -290px;
-  }
-
-  #column2 > #meeting-search #loading {
-    margin-left: -210px;
-    margin-top: 50px;
-  }
-}
-
-@media only screen and (max-width: 953px) {
 
   #column2 > #meeting-search > #find-meeting-form #meeting-day-form-field {
     margin-top: -25px;
@@ -536,24 +513,11 @@ i {
 @media only screen and (max-width: 480px) {
 
   #column2 #main-sidebar-toggle {
-    top: 40px;
     right: 10px;
-  }
-
-  .page-header > .page-header-title {
-    margin-top: 28px;
-  }
-
-  .page-header .page-header-title-uk {
-    display: inline !important;
-  }
-
-  .page-header .page-header-title h2 {
-    line-height: 33px;
   }
 }
 
-@media only screen and (max-width: 458px) {
+@media only screen and (max-width: 475px) {
 
   #column2 > #meeting-search > #find-meeting-form #meeting-day-form-field {
     margin-top: -27px;

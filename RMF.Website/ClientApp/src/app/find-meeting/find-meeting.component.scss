@@ -14,3 +14,7 @@
   margin-right: 0px !important;
   padding-bottom: 0px !important;
 }
+
+:host ::ng-deep .website-closed-banner {
+  padding-left: 32px !important;
+}
