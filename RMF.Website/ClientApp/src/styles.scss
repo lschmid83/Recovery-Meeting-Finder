@@ -674,15 +674,15 @@ a {
 }
 
 #page-content {
-  height: calc(100vh - 214px);
+  height: calc(100vh - 258px);
 }
 
 #content-container {
-  height: calc(100vh - 214px);
+  height: calc(100vh - 258px);
 }
 
 #sidebar .list-group {
-  height: calc(100vh - 214px);
+  height: calc(100vh - 258px);
 }
 
 
@@ -858,13 +858,13 @@ a {
   #page-content {
     margin-top: 0px;
     top: 170px;
-    height: calc(100vh - 126px);
+    height: calc(100vh - 170px);
   }
 
   #content-container {
     margin-top: 0px;
     top: 170px;
-    height: calc(100vh - 126px);
+    height: calc(100vh - 170px);
   }
 
   #sidebar-toggle {
@@ -872,7 +872,7 @@ a {
   }
 
   #sidebar .list-group {
-    height: calc(100vh - 126px) !important;
+    height: calc(100vh - 170px) !important;
   }
 }
 
