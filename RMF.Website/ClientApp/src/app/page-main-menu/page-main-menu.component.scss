@@ -7,12 +7,6 @@
   top: 154px;
 }
 
-@if not($display-main-menu) {
-  #main-menu-container {
-    display: none;
-  }
-}
-
 :host-context(.relative) {
   #main-menu-container {
     top: 0px;
@@ -138,7 +132,7 @@
   color: $primary-text-color;
 }
 
-@media only screen and (max-width: $main-menu-breakpoint) {
+@media only screen and (max-width: 1045px) {
 
   #main-menu-container {
     display: none;

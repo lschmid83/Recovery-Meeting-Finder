@@ -9,11 +9,11 @@
   z-index: 1;
 }
 
-@if $display-main-menu {
+
   #quick-search {
     height: 108px;
   }
-}
+
 
   #quick-search mat-select {
     margin-top: -28px !important;
@@ -96,7 +96,7 @@
   }
 }
 
-@media only screen and (max-width: $main-menu-breakpoint) {
+@media only screen and (max-width: 1045px) {
   #quick-search {
     display: none;
   }

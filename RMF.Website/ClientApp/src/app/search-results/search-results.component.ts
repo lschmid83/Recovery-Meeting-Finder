@@ -44,7 +44,6 @@ export class SearchResultsComponent {
     var lon = this.router.getCurrentNavigation().extras.state.lng;
     this.state = this.router.getCurrentNavigation().extras.state;
 
-
     // Get search term for print results heading.
     this.searchTerm = location;
     if (region !== undefined)
