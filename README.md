@@ -8,7 +8,7 @@ This repository contains the source code for the Angular website and the data in
 
 If you are a developer and want to rebuild the database, website and API in development mode these are the detailed instructions.
 
-We are looking for contributors to the main project who could potentially add new features and ideas to the website. 
+We are looking for contributors to the main project who could potentially add new features and ideas to the website. Please see the issue list for ideas.
 
 If you have enough experience in web scraping, XPath and HTML Agility Pack and are interested in helping to maintain and test the web scrapers we use to collect meeting information then email admin@recoverymeetingfinder.com for information on our private repository.
 
