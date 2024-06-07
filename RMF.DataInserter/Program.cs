@@ -260,7 +260,7 @@ namespace RMF.DataInserter
 
             // Read region lat, lon and zoom from CSV file.
             var regionInfoCsv = new List<RegionInformationCsv>();
-            var regionsCsvPath = DataDumpPath + LatestDataDumpDate + @"\regions-" + LatestDataDumpDate + ".csv";
+            var regionsCsvPath = DataDumpPath + @"\regions" + ".csv";
             using (var reader = new StreamReader(regionsCsvPath, Encoding.UTF8))
             {
                 using (var csv = new CsvReader(reader, CultureInfo.InvariantCulture))
@@ -269,126 +269,44 @@ namespace RMF.DataInserter
                 }
             }
 
-            // Get meeting regions grouped by name.
-            var regionGroups = dbContext.MeetingDataDump
-                .Where(x => x.MeetingTypeNamespace == "AA" && !String.IsNullOrEmpty(x.Region) && x.RegionArea != "UK" && !String.IsNullOrEmpty(x.RegionArea))
-                .GroupBy(x => new { x.Region, x.RegionArea })
-                .Select(x => new { x.Key.Region, x.Key.RegionArea });
-
-            // Loop through regions.
             var regions = new List<Region>();
-            foreach (var region in regionGroups)
+            foreach (var region in regionInfoCsv)
             {
-                // Select all lat and lon values for meetings in region.
-                // Only select AA meetings which have a region. (This is the 'good data' we use to create convex hull).
-                var meetings = dbContext.MeetingDataDump
-                    .Where(x => x.MeetingTypeNamespace == "AA" && x.Region == region.Region)
-                    .Select(x => new { x.Region, x.RegionArea, x.Latitude, x.Longitude });
+                // Loop through lat, lon and construct coordinates.
+                var pointList = new List<Geometry>();
+                var points = region.Boundary.Split('[', ']').Where((s, i) => i % 2 == 1).Select(s => '[' + s + ']').ToArray();
 
-                var country = dbContext.MeetingDataDump
-                    .Where(x => x.MeetingTypeNamespace == "AA" && x.Region == region.Region)
-                    .Select(x => x.Country)
-                    .FirstOrDefault();
+                // Extract points array.
+                foreach (var point in points)
+                {
+                    var lon = double.Parse(point.TrimStart('[').TrimEnd(']').Split(',')[0]);
+                    var lat = double.Parse(point.TrimStart('[').TrimEnd(']').Split(',')[1]);
+                    var coordinate = new Point(lon, lat) { SRID = 4326 };
+                    pointList.Add(coordinate);
+                }
 
                 // Create geomotery for points.
                 var geometeryFactory = new GeometryFactory(new PrecisionModel(), 4326);
 
-                // Loop through lat, lon and construct coordinates.
-                var pointList = new List<Geometry>();
-                double averageLon = 0, averageLat = 0;
-                foreach (var meeting in meetings)
-                {
-                    averageLon += meeting.Longitude;
-                    averageLat += meeting.Latitude;
-
-                    var coordinate = new Point(meeting.Longitude, meeting.Latitude) { SRID = 4326 };
-                    pointList.Add(coordinate);
-                }
-
-                // Calculate avergae lon, lat
-                averageLon /= meetings.Count();
-                averageLat /= meetings.Count();
-
                 // Create a convex hull from points.
                 var convexHull = new ConvexHull(geometeryFactory.BuildGeometry(pointList.ToArray()));
-
-                // Create a boundary array.
-                var boundary = "[[";
-                foreach (var coordinate in convexHull.GetConvexHull().Coordinates)
-                {
-                    boundary += "[" + coordinate.X.ToString().Replace(',', '.') + "," + coordinate.Y.ToString().Replace(',', '.') + "],";
-                }
-                boundary = boundary.TrimEnd(',');
-                boundary += "]]";
-
-                // Get region latitude and longitude and map zoom level.
-                var regionInfo = regionInfoCsv.Where(x => x.Name == region.Region).FirstOrDefault();
-                if (regionInfo == null)
-                    Console.WriteLine("Missing region information using default values: " + region.Region);
 
                 // Add region to database.
                 regions.Add(new Region()
                 {
-                    Name = region.Region,
-                    Location = regionInfo != null ? new Point(regionInfo.Longitude, regionInfo.Latitude) { SRID = 4326 } : new Point(averageLon, averageLat) { SRID = 4326 },
-                    Zoom = regionInfo != null ? regionInfo.Zoom : 0,
-                    AreaId = dbContext.Area.Where(x => x.Name == region.RegionArea).FirstOrDefault().Id,
-                    CountryId = dbContext.Country.Where(x => x.Name == country).FirstOrDefault().Id,
+                    Name = region.Name,
+                    Location = new Point(region.Longitude, region.Latitude) { SRID = 4326 },
+                    Zoom = region.Zoom,
+                    AreaId = dbContext.Area.Where(x => x.Name == region.Area).FirstOrDefault().Id,
+                    CountryId = dbContext.Country.Where(x => x.Name == region.Country).FirstOrDefault().Id,
                     ConvexHull = convexHull.GetConvexHull(),
-                    Boundary = boundary
+                    Boundary = "[[" + region.Boundary + "]]"
                 });
             }
 
             // Insert into Region table.
             dbContext.Region.AddRange(regions);
             dbContext.SaveChanges();
-
-            // Write regions information with any missing regions left blank.
-            var areas = new AreaRepo().GetAll().Result;
-            var regionInformationOutput = new List<RegionInformationCsv>();
-
-            foreach (var area in areas)
-            {
-                foreach (var region in area.Regions.OrderBy(x => x.Name))
-                {
-                    var regionInfo = regionInfoCsv.Where(x => x.Name == region.Name).FirstOrDefault();
-                    regionInformationOutput.Add(new RegionInformationCsv()
-                    {
-                        Name = region.Name,
-                        Latitude = regionInfo != null ? regionInfo.Latitude : 0,
-                        Longitude = regionInfo != null ? regionInfo.Longitude : 0,
-                        Zoom = regionInfo != null ? regionInfo.Zoom : 0,
-                        Area = area.Name
-                    });
-                }
-            }
-
-            // Write CSV file.
-            var csvConfiguration = new CsvConfiguration(CultureInfo.CurrentCulture);
-            if (File.Exists(regionsCsvPath))
-                File.Delete(regionsCsvPath);
-
-            // Overwrite current data dump regions CSV.
-            using (FileStream fs = new FileStream(regionsCsvPath, FileMode.Create, FileAccess.Write))
-            {
-                using (var sw = new StreamWriter(fs, Encoding.UTF8))
-                {
-                    // Write regionss to CSV.
-                    using (var csv = new CsvWriter(sw, csvConfiguration))
-                        csv.WriteRecords(regionInformationOutput);
-                }
-            }
-
-            // Create base regions file.
-            using (FileStream fs = new FileStream(DataDumpPath + "regions.csv", FileMode.Create, FileAccess.Write))
-            {
-                using (var sw = new StreamWriter(fs, Encoding.UTF8))
-                {
-                    // Write regionss to CSV.
-                    using (var csv = new CsvWriter(sw, csvConfiguration))
-                        csv.WriteRecords(regionInformationOutput);
-                }
-            }
         }
 
         private static void CreateDayTable()
@@ -608,31 +526,14 @@ namespace RMF.DataInserter
             }
             CreateMeetingRegionTable(dbContext.MeetingRemoved, dbContext.MeetingRemovedRegion);
         }
-
         private static void CreateMeetingRegionTable<TMeetingTable, TMeetingRegionTable>(DbSet<TMeetingTable> meetingTable, DbSet<TMeetingRegionTable> meetingRegionTable) where TMeetingTable : class, IMeeting where TMeetingRegionTable : class, IMeetingRegion
         {
             var meetingRegions = new List<MeetingRegion>();
-
             var regions = dbContext.Region;
 
             foreach (var meeting in meetingTable.Include(x => x.Type))
             {
-                // AA regions can be set automatically from the name as this is the main region select options.
-                if (meeting.Type.Namespace == "AA" && !String.IsNullOrEmpty(meeting.RegionName) && !String.IsNullOrEmpty(meeting.RegionArea) && meeting.RegionArea != "UK")
-                {
-                    var regionId = regions.Where(x => x.Name == meeting.RegionName).Select(x => x.Id).FirstOrDefault();
-                    if (regionId != 0)
-                    {
-                        meetingRegions.Add(new MeetingRegion()
-                        {
-                            MeetingId = meeting.Id,
-                            RegionId = regionId
-                        });
-                    }
-                }
-            
                 // Lookup region ID using convex hull contains algorithm.
-                // Include AA regions as they may be located inside multiple region selections.
                 foreach (var region in regions)
                 {
                     // Check if lat / lon is inside convex hull.
@@ -640,7 +541,7 @@ namespace RMF.DataInserter
                     var convexHullGeometry = geometryFactory.Create(region.ConvexHull);
 
                     // We will get some duplicate meeting IDs because of edge cases on convex hull boundaries.
-                    if (convexHullGeometry.Contains(new Point(meeting.Location.X, meeting.Location.Y) { SRID = 4326 })) 
+                    if (convexHullGeometry.Contains(new Point(meeting.Location.X, meeting.Location.Y) { SRID = 4326 }))
                     {
                         meetingRegions.Add(new MeetingRegion()
                         {
@@ -650,7 +551,6 @@ namespace RMF.DataInserter
                     }
                 }
             }
-
             meetingRegions = meetingRegions.DistinctBy(x => new { x.MeetingId, x.RegionId }).ToList();
 
             // Create AutoMapper configuration. Ignore missing fields.
@@ -768,16 +668,16 @@ namespace RMF.DataInserter
             File.Copy(DataDumpPath + allStatisticsFilename, WebDataDumpPath + allStatisticsFilename);
 
             // Copy regions dump.
-            var regionsDump = LatestDataDumpDate + @"\regions-" + LatestDataDumpDate + ".csv";
-            File.Copy(DataDumpPath + regionsDump, WebDataDumpPath + regionsDump);
+            var regionsDump = DataDumpPath + @"\regions.csv";
+            File.Copy(regionsDump, WebDataDumpPath + "regions.csv");
 
-            // Copy regions dump.
+            // Copy statistics dump.
             var statisticsDump = LatestDataDumpDate + @"\statistics-" + LatestDataDumpDate + ".csv";
             File.Copy(DataDumpPath + statisticsDump, WebDataDumpPath + statisticsDump);
 
             var meetingDumpPath = WebDataDumpPath + LatestDataDumpDate + @"\meetings";
-                        
-            var outputPath =  meetingDumpPath + "-" + LatestDataDumpDate + ".csv";
+
+            var outputPath = meetingDumpPath + "-" + LatestDataDumpDate + ".csv";
             CreateMeetingsDataDump(dbContext.Meeting, dbContext.MeetingRegion, outputPath);
 
             outputPath = meetingDumpPath + "-added-" + LatestDataDumpDate + ".csv";

@@ -1,4 +1,4 @@
-﻿Name,Area,Latitude,Longitude,Zoom
+Name,Area,Latitude,Longitude,Zoom
 Bournemouth District,South West,50.7461661,-1.827507019,13
 Cornwall,South West,50.47289459,-4.9476215,9
 Devon Central,South West,50.89725735,-3.605298,9
@@ -63,7 +63,7 @@ West Kent,South East,51.27867252,0.504684448,10
 West Sussex,South East,50.99133918,-0.2879495,10
 City Of London,London (North),51.51650036,-0.088641644,15
 East London,London (North),51.5635123,0.033817291,12
-London Chelsea,London (North),51.48959665,-0.1607535,14
+London Chelsea,London (North),51.48934665,-0.15827179,14
 London Kensington and Fulham,London (North),51.48728584,-0.198483467,14
 London North,London (North),51.56905103,-0.149517059,12
 London North East,London (North),51.55217669,-0.1141119,14
@@ -95,6 +95,7 @@ Aberdeen and District,East of Scotland,57.24516091,-2.4154505,9
 Angus and District,East of Scotland,56.58793648,-2.720131,10
 Dundee and Area,East of Scotland,56.46569985,-3.001526,14
 Fife,East of Scotland,56.19410242,-3.144836426,10
+Perth and Kinross,East of Scotland,56.29287117,-3.717230558,16
 Argyll,Highland and Islands,56.42808375,-5.54397583,12
 Inverness and District,Highland and Islands,57.78466676,-4.339599609,8
 Lochaber,Highland and Islands,56.83112987,-5.484237671,11
@@ -108,12 +109,12 @@ Paisley and District,South West Scotland,55.85730245,-4.477272034,12
 Clydebank and District,Glasgow,55.91625672,-4.4437705,13
 Glasgow East,Glasgow,55.84135114,-4.171199799,13
 Glasgow North West,Glasgow,55.89037002,-4.3166595,13
-Glasgow South,Glasgow,55.82426184,-4.300062,13
+Glasgow South,Glasgow,55.84226544,-4.293079376,13
 Monklands,Glasgow,55.86283778,-4.008464813,13
 Antrim,Northern Ireland,54.77392676,-6.081619263,11
 Armagh,Northern Ireland,54.36096407,-6.469573975,10
 Derry,Northern Ireland,54.99644635,-7.320971489,14
-Down,Northern Ireland,54.36055555,-5.940856934,9
+Down,Northern Ireland,54.37175859,-5.765075684,9
 Fermanagh,Northern Ireland,54.29318949,-7.4074095,12
 Tyrone,Northern Ireland,54.6178089,-7.073822021,10
 Cork,Republic of Ireland,51.89041846,-8.467025757,13

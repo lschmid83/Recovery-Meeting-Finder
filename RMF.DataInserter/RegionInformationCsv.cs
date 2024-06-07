@@ -13,10 +13,14 @@ namespace RMF.DataInserter
 
         public string Area { get; set; }
 
+        public string Country { get; set; }
+
         public double Latitude { get; set; }
 
         public double Longitude { get; set; }
 
         public int Zoom { get; set; }
+
+        public string Boundary { get; set; }
     }
 }
