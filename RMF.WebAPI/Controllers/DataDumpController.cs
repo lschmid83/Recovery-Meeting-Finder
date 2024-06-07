@@ -28,7 +28,8 @@ namespace RMF.WebAPI.Controllers
             var dataDumpResults = new DataDumpResults
             {
                 Path = "/data-dump/",
-                Statistics = "statistics.csv"
+                Statistics = "statistics.csv",
+                Regions = "regions.csv"
             };
 
             foreach (var dataDump in dataDumps)
@@ -42,7 +43,6 @@ namespace RMF.WebAPI.Controllers
                         "meetings-" + dataDumpDate + ".csv",
                         "meetings-added-" + dataDumpDate + ".csv",
                         "meetings-removed-" + dataDumpDate + ".csv",
-                        "regions-" + dataDumpDate + ".csv",
                         "statistics-" + dataDumpDate + ".csv"
                     } 
                 });

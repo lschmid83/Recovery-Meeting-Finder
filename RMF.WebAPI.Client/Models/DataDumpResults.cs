@@ -10,6 +10,7 @@ namespace RMF.WebAPI.Client.Models
     {
         public string Path { get; set; }
         public string Statistics { get; set; }
+        public string Regions { get; set; }
         public List<DataDumpResult> DataDumps { get; set; } = new List<DataDumpResult>();
     }
 }
