@@ -1,5 +1,28 @@
 @import '../../variables.scss';
 
+.homepage-top-banner {
+  text-align: center;
+  background-color: #0c2a5c;
+  color: #fff;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  font-weight: bold;
+  position: relative;
+  z-index: 1;
+}
+
+@if $display-homepage-top-banner {
+  .homepage-top-banner {
+    display: block;
+  }
+}
+@else {
+  .homepage-top-banner {
+    display: none;
+  }
+}
+
+
 #homepage-background {
   background-image: url("/assets/images/home-background.jpg");
   background-position: center;
@@ -293,8 +316,18 @@ i {
 
 #column2 #main-sidebar-toggle {
   position: fixed;
-  top: 84px;
   right: 130px;
+}
+
+@if $display-homepage-top-banner {
+  #column2 #main-sidebar-toggle {
+    top: 84px;
+  }
+}
+@else {
+  #column2 #main-sidebar-toggle {
+    top: 40px;
+  }
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -304,7 +337,17 @@ i {
 #github-banner {
   position: absolute;
   right: 0px;
-  top: 44px;
+}
+
+@if $display-homepage-top-banner {
+  #github-banner {
+    top: 44px;
+  }
+}
+@else {
+  #github-banner {
+    top: 0px;
+  }
 }
 
 :host ::ng-deep #footer {

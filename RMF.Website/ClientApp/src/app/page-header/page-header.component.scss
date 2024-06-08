@@ -6,10 +6,20 @@
 
 :host-context(.fixed) #page-header-wrap {
   position: fixed;
-  top: 44px;
 }
 
-:host::ng-deep .website-closed-banner {
+@if $display-top-banner {
+  :host-context(.fixed) #page-header-wrap {
+    top: 44px;
+  }
+}
+@else {
+  :host-context(.fixed) #page-header-wrap {
+    top: 0px;
+  }
+}
+
+:host::ng-deep .top-banner {
   padding-right: 32px !important;
 }
 
@@ -56,8 +66,18 @@
 
 #page-header-wrap #main-sidebar-toggle {
   position: fixed;
-  top: 84px;
   right: 412px;
+}
+
+@if $display-top-banner {
+  #page-header-wrap #main-sidebar-toggle {
+    top: 84px;
+  }
+}
+@else {
+  #page-header-wrap #main-sidebar-toggle {
+    top: 40px;
+  }
 }
 
 .custom-toggler .navbar-toggler-icon {
@@ -71,8 +91,19 @@
   }
 
   #page-header-wrap #main-sidebar-toggle {
-    top: 84px;
     right: 26px;
+  }
+
+  @if $display-top-banner {
+    #page-header-wrap #main-sidebar-toggle {
+      top: 84px;
+    }
+  }
+
+  @else {
+    #page-header-wrap #main-sidebar-toggle {
+      top: 40px;
+    }
   }
 }
 
@@ -112,8 +143,18 @@
   }
 
   #page-header-wrap #main-sidebar-toggle {
-    top: 84px;
     right: 10px;
+  }
+
+  @if $display-top-banner {
+    #page-header-wrap #main-sidebar-toggle {
+      top: 84px;
+    }
+  }
+  @else {
+    #page-header-wrap #main-sidebar-toggle {
+      top: 40px;
+    }
   }
 }
 
@@ -121,7 +162,18 @@
 
   :host-context(.fixed) #page-header-wrap {
     position: fixed;
-    top: 40px;
+  }
+
+  @if $display-top-banner {
+    :host-context(.fixed) #page-header-wrap {
+      top: 40px;
+    }
+  }
+
+  @else {
+    :host-context(.fixed) #page-header-wrap {
+      top: 0px;
+    }
   }
 }
 

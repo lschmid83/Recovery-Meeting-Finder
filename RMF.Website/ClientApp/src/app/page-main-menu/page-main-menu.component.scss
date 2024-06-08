@@ -7,6 +7,20 @@
   top: 154px;
 }
 
+@if $display-top-banner {
+  #main-menu-container {
+    top: 154px;
+  }
+}
+
+@else {
+  #main-menu-container {
+    top: 110px;
+  }
+}
+
+
+
 :host-context(.relative) {
   #main-menu-container {
     top: 0px;
