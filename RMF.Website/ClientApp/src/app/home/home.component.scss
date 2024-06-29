@@ -369,6 +369,17 @@ i {
   padding-bottom: 0px !important;
 }
 
+#column2 .googleplay-description p {
+  font-size: 18px;
+  font-weight: normal;
+}
+
+#column2 #googleplay-badge {
+  width: 180px;
+  margin-left: -7px;
+  margin-top: -35px;
+}
+
 @media only screen and (max-width: 1560px) {
 
   #column1 > #website-description {
@@ -430,6 +441,10 @@ i {
     float: left;
     margin-top: 35px;
     margin-left: -130px;
+  }
+
+  #column2 .googleplay-description p {
+    margin-top: 51px;
   }
 }
 
@@ -515,6 +530,10 @@ i {
   #column2 > #meeting-search #loading {
     margin-left: -212px;
     margin-top: 1px;
+  }
+
+  #column2 .googleplay-description p {
+    margin-top: 21px;
   }
 }
 

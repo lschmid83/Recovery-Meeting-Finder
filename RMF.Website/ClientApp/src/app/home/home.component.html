@@ -81,9 +81,8 @@
           <div class="info d-sm-none"><p>We list physical face to face 12-Step meetings for AA, CA, NA and OA.&nbsp;&nbsp;<i class="fa fa-info-circle info-icon" aria-hidden="true" title="View disclaimer" (click)="openDisclaimerDialog()"></i></p></div>
           <div class="statistics d-sm-none"><p>Last updated {{statistics.lastUpdated | date: 'dd/MM/yyyy'}} with {{statistics.total}} meetings across the UK.&nbsp;&nbsp;<i class="fa fa-chart-bar info-icon" aria-hidden="true" title="View statistics" (click)="navigateTo('/meetings/statistics')"></i></p></div>
           <div class="donation d-sm-none">If you use this website please consider donating a small amount according to tradition seven.&nbsp;&nbsp;<i class="fa fa-info-circle donation-info" aria-hidden="true" title="View donations disclaimer" (click)="openDonationsDialog()"></i></div>
-          <!--<div class="paypal-donate d-sm-none">
-            <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=GB6RRQPJ2VB5S&source=url" target="_blank"><img src="assets/images/paypal-donate.png" width="140" alt="Donate via PayPal" /></a>
-          </div>-->
+          <div class="googleplay-description"><p>We also provide a 12-Step Recovery Guide app available here:</p></div>
+          <a href="https://play.google.com/store/apps/details?id=com.citex.twelve_step_recovery" target="_blank" alt="Get it on Google Play"><img id="googleplay-badge" src="assets/images/googleplay-badge.webp" title="Get it on Google Play" /></a>
         </form>
       </div>
     </div>
