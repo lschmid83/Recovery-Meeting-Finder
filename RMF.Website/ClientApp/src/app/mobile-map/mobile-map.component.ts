@@ -150,17 +150,57 @@ export class MobileMapComponent implements AfterViewInit {
       }.bind(this));
     }
 
-    // Add markers to map.
+    // Add markers to map and calculate extent.
     if (markerArray.length > 0) {
 
       // Add markers to cluster group.
       this.markerClusterGroup.addLayers(markerArray);
 
+      // Expand cluster on mouseover.
+      this.markerClusterGroup.on('clustermouseover', function (e) {
+        e.layer.spiderfy();
+      });
+
       // Add cluster group with markers to the map.
       this.markerClusterGroup.addTo(this.map);
 
       // Zoom to extent of markers.
-      this.map.fitBounds(this.markerClusterGroup.getBounds());
+      this.map.fitBounds(this.markerClusterGroup.getBounds(), true); // <-- without second arg, map.getZoom() will return a wrong value!
+
+      // Get min zoom level to display all markers in bounds.
+      var zoomLevel = this.map.getZoom();
+
+      var minFoundMarkers = 10;
+
+      // Loop through two levels of zoom to see if they contain at least min amount of markers.
+      for (var i = 2; i > 0; i--) {
+
+        // Get scaled viewport at increased zoom level.
+        var scaledBounds = this.getScaledBoundsWorking([this.lat, this.lng], zoomLevel + i);
+
+        // Loop through marker array.
+        var foundMarkers = 0;
+        for (let marker of markerArray) {
+
+          // Scaled viewport contains marker.
+          if (scaledBounds.contains(marker.getLatLng()))
+            foundMarkers++;
+
+          // More than min markers found.
+          if (foundMarkers >= minFoundMarkers) {
+            break;
+          }
+        };
+
+        // Use increased zoom level.
+        if (foundMarkers === minFoundMarkers) {
+          zoomLevel += i;
+          break;
+        }
+      }
+
+      // Set zoom level.
+      this.map.setZoom(zoomLevel);
     }
     else {
       // Set location even if there are no search results.
@@ -187,6 +227,14 @@ export class MobileMapComponent implements AfterViewInit {
     }).addTo(this.map);
   }
 
+  // https://stackoverflow.com/questions/70115385/leaflet-get-scaled-bounding-box-by-zoom-level
+  private getScaledBoundsWorking(center, zoom) {
+    const bounds = this.map.getPixelBounds(center, zoom);
+    const sw = this.map.unproject(bounds.getBottomLeft(), zoom);
+    const ne = this.map.unproject(bounds.getTopRight(), zoom);
+    return L.latLngBounds(sw, ne);
+  }
+
   // Gets meeting map popup.
   private getMeetingPopup(meeting: IMeeting): String {
 
@@ -210,22 +258,6 @@ export class MobileMapComponent implements AfterViewInit {
 
     return popup;
   }
-
-  /*
-  // Gets meeting map popup. (Added Bookmark and Calendar) Tbd..
-  private getMeetingPopup(meeting: IMeeting): String {
-    var meetingTime = new Date(meeting.time);
-    return "<h1 style='font-size: 15px; color: #000000; font-weight: bold; padding-top: 5px; padding-right: 5px'>" + (meeting.title !== null ? meeting.title + "<span style='color:#203177'>: " + meeting.day.name : "<span style='color:#203177'>" + meeting.day.name) + "</span></h1>" +
-      "<p style='font-size: 15px; margin-bottom: -18px' *ngIf='meeting.venue !== null'>" + meeting.venue + "</p>" +
-      "<p style='font-size: 15px;'>" + meeting.address.replace(/,/g, ', ') + "<br/>" + meeting.postcode + "</p>" +
-      "<p style='font-size: 15px;'>Start time: " + meetingTime.toTimeString().split(' ')[0].substr(0, 5) +
-      (meeting.duration !== null ? " - duration " + meeting.duration : "") + "</p>" +
-      "<a href='javascript:void(0);' class='details-dialog' style='font-size:15px; color:#203177'>Details</a><br/><br/>" +
-      "<a target='_blank' style='font-size:15px; color:#203177; padding-bottom: 5px;'" +
-      "href='https://www.google.com/maps/dir/?api=1&origin=" + this.lat + "%2C" + this.lng + "&destination=" + meeting.latitude + "%2C" + meeting.longitude + "&travelmode=driving'>Directions</a> | " +
-      "<a href='bookmark:" + meeting.hash + "' style='font-size:15px; color:#203177'>Bookmark</a> | " +
-      "<a href='calendar:' style='font-size:15px; color:#203177'>Add to Calendar</a>";
-  }*/
 
   // Opens meeting details dialog box.
   public openDetailsDialog(meeting: IMeeting): void {
