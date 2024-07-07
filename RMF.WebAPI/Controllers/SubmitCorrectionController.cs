@@ -49,7 +49,7 @@ namespace RMF.WebAPI.Controllers
                         "Meeting Address:" + "<br/><br/>" + submitCorrectionForm.MeetingAddress + "<br/><br/>" +
                         "Meeting Time:" + "<br/><br/>" + submitCorrectionForm.MeetingAddress + "<br/><br/>" +
                         "Meeting Day:" + "<br/><br/>" + submitCorrectionForm.MeetingDay + "<br/><br/>" +
-                        "Meeting Correction Details:" + "<br/><br/>" + submitCorrectionForm.MeetingAddress;
+                        "Meeting Correction Details:" + "<br/><br/>" + submitCorrectionForm.MeetingCorrectionDetails;
 
             var client = new SmtpClient(SmtpSettings.Host, SmtpSettings.Port)
             {
