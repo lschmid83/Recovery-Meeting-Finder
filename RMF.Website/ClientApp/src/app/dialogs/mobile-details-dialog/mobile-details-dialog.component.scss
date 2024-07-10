@@ -1,77 +1,125 @@
-.custom-dialog-container .mat-dialog-container {
-  padding: 0px !important;
-}
+@import '../../../variables.scss';
 
 .modal-header {
   height: 70px;
 }
 
 .modal-content {
-    max-height: 50vh;
-    overflow-y: auto;
-    overflow-x: auto;
+  overflow-y: auto;
+  overflow-x: auto;
+  margin-left: 0px;
 }
 
-  .modal-header .close-dialog {
-    color: #808080
-  }
+.modal-content .notes {
+  margin-bottom: 18px;
+}
+
+.modal-content .share {
+  color: $primary-text-color;
+  margin-top: -3px;
+}
+
+.modal-content .share-icon {
+  color: #4d4c4c;
+}
+
+.modal-content .share-text-icon {
+  font-size: 21px;
+  margin-left: 10px;
+  position: relative;
+  top: 2px;
+}
+
+.modal-content .share-email-icon {
+  font-size: 21px;
+  margin-left: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.modal-content .share-whatsapp-icon {
+  font-size: 23px;
+  margin-left: 20px;
+  position: relative;
+  top: 2px;
+}
+
+.modal-content .share-print-icon {
+  margin-left: 18px;
+  margin-top: -4px;
+  width: 20px;
+  cursor: pointer;
+}
+
+
+.modal-header .close-dialog {
+  color: #808080
+}
 
 .modal-header .mat-dialog-title {
   padding-left: 2px;
   padding-top: 5px;
-  color: #5397c1;
+  color: $secondary-color;
 }
 
 .modal-content {
-    padding: 18px;
-    padding-bottom: 10px;
-    border: none;
+  padding: 18px;
+  padding-bottom: 10px;
+  border: none;
 }
 
-  .modal-content p {
-    word-wrap: break-word;
-  }
+.modal-content p {
+  word-wrap: break-word;
+}
 
-  .modal-content .title {
-    font-size: 24px;
-    color: #5397c1;
-  }
+.modal-content .title {
+  font-size: 24px;
+  color: $secondary-color;
+}
 
-  .modal-content .day {
-    color: #203177;
-  }
+.modal-content .day {
+  color: $primary-color;
+}
 
-  .modal-content .address {
-      margin-top: 5px;
-      margin-bottom: 2px;
-  }
+.modal-content .address {
+  margin-top: 5px;
+  margin-bottom: 2px;
+}
 
-  .modal-content .venue {
-    margin-top: 5px;
-    margin-bottom: -3px;
+.modal-content .postcode {
+  margin-top: -1px;
+  margin-bottom: 2px;
+}
 
-  }
+.modal-content .what3words {
+  margin-bottom: 5px;
+}
 
-  .modal-content .start-time {
-      margin-bottom: 5px;
-  }
+.modal-content .venue {
+  margin-top: 5px;
+  margin-bottom: -3px;
+}
 
-  .modal-content .open {
-    margin-bottom: 5px;
-  }
+.modal-content .start-time {
+  margin-bottom: 5px;
+}
 
-  .modal-content .disability {
-    margin-bottom: 5px;
-  }
+.modal-content .open {
+  margin-bottom: 5px;
+}
 
-  .modal-content .format {
-    margin-bottom: 5px;
-  }
+.modal-content .accessibility {
+  margin-bottom: 5px;
+}
 
-  .modal-content .meeting-guide {
-      margin-top: 10px;
-      font-size: 1em;
-  }
+.modal-content .format {
+  margin-bottom: 5px;
+}
+
+.modal-content .meeting-guide {
+  margin-top: 10px;
+  font-size: 1em;
+}
 
 .modal-footer {
   border-top: 1px solid #dee2e6;
@@ -79,5 +127,57 @@
 }
 
 .modal-footer .close-button {
-    margin-right: 15px;
+  margin-right: 15px;
+}
+
+#details-map-container {
+  float: left;
+  margin-left: -15px;
+  margin-top: 10px;
+  padding-bottom: 20px;
+}
+
+#details-map-container .row {
+  margin-right: -40px !important
+}
+
+#details-map {
+  width: 100%;
+  height: 400px;
+  border-radius: 5px;
+}
+
+.modal-content a {
+  color: #203177;
+}
+
+.modal-content a {
+  text-decoration: none;
+}
+
+.modal-content #all-meetings {
+  color: #203177;
+  margin-left: 15px;
+}
+
+.modal-content #all-meetings:hover {
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .modal-content #all-meetings {
+    float: left;
+    clear: left;
+    margin-left: 0px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #details-map {
+    width: 100%;
+    height: 30vh;
+    border-radius: 5px;
+  }
 }

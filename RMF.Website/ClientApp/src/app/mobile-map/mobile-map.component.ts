@@ -63,12 +63,12 @@ export class MobileMapComponent implements AfterViewInit {
       location: location,
       region: region,
       day: day !== undefined ? day.split(",") : ['all'],
-      distance: distance,
+      distance: parseInt(distance),
       units: units,
       accessibility: accessibility !== undefined ? accessibility.split(",") : accessibility,
       open: open,
-      lat: lat,
-      lng: lng
+      lat: parseFloat(lat),
+      lng: parseFloat(lng)
     }
 
     // Request search results.
@@ -88,7 +88,7 @@ export class MobileMapComponent implements AfterViewInit {
     this.lng = -3.2765753;
 
     // Set Nominatim search result coordinates.
-    if (this.meetingResults.latitude !== undefined && this.meetingResults.longitude !== undefined) {
+    if (this.meetingResults !== null && this.meetingResults.latitude !== undefined && this.meetingResults.longitude !== undefined) {
       this.lat = this.meetingResults.latitude;
       this.lng = this.meetingResults.longitude;
       this.locationFound = true;
@@ -262,12 +262,13 @@ export class MobileMapComponent implements AfterViewInit {
   // Opens meeting details dialog box.
   public openDetailsDialog(meeting: IMeeting): void {
     this.dialog.open(MobileDetailsDialogComponent, {
-      width: 'auto',
+      width: '550px',
       height: 'auto',
+      position: { top: '20px' },
       autoFocus: false,
       restoreFocus: false,
       panelClass: 'custom-dialog-container',
-      data: { meeting: meeting, lat: this.lat, lng: this.lng }
+      data: { meeting: meeting, lat: this.lat, lng: this.lng },
     });
   }
 }
