@@ -15,9 +15,15 @@
 }
 
 #social-media .social-icon {
-  font-size: 25px;
+  font-size: 24px;
   margin-left: 15px;
   color: #4f4f4e;
+  padding-top: 8px;
+}
+
+#social-media .social-icon-tiktok {
+  font-size: 22px;
+  padding-top: 9px
 }
 
 #copyright {
@@ -28,7 +34,7 @@
 }
 
 #copyright a {
-  margin-top: 15px;
+  margin-top: 13px;
   padding-bottom: 20px;
   color: #000;
   font-size: 14px;

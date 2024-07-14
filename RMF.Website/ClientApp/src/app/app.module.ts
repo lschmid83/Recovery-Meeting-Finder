@@ -38,8 +38,6 @@ import { DisclaimerDialogComponent } from './dialogs/disclaimer-dialog/discliame
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { faFile, faComment, faEnvelope, faFileExcel } from '@fortawesome/free-regular-svg-icons';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import { faFacebook, faTwitter, faInstagram, faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { AccessibilityDialogComponent } from './dialogs/accessibility-dialog/accessibility-dialog.component';
 import { LOCALE_ID } from '@angular/core';
 import { registerLocaleData } from '@angular/common';
@@ -377,6 +375,6 @@ registerLocaleData(localePt);
 
 export class AppModule {
   constructor() {
-    library.add(faFile, faComment, faEnvelope, faFileExcel, faWhatsapp, faFacebook, faTwitter, faInstagram, faLinkedin, faGithub);
+    library.add(faFile, faComment, faEnvelope, faFileExcel);
   }
 }
