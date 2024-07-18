@@ -78,6 +78,8 @@ import { SubmitCorrectionComponent } from './meetings/submit-correction/submit-c
 import { RecaptchaModule, RecaptchaFormsModule } from 'ng-recaptcha';
 import { PageFooterComponent } from './page-footer/page-footer.component';
 import { CrowdfunderComponent } from './crowdfunder/crowdfunder.component';
+import { AndroidTermsAndConditionsComponent } from './support/android-terms-and-conditions/android-terms-and-conditions.component';
+import { AndroidHealthDeclarationComponent } from './support/android-health-declaration/android-health-declaration.component';
 
 registerLocaleData(localePt);
 
@@ -121,12 +123,14 @@ registerLocaleData(localePt);
     BasicTextsComponent,
     PrayersComponent,
     TermsAndConditionsComponent,
+    AndroidTermsAndConditionsComponent,
     FrequentlyAskedQuestionsComponent,
     ContactUsComponent,
     PageSearchComponent,
     SubmitCorrectionComponent,
     PageFooterComponent,
-    CrowdfunderComponent
+    CrowdfunderComponent,
+    AndroidHealthDeclarationComponent
   ],
   imports: [
     BrowserModule.withServerTransition({ appId: 'ng-cli-universal' }),
@@ -298,6 +302,16 @@ registerLocaleData(localePt);
       {
         path: 'support/terms-and-conditions',
         component: TermsAndConditionsComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'support/12-step-recovery-guide-privacy-policy',
+        component: AndroidTermsAndConditionsComponent,
+        pathMatch: 'full',
+      },
+      {
+        path: 'support/12-step-recovery-guide-health-declaration',
+        component: AndroidHealthDeclarationComponent,
         pathMatch: 'full',
       },
       {

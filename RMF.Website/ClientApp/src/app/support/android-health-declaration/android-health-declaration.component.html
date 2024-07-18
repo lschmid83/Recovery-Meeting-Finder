@@ -1,0 +1,211 @@
+<app-page-header class="fixed"></app-page-header>
+<app-page-main-menu class="fixed"></app-page-main-menu>
+<div id="sidebar" class="show">
+  <div class="list-group border-0 text-xs-left">
+    <a href="javascript:void(0)" (click)="scrollTo('health-declaration')" class="list-group-item d-inline-block">Health Declaration</a>
+    <a href="#aa" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Alcoholics Anonymous (AA)</a>
+    <div id="aa" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('aa-introduction')" class="list-group-item">Introduction</a>
+      <a href="javascript:void(0)" (click)="scrollTo('aa-world-medical-association-declaration')" class="list-group-item">World Medical Association Declaration</a>
+    </div>
+    <a href="#ca" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Cocaine Anonymous (CA)</a>
+    <div id="ca" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('ca-introduction')" class="list-group-item">Introduction</a>
+      <a href="javascript:void(0)" (click)="scrollTo('ca-cocaine-addiction-health-declaration')" class="list-group-item">Cocaine Addiction Health Declaration</a>
+    </div>
+    <a href="#na" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Narcotics Anonymous (NA)</a>
+    <div id="na" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('na-introduction')" class="list-group-item">Introduction</a>
+      <a href="javascript:void(0)" (click)="scrollTo('na-narcotics-addiction-getting-help')" class="list-group-item">Narcotics Addiction: Getting Help</a>
+    </div>
+    <a href="#oa" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">Overeaters Anonymous (OA)</a>
+    <div id="oa" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('oa-introduction')" class="list-group-item">Introduction</a>
+      <a href="javascript:void(0)" (click)="scrollTo('oa-government-weight-gain-declaration')" class="list-group-item">Government Weight Gain Declaration</a>
+    </div>
+    <a href="#how-this-app-can-improve-health" class="list-group-item d-inline-block drop-down collapsed" data-toggle="collapse" aria-expanded="false">How This App Can Improve Health</a>
+    <div id="how-this-app-can-improve-health" class="collapse" data-parent="#sidebar">
+      <a href="javascript:void(0)" (click)="scrollTo('app-activity-and-fitness')" class="list-group-item">Activity and Fitness</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-nutrition-and-weight-management')" class="list-group-item">Nutrition and Weight Management</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-sleep-management')" class="list-group-item">Sleep Management</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-stress-management-relaxation-mental-acuity')" class="list-group-item">Stress Management and Relaxation</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-diseases-and-conditions-management')" class="list-group-item">Diseases and Conditions Management</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-clinical-decision-support-healthcare-services-and-management')" class="list-group-item">Clinical Support / Healthcare Services</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-mental-and-behavioural-health')" class="list-group-item">Mental and Behavioural Health</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-medical-reference-and-education')" class="list-group-item">Medical Reference and Education</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-medication-and-pain-management')" class="list-group-item">Medication and Pain Management</a>
+      <a href="javascript:void(0)" (click)="scrollTo('app-physical-therapy-and-rehabilitation')" class="list-group-item">Physical Therapy and Rehabilitation</a>
+    </div>
+  </div>
+</div>
+<div id="content-container">
+  <div id="content" class="container-fluid">
+    <div class="row">
+      <div id="content-title-wrap" class="col-12">
+        <h1 id="health-declaration" class="content-title">Health Declaration</h1>
+        <button id="sidebar-toggle" class="navbar-toggler navbar-light" title="Toggle sidebar" type="button">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="content-text">
+          <p>Using this app to help with alcohol intake, drug use or eating disorder problems along with attending recovery meetings in-person or online can potentially contribute to improving your health as part of a 12-Step program in these key areas:</p>
+          <ul>
+            <li>Activity and Fitness</li>
+            <li>Nutrition and Weight Management</li>
+            <li>Sleep Management</li>
+            <li>Stress Management, Relaxation, Mental Acuity</li>
+            <li>Diseases and Conditions Management</li>
+            <li>Clinical Decision Support</li>
+            <li>Healthcare Services and Management</li>
+            <li>Mental and Behavioural Health</li>
+            <li>Medical Reference and Education</li>
+            <li>Medication and Pain Management</li>
+            <li>Physical therapy and Rehabilitation</li>
+          </ul>
+          <p>We cover the fellowships of Alcoholics Anonymous, Cocaine Anonymous, Narcotics Anonymous and Overeaters Anonymous who are open to all to join for free if you feel you want to.</p>
+          <p>We offer no guarantees you will see improvement in your health but clinical studies have proven it can work if you put the effort in.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="aa-introduction">Alcoholics Anonymous (AA)</h2>
+          <p>Alcoholics Anonymous is a fellowship of men and women who share their experience, strength and hope with each other that they may solve their common problem and help others to recover from alcoholism. It doesn’t cost anything to attend AA meetings. There are no age or education requirements to participate. Membership is open to anyone who wants to do something about their drinking problem.</p>
+          <p>For more information on Alcoholics Anonymous see the <b>Readings -> Alcoholics Anonymous</b> section of this app especially <b>Information, What to Expect and New Comers</b>.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="aa-world-medical-association-declaration">World Medical Association Declaration</h2>
+          <p>The WMA have issued a declaration on how excessive alcohol use can negatively impact your health in the following ways:</p>
+          <ul>
+            <li>The burden of disease and injury associated with alcohol consumption is a critical challenge to global public health and development around the world.</li>
+            <li>There are significant health, social and economic problems associated with excessive alcohol use. Overall, there are causal relationships between alcohol consumption and more than 200 types of disease and injury including traffic fatalities.</li>
+            <li>It is a substance that causes extensive medical, psychological and social harm by means of physical toxicity, intoxication and dependence.</li>
+            <li>There are many evidence-based alcohol policies and prevention programmes that are effective in reducing the health, safety and socioeconomic problems attributable to harmful use of alcohol.</li>
+          </ul>
+          <p>See <a href="https://www.wma.net/policies-post/wma-declaration-on-alcohol" target="_blank">https://www.wma.net/policies-post/wma-declaration-on-alcohol</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="ca-introduction">Cocaine Anonymous (CA)</h2>
+          <p>Cocaine Anonymous is a fellowship of men and women who share their experience, strength and hope with each other so that they may solve their common problem and help others to recover from their addiction. The only requirement for membership is a desire to stop using cocaine and all other mind-altering substances. There are no dues or fees for membership; we are fully self-supporting through our own contributions.</p>
+          <p>For more information on Cocaine Anonymous see the <b>Readings -> Cocaine Anonymous</b> section of this app especially <b>Information, What to Expect and New Comers</b>.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="ca-cocaine-addiction-health-declaration">Cocaine Addiction Health Declaration</h2>
+          <p>If cocaine is damaging your relationships, work, money situation or health, you can get help to stop.</p>
+          <p>You do not have to be taking cocaine, or crack cocaine, every day to be addicted to it. A sign of addiction is that you've tried to cut down or stop but are unable to.</p>
+          <p>There are effective treatments available to help you stop.</p>
+          <p>Some people find mutual support groups, such as Narcotics Anonymous useful. These are based on the same 12-step principles as Alcoholics Anonymous.</p>
+          <p>Cocaine Anonymous offers a recovery solution for anyone who has a problem with drug or alcohol misuse. They use the proven 12-step recovery programme.</p>
+          <p>See <a href="https://www.nhs.uk/live-well/addiction-support/cocaine-get-help" target="_blank">https://www.nhs.uk/live-well/addiction-support/cocaine-get-help</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="na-introduction">Narcotics Anonymous (NA)</h2>
+          <p>Narcotics Anonymous is a non-profit fellowship or society of men and women for whom drugs had become a major problem. We are recovering addicts who meet regularly to help each other stay clean. This is a program of complete abstinence from all drugs. There is only one requirement for membership, the desire to stop using. We suggest that you keep an open mind and give yourself a break. Our program is a set of principles written so simply that we can follow them in our daily lives. The most important thing about them is that they work.</p>
+          <p>There are no strings attached to NA. We are not affiliated with any other organizations. We have no initiation fees or dues, no pledges to sign, no promises to make to anyone.</p>
+          <p>For more information on Narcotics Anonymous see the <b>Readings -> Narcotics Anonymous</b> section of this app especially <b>Information, What to Expect and New Comers</b>.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="na-narcotics-addiction-getting-help">Narcotics Addiction: Getting Help</h2>
+          <p>With the right help and support, it's possible for you to get drug free and stay that way.</p>
+          <p>A doctor is a good place to start. They can discuss your problems with you and get you into treatment. They may offer you treatment at the practice or refer you to your local drug service.</p>
+          <p>If you're not comfortable talking to a GP, you can approach your local drug treatment service yourself. Some people find support groups like UKNA (Narcotics Anonymous) helpful. Your keyworker can tell you where your nearest group is.</p>
+          <p>See <a href="https://www.nhs.uk/live-well/addiction-support/drug-addiction-getting-help" target="_blank">https://www.nhs.uk/live-well/addiction-support/drug-addiction-getting-help</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="oa-introduction">Overeaters Anonymous (OA)</h2>
+          <p>Overeaters Anonymous is a Fellowship of individuals who, through shared experience, strength, and hope, are recovering from compulsive overeating. We welcome everyone who wants to stop eating compulsively. There are no dues or fees for members; we are self-supporting through our own contributions, neither soliciting nor accepting outside donations.</p>
+          <p>OA is not affiliated with any public or private organization, political movement, ideology, or religious doctrine; we take no position on outside issues. Our primary purpose is to abstain from compulsive eating and compulsive food behaviours and to carry the message of recovery through the Twelve Steps of OA to those who still suffer.</p>
+          <p></p>
+          <p>For more information on Overeaters Anonymous see the <b>Readings -> Overeaters Anonymous</b> section of this app especially <b>Information, What to Expect and New Comers</b>.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="oa-government-weight-gain-declaration">Government Weight Gain Declaration</h2>
+          <p>Overweight and obesity can lead to significant health issues for adults across the life course and into old age. Living with overweight or obesity can have significant implications for an individual’s physical and mental health.</p>
+          <p>There isn’t a single intervention that can tackle obesity on its own, at population or at an individual level. Causes of obesity are multi-factorial, including biological; physiological; psycho-social; behavioural; and environmental factors.</p>
+          <p>Our environment tends to encourage unhealthy lifestyle choices relating to food and physical activity. Unhealthy food and drink choices (including alcohol) are easy to access and often high energy. We also tend to be less active and lead more sedentary lifestyles than previous generations.</p>
+          <p>See <a href="https://www.gov.uk/government/publications/adult-obesity-applying-all-our-health/adult-obesity-applying-all-our-health" target="_blank">https://www.gov.uk/government/publications/adult-obesity-applying-all-our-health/adult-obesity-applying-all-our-health</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="how-this-app-can-improve-health">How This App can Improve your health</h2>
+          <p>We will now explain how using this app and the different features, literature, daily readings and access to meeting information can help improve your health as part of Google’s Health Declaration policy.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-activity-and-fitness">Activity and Fitness</h2>
+          <p>Using the sobriety tracker and keeping track of the date when you stopped drinking, taking drugs or eating excessively will hopefully help inspire you to put more effort in to exercise and do activities such as attending meetings, socialising, going to the gym and participating in a well proven recovery program. The readings and literature contained in this app will help guide you through the process and offer suggestions on how you can succeed in your recovery.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-nutrition-and-weight-management">Nutrition and Weight Management</h2>
+          <p>By attending meetings especially Overeaters Anonymous you can gain advice from other people who have found a program which works to eat a more nutritional diet and help control your weight.</p>
+          <p>Excessive use of alcohol and drugs and binge eating disorder frequently co-occur. Binge drinking alcohol, binge eating and any other compulsive bingeing behaviour can be in some circumstances an attempt to deal with negative emotions.</p>
+          <p>If you feel you also have a drink or drug problem feel free to browse the AA, CA and NA literature and participate in these meetings along with OA.</p>
+          <p>See: <a href="https://www.therecoveryvillage.com/alcohol-abuse/binge-eating-and-alcohol" target="_blank">https://www.therecoveryvillage.com/alcohol-abuse/binge-eating-and-alcohol</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-sleep-management">Sleep Management</h2>
+          <p>As soon as you give up drinking, using drugs or potentially eating too much you may notice an improvement in your sleep management and patterns. Using this app to read the daily reflections and readings before bed or reciting the prayers may help you relax and fall to sleep easier.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-stress-management-relaxation-mental-acuity">Stress Management, Relaxation, Mental acuity</h2>
+          <p>By using this app we hope you can manage your stress levels and relax being inspired by the daily motivation images, reading the suggested literature and attending meetings where you can meet people with similar problems.</p>
+          <p>Most of us relate to the fact that losing yourself in a book is a great form of escapism and relaxation, but did you know that reading has been proven to reduce stress levels, lower heart rate, and ease tension in the muscles more effectively than other methods?</p>
+          <p>According to research carried out by Mindlab International at the University of Sussex, reading for only 6 minutes reduces stress levels by 68%, making it more effective than listening to music 61%, having a cuppa 54%, taking a walk by 42%, or playing video games 21%.</p>
+          <p>Reading is a powerful tool for cognitive stimulation, exercising the brain and keeping it active. For the elderly, maintaining cognitive function is crucial in preserving memory and mental acuity.</p>
+          <p>See: <a href="https://blogs.ncl.ac.uk/medlit/2023/01/19/reading-reduces-stress-fact" target="_blank">https://blogs.ncl.ac.uk/medlit/2023/01/19/reading-reduces-stress-fact</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-diseases-and-conditions-management">Diseases and Conditions Management</h2>
+          <p>Alcohol and using illicit drugs can lead to short and long term problems.</p>
+          <ul>
+            <li>Accidents and injuries requiring hospital treatment, such as a head injury</li>
+            <li>Violent behaviour and being a victim of violence</li>
+            <li>Unprotected sex that could potentially lead to unplanned pregnancy or sexually transmitted infections (STIs)</li>
+            <li>Loss of personal possessions, such as wallets, keys or mobile phones</li>
+            <li>Alcohol poisoning – this may lead to vomiting, fits (seizures) and falling unconscious</li>
+          </ul>
+          <p>If you use this app to attend meetings you can meet other people who have suffered the same consequences and discuss you views and opinions and hopefully help each other to stay sober and avoid further problems.</p>
+          <p>The reading materials, daily quotes and motivational images will help you feel that other people have been in the same position and made progress and gained sobriety by following a program of recovery.</p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-clinical-decision-support-healthcare-services-and-management">Clinical Decision Support / Healthcare Services and Management</h2>
+          <p>Twelve-Step programs remain a commonly recommended and used treatment modality for various types of addiction. According to the Substance Abuse and Mental Health Services Administration (SAMSHA) in its National Survey of Substance Abuse Treatment Services from 2013, 12-Step models are used, at least occasionally, by approximately 74 percent of treatment centres.</p>
+          <p>By using this app to look for and attend 12-Step meetings and follow a program you may find your doctor or clinical advisor will support you further in your recovery as you are making an effort to move in the right direction.</p>
+          <p>See: <a href="https://americanaddictioncenters.org/rehab-guide/12-step" target="_blank">https://americanaddictioncenters.org/rehab-guide/12-step</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-mental-and-behavioural-health">Mental and Behavioural Health</h2>
+          <p>Behavioural health is a term for a wide-reaching field that looks at mental health, lifestyle, substance use, and patterns of behaviour, interpersonal relationships, and more.</p>
+          <p>Using this app can help with mental and behavioural health. Looking at a daily inspirational image or reading an inspirational quote may lift your mood and help alleviate anxiety and depression.</p>
+          <p>The recommended basic texts and literature in this app can help someone more effectively quit drinking or using drugs by teaching them to identify the thoughts, feelings, and stressors that lead to them using alcohol, substances or food as a coping method. This can lead you find healthier ways to manage those thoughts, feelings, and stressors.</p>
+          <p>By attending meetings you will find you are introduced with other people with similar problems this can help with your communication skills and boost self-confidence. You will probably be more active and outgoing and this may help lift depression and improve your mental health.</p>
+          <p>See: <a href="https://www.healthline.com/health/mental-health/what-is-behavioral-health#definition" target="_blank">https://www.healthline.com/health/mental-health/what-is-behavioral-health#definition</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-medical-reference-and-education">Medical Reference and Education</h2>
+          <p>This app and the reading material and literature can be used by healthcare professionals to educate themselves and learn more about the nature of addiction and how the 12-Steps have been proven to help millions of people suffering from addiction issues.</p>
+          <p>Professional workers tend to have a clear understanding of their areas of responsibility but few will fully understand the nature of 12-Step fellowships. The role of this app and literature contained in it might be that of providing information as to what the AA, CA, NA and OA fellowships can and cannot do, always remembering that we are committed to remaining non-professional. Our approach is based on our ability to work effectively with the still suffering addict.</p>
+          <p>See: <a href="https://aa-london.com/service/health" target="_blank">https://aa-london.com/service/health</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-medication-and-pain-management">Medication and Pain Management</h2>
+          <p>Some members of 12-Step fellowships must take prescribed medication for serious medical problems and this is not a problem at all and encouraged. No member of a group should “play doctor” all medical advice should come from a qualified physician in all cases.</p>
+          <p>By explaining to your doctor that you are active in recovery, attending 12-Step meetings and trying a new way of life they will be able to help you find the right medication and dosage for your current situation.</p>
+          <p>Drinking alcohol and using illicit drugs or even overeating can often affect how well your medication works and by tapering down or giving up you may find some of your symptoms are alleviated.</p>
+          <p>See: <a href="https://www.alcoholics-anonymous.org.uk/wp-content/uploads/2023/10/3140-The-AA-Member-Medications-and-Other-Drugs.pdf" target="_blank">https://www.alcoholics-anonymous.org.uk/wp-content/uploads/2023/10/3140-The-AA-Member-Medications-and-Other-Drugs.pdf</a></p>
+        </div>
+        <div class="content-text">
+          <h2 id="app-physical-therapy-and-rehabilitation">Physical Therapy and Rehabilitation</h2>
+          <p>By attending meetings in-person using our meeting finder map you will find you are more physically active travelling to the venues. The basic text readings can provide information on how you can exercise and live a more active lifestyle.</p>
+          <p>As you attend meetings you will meet other who have attended rehabilitation facilities and have gained sobriety you may choose to do this yourself.</p>
+          <p>There are different type of rehab:</p>
+          <p><b>Outpatient Programmes</b></p>
+          <p>This involves going into the clinic for your treatment each day and then heading back home. There is a selection of different treatments you can access ranging from support groups to drug detox and alcohol detox. However, these are not rehabilitation centres.</p>
+          <p><b>Inpatient programmes</b></p>
+          <p>These are only available through private rehab, involve staying in the rehabilitation premises during your treatment. This provides stability and constant care throughout your recovery and is the form of rehab with the highest success rate. Being away from routine for a while also provides you with time to reflect on your options and focus all your attention on getting clean.</p>
+          <p>See: <a href="https://www.ukat.co.uk/locations/drug-alcohol-rehab-london" target="_blank">https://www.ukat.co.uk/locations/drug-alcohol-rehab-london</a></p>
+        </div>
+      </div>
+    </div>
+    <app-page-footer></app-page-footer>
+  </div>
+</div>
+<app-cookie-consent></app-cookie-consent>

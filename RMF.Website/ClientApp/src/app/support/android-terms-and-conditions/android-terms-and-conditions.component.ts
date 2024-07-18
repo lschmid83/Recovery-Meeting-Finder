@@ -6,12 +6,12 @@ import { Title, Meta } from '@angular/platform-browser';
 import { SeoService } from '../../seo.service';
 
 @Component({
-  selector: 'app-terms-and-conditions',
-  templateUrl: './terms-and-conditions.component.html',
-  styleUrls: ['./terms-and-conditions.component.scss']
+  selector: 'app-android-terms-and-conditions',
+  templateUrl: './android-terms-and-conditions.component.html',
+  styleUrls: ['./android-terms-and-conditions.component.scss']
 })
 
-export class TermsAndConditionsComponent extends PageWithSidebar {
+export class AndroidTermsAndConditionsComponent extends PageWithSidebar {
 
   constructor(route: ActivatedRoute, private router: Router, private seoService: SeoService, title: Title, meta: Meta) {
     super(route, title, meta);
@@ -19,8 +19,8 @@ export class TermsAndConditionsComponent extends PageWithSidebar {
     document.body.style.overflowX = 'hidden';
     document.body.style.overflowY = 'hidden';
 
-    this.setPageTitle('Terms and Conditions - Recovery Meeting Finder');
-    this.setPageDescription('Terms and Conditions (T&C) regarding the use of our website recoverymeetingfinder.com');
+    this.setPageTitle('Privacy Policy - 12-Step Recovery Guide');
+    this.setPageDescription('Privacy Policy regarding the use of our app 12-Step Revovery Guide');
   }
 
   ngOnInit() {
