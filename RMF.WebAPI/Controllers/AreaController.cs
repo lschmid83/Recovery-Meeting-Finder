@@ -4,6 +4,8 @@ using RMF.DAL.Repos.Interfaces;
 using System.Collections.Generic;
 using RMF.WebAPI.Client.Models;
 using System.Threading.Tasks;
+using RMF.WebAPI.ActionFilters;
+using RMF.WebAuth.Enums;
 
 namespace RMF.WebAPI.Controllers
 {
@@ -20,6 +22,7 @@ namespace RMF.WebAPI.Controllers
 
         [HttpGet]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<IEnumerable<Area>> Get()
         {
             var areas = await AreaRepo.GetAll();

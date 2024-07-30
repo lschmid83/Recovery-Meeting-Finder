@@ -1,7 +1,9 @@
 ﻿using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RMF.DAL.Repos.Interfaces;
+using RMF.WebAPI.ActionFilters;
 using RMF.WebAPI.Client.Models;
+using RMF.WebAuth.Enums;
 using System.Threading.Tasks;
 
 namespace RMF.WebAPI.Controllers
@@ -20,6 +22,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [ResponseCache(Duration = 3600, VaryByQueryKeys = new[] { "regionName" })]
         [Route("name")]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<Region> GetRegionByName(string regionName)
         {
             var region = await RegionRepo.Get(regionName);
@@ -42,6 +45,7 @@ namespace RMF.WebAPI.Controllers
 
         [HttpGet]
         [ResponseCache(Duration = 3600, VaryByQueryKeys = new[] { "regionId" })]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<Region> Get(int regionId)
         {
             var region = await RegionRepo.Get(regionId);

@@ -1,7 +1,9 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using RMF.DAL.Entities;
 using RMF.DAL.Repos.Interfaces;
+using RMF.WebAPI.ActionFilters;
 using RMF.WebAPI.Client.Models;
+using RMF.WebAuth.Enums;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 
@@ -21,6 +23,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("~/data-dump")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<DataDumpResults> Get()
         {
             var dataDumps = await DataDumpRepo.GetAll();

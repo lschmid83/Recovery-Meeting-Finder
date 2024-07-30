@@ -5,6 +5,8 @@ using RMF.DAL.Repos.Interfaces;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using RMF.WebAPI.ActionFilters;
+using RMF.WebAuth.Enums;
 
 namespace RMF.WebAPI.Controllers
 {
@@ -22,6 +24,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("latest/meeting-type")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<StatisticTypeResults> GetLatestStatisticType()
         { 
             // Get latest statistics.
@@ -34,6 +37,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("history/meeting-type")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<IEnumerable<StatisticTypeResults>> GetHistoryStatisticType()
         {
             // Get latest statistics.
@@ -80,6 +84,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("latest/country")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<StatisticCountryResults> GetLatestStatisticCountry()
         {
             // Get latest statistics.
@@ -93,6 +98,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("history/country")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<IEnumerable<StatisticCountryResults>> GetHistoryStatisticCountry()
         {
             // Get latest statistics.

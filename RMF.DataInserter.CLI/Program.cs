@@ -11,6 +11,7 @@ using RMF.DAL.Entities;
 using RMF.DAL.Entities.Interfaces;
 using RMF.DAL.Repos;
 using RMF.MeetingWebsiteScraper.Files;
+using RMF.WebAuth.Enums;
 using System;
 using System.Collections.Generic;
 using System.Globalization;
@@ -25,12 +26,12 @@ namespace RMF.DataInserter
 {
     class Program
     {
-        private const string DataDumpPath = @"c:\data\data dump\";
-        private const string WebDataDumpPath = @"C:\Users\Lawrence\source\repos\Recovery Meeting Finder\RMF.Website\wwwroot\data-dump\";
+        private const string DataDumpPath = @"$installPath\DataDump\";
+        private const string WebDataDumpPath = @"$installPath\RMF.Website\wwwroot\data-dump\";
         private static string UseDateDumpDate = null;
         private static string LatestDataDumpDate = null;
         private static string LastMonthDataDumpDate = null;
-        private const string DbBackupFilePath = @"C:\data\rmf.bak";
+        private const string DbBackupFilePath = @"$installPath\DataDump\rmf.bak";
         private static MeetingContext dbContext = new MeetingContext();
         private static readonly string[] UseOrganisations = new string[] { "AA", "CA", "NA", "OA" };
 
@@ -60,6 +61,7 @@ namespace RMF.DataInserter
             CreateMeetingFormatTable();
             CreateStatisticTable();
             CreateDataDumpTable();
+            CreateUserTable();
 
             CreateWebDataDump();
 
@@ -645,6 +647,21 @@ namespace RMF.DataInserter
                 dbContext.Statistic.AddRange(statistics);
                 dbContext.SaveChanges();
             }
+        }
+
+        private static void CreateUserTable()
+        {
+            Console.WriteLine("Insert User");
+
+            var User = new User()
+            {
+                Username = "webapi",
+                Password = "Ml#2PB?ti1C",
+                Permissions = UserType.ApiUser
+            };
+
+            dbContext.User.Add(User);
+            dbContext.SaveChanges();
         }
 
         private static void CreateDataDumpTable()

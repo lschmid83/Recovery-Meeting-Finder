@@ -13,7 +13,7 @@ using RMF.DAL;
 namespace RMF.DAL.Migrations
 {
     [DbContext(typeof(MeetingContext))]
-    [Migration("20240421165915_Initial")]
+    [Migration("20240421153614_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -992,6 +992,32 @@ namespace RMF.DAL.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Type");
+                });
+
+            modelBuilder.Entity("RMF.DAL.Entities.User", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
+
+                    b.Property<string>("Password")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.Property<int>("Permissions")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Username")
+                        .IsRequired()
+                        .HasMaxLength(250)
+                        .HasColumnType("nvarchar(250)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("User");
                 });
 
             modelBuilder.Entity("RMF.DAL.Entities.Format", b =>

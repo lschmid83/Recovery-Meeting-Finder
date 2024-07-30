@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RMF.DAL.Repos.Interfaces;
+using RMF.WebAPI.ActionFilters;
 using RMF.WebAPI.Client.Models;
 using RMF.WebAPI.SMTP;
+using RMF.WebAuth.Enums;
 
 namespace RMF.WebAPI.Controllers
 {
@@ -28,6 +30,7 @@ namespace RMF.WebAPI.Controllers
         [HttpPost]
         [Route("~/submit-correction/send")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<IActionResult> Post([FromBody] SubmitCorrectionForm submitCorrectionForm)
         {
 

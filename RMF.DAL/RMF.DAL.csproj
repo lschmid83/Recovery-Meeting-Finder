@@ -23,4 +23,8 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\RMF.WebAuth\RMF.WebAuth.csproj" />
+  </ItemGroup>
+
 </Project>

@@ -6,6 +6,8 @@ using RMF.DAL.Repos.Interfaces;
 using RMF.WebAPI.Client.Models;
 using System.Threading.Tasks;
 using System;
+using RMF.WebAPI.ActionFilters;
+using RMF.WebAuth.Enums;
 
 namespace RMF.WebAPI.Controllers
 {
@@ -24,6 +26,7 @@ namespace RMF.WebAPI.Controllers
 
         [HttpGet]
         [ResponseCache(Duration = 3600, VaryByQueryKeys = new[] { "*" })]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<Meeting> Get(int meetingId)
         {
             // Get meetings from database.
@@ -45,6 +48,7 @@ namespace RMF.WebAPI.Controllers
 
         [HttpPost]
         [ResponseCache(Duration = 3600, VaryByQueryKeys = new[] { "*" })]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<MeetingSearchResults> Get([FromBody]MeetingQuery meetingQuery)
         {
             // Location must be specified.
@@ -80,6 +84,7 @@ namespace RMF.WebAPI.Controllers
         [HttpPost]
         [Route("~/meetings-at-location")]
         [ResponseCache(Duration = 3600, VaryByQueryKeys = new[] { "*" })]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<MeetingSearchResults> GetLocation([FromBody] MeetingQuery meetingQuery)
         {
             // Location must be specified.

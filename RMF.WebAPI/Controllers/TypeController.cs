@@ -4,7 +4,9 @@ using System.Threading.Tasks;
 using AutoMapper;
 using Microsoft.AspNetCore.Mvc;
 using RMF.DAL.Repos.Interfaces;
+using RMF.WebAPI.ActionFilters;
 using RMF.WebAPI.Client.Models;
+using RMF.WebAuth.Enums;
 
 namespace RMF.WebAPI.Controllers
 {
@@ -22,6 +24,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("~/meeting-type")]
         [ResponseCache(Duration = 3600)]
+        [Authorization(UserType = UserType.ApiUser)]
         public async Task<IEnumerable<Type>> Get()
         {
             var types = await TypeRepo.GetAll();

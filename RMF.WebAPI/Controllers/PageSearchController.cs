@@ -9,7 +9,9 @@ using Lucene.Net.Search.Highlight;
 using Lucene.Net.Store;
 using Lucene.Net.Util;
 using Microsoft.AspNetCore.Mvc;
+using RMF.WebAPI.ActionFilters;
 using RMF.WebAPI.Client.Models;
+using RMF.WebAuth.Enums;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -33,6 +35,7 @@ namespace RMF.WebAPI.Controllers
         [HttpGet]
         [Route("~/page-search")]
         [ResponseCache(Duration = 3600, VaryByQueryKeys = new[] { "*" })]
+        [Authorization(UserType = UserType.ApiUser)]
         public PageSearchResults Get(string query, int maxContentLength = 500)
         {
             if (String.IsNullOrEmpty(query))

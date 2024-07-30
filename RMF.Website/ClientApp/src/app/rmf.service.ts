@@ -218,6 +218,8 @@ export class RmfService {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json',
+        'User': environment.apiUser,
+        'Hash': sha512.sha512(environment.apiPassword + decodeURIComponent(method.trim()) + timestamp),
         'Timestamp': timestamp
       }
     }

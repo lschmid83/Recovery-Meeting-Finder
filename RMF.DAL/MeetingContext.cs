@@ -24,6 +24,8 @@ namespace RMF.DAL
         public DbSet<Statistic> Statistic { get; set; }
         public DbSet<PageIndex> PageIndex { get; set; }
         public DbSet<DataDump> DataDump { get; set; }
+        public DbSet<User> User { get; set; }
+
         public MeetingContext()
         {
 

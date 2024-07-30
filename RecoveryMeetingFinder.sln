@@ -13,6 +13,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMF.WebAPI", "RMF.WebAPI\RM
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMF.DataInserter.CLI", "RMF.DataInserter.CLI\RMF.DataInserter.CLI.csproj", "{20EE0B9C-ED2A-4E1C-AFFA-796585E0D680}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "RMF.WebAuth", "RMF.WebAuth\RMF.WebAuth.csproj", "{415DEFA0-3B6E-4A07-B285-53E5D61504AB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{20EE0B9C-ED2A-4E1C-AFFA-796585E0D680}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{20EE0B9C-ED2A-4E1C-AFFA-796585E0D680}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{20EE0B9C-ED2A-4E1C-AFFA-796585E0D680}.Release|Any CPU.Build.0 = Release|Any CPU
+		{415DEFA0-3B6E-4A07-B285-53E5D61504AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{415DEFA0-3B6E-4A07-B285-53E5D61504AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{415DEFA0-3B6E-4A07-B285-53E5D61504AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{415DEFA0-3B6E-4A07-B285-53E5D61504AB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

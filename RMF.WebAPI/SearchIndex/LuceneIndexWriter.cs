@@ -28,13 +28,13 @@ namespace RMF.WebAPI.SearchIndex
 
             // Open the Directory using a Lucene Directory class
             var indexName = "rmf_lucene_index";
-            var indexPath = Path.Combine(Startup.LuceneIndexPath, indexName);
+            var indexPath = Path.Combine(@"c:\data\", indexName);
             using Lucene.Net.Store.Directory indexDir = FSDirectory.Open(indexPath);
 
             // Create an analyzer to process the text.
             var standardAnalyzer = new EnglishAnalyzer(luceneVersion);
 
-            //Create an index writer
+            // Create an index writer
             var indexConfig = new IndexWriterConfig(luceneVersion, standardAnalyzer);
             indexConfig.OpenMode = OpenMode.CREATE;
             var writer = new IndexWriter(indexDir, indexConfig);

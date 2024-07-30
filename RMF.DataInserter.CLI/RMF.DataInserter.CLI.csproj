@@ -23,6 +23,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\RMF.DAL\RMF.DAL.csproj" />
+    <ProjectReference Include="..\RMF.WebAuth\RMF.WebAuth.csproj" />
   </ItemGroup>
 
   <ItemGroup>
