@@ -21,11 +21,15 @@
   <ItemGroup>
     <!-- Don't publish the SPA source files, but do show them in the project files list -->
     <Compile Remove="ClientApp\dist\**" />
+    <Compile Remove="ClientApp\src\daily-image\**" />
     <Content Remove="$(SpaRoot)**" />
     <Content Remove="ClientApp\dist\**" />
+    <Content Remove="ClientApp\src\daily-image\**" />
     <EmbeddedResource Remove="ClientApp\dist\**" />
+    <EmbeddedResource Remove="ClientApp\src\daily-image\**" />
     <None Remove="$(SpaRoot)**" />
     <None Remove="ClientApp\dist\**" />
+    <None Remove="ClientApp\src\daily-image\**" />
     <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
   </ItemGroup>
 
@@ -131,7 +135,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="ClientApp\src\daily-image\" />
     <Folder Include="wwwroot\page-index\" />
   </ItemGroup>
 

@@ -68,7 +68,6 @@ import { OpeningReadingsComponent } from './readings/opening-readings/opening-re
 import { ClosingReadingsComponent } from './readings/closing-readings/closing-readings.component';
 import { BasicTextsComponent } from './readings/basic-texts/basic-texts.component';
 import { PrayersComponent } from './readings/prayers/prayers.component';
-import { TermsAndConditionsComponent } from './support/terms-and-conditions/terms-and-conditions.component';
 import { FrequentlyAskedQuestionsComponent } from './support/frequently-asked-questions/frequently-asked-questions.component';
 import { ContactUsComponent } from './support/contact-us/contact-us.component';
 import { PageSearchResolve } from './page-search.resolve';
@@ -80,6 +79,7 @@ import { PageFooterComponent } from './page-footer/page-footer.component';
 import { CrowdfunderComponent } from './crowdfunder/crowdfunder.component';
 import { AndroidTermsAndConditionsComponent } from './support/android-terms-and-conditions/android-terms-and-conditions.component';
 import { AndroidHealthDeclarationComponent } from './support/android-health-declaration/android-health-declaration.component';
+import { TermsAndConditionsComponent } from './support/terms-and-conditions/terms-and-conditions.component';
 
 registerLocaleData(localePt);
 

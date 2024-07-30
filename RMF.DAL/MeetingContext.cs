@@ -58,13 +58,9 @@ namespace RMF.DAL
         {
             if (!optionsBuilder.IsConfigured)
             {
-                optionsBuilder.UseSqlServer(@"Data Source=DESKTOP-TOROFFK;Initial Catalog=RMF;Persist Security Info=True;User ID=sa;Password=8FNP#Ft?7n",
-                options => options.UseNetTopologySuite().EnableRetryOnFailure());
-                /*
                 optionsBuilder.UseSqlServer(
                 @"Data Source=YOUR_SERVER_NAME;Initial Catalog=RMF;Persist Security Info=True;User ID=YOUR_USERNAME;Password=YOUR_PASSWORD",
                 options => options.UseNetTopologySuite().EnableRetryOnFailure());
-                */
             }
         }
     }
