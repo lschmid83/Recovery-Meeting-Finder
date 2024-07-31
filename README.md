@@ -118,7 +118,7 @@ When you checkout this project you will notice that there is a DataDump folder i
 
 To run the website project in development mode you must first right click on the Solution Name in the Solution Explorer. In the Startup Project page you should select Multiple Startup Projects and change the Action for RMF.Website and RMF.WebAPI to Start. You can now click the run button and both projects will start.
 
-If the webpage does not load first time you may need to run the following commands from the command prompt to clear the IIS Express cache:
+If the webpage does not load first time you may need to run the following from the command prompt to clear the IIS Express cache:
 
 ```
 cd "C:\Program Files (x86)\IIS Express\"
