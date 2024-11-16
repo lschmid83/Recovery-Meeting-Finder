@@ -61,7 +61,7 @@ namespace RMF.DAL
             if (!optionsBuilder.IsConfigured)
             {
                 optionsBuilder.UseSqlServer(
-                @"Data Source=YOUR_SERVER_NAME;Initial Catalog=RMF;Persist Security Info=True;User ID=YOUR_USERNAME;Password=YOUR_PASSWORD",
+                @"Data Source=LAPTOP;Initial Catalog=RMF;Persist Security Info=True;User ID=sa;Password=jdY#1fTP?GXhh",
                 options => options.UseNetTopologySuite().EnableRetryOnFailure());
             }
         }
