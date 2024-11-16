@@ -6,7 +6,7 @@ export const environment = {
   production: false,
   apiUrl: 'http://localhost:54256',
   apiUser: 'webapi',
-  apiPassword: 'Ml#2PB?ti1C'
+  apiPassword: '6Zoy?4UED09nt'
 };
 
 /*
