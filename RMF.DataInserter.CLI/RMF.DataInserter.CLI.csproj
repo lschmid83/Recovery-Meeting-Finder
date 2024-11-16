@@ -31,6 +31,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <None Update="organisations.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Update="PageIndex\index-title.txt">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
