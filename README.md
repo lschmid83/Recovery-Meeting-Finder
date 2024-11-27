@@ -66,6 +66,16 @@ In this document $installPath will refer to the location of the repository sourc
 
    This will restore all of the Angular Node.js packages using the Node Package Manager.	
 
+# Restoring NuGet packages
+
+1) Select Tools -> NuGet Package Manager -> Package Manager Console
+
+2) Enter the commands:
+   ```
+   Install-Package NuGet.CommandLine
+   nuget restore RecoveryMeetingFinder.sln
+   ```
+
 # Database Context
 
 You must define the connection string for the database. In the Solution explorer expand the RMF.DAL project and open the MeetingContext.cs file. In the OnCofiguring method you will find the connection string which should look like this:
