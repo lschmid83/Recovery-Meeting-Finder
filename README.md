@@ -135,6 +135,6 @@ cd "C:\Program Files (x86)\IIS Express\"
 appcmd.exe list site /xml | appcmd delete site /in
 ```
 
-If there is an error saying the Lucene index is open delete the `$installPath\DataDump\rmf_lucene_index\write.lock` file
+If there is an error saying the Lucene index is open delete `$installPath\DataDump\rmf_lucene_index\write.lock`
 
 
