@@ -62,5 +62,4 @@
 #*.rtf   diff=astextplain
 #*.RTF   diff=astextplain
 
-$ cat .gitattributes
-*.rb linguist-language=C#
+*.html linguist-language=C#
