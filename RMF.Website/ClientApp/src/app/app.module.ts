@@ -216,41 +216,73 @@ registerLocaleData(localePt);
       {
         path: 'information/12-step-meeting-types',
         component: MeetingTypesComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'information/newcomers',
         component: NewcomersComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'information/addiction-self-assessments',
         component: SelfAssessmentsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'information/12-steps',
         component: TwelveStepsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'information/12-traditions',
         component: TwelveTraditionsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'information/12-concepts',
         component: TwelveConceptsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'information/history-of-12-step-fellowships',
         component: HistoryComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'meetings/what-to-expect',
         component: WhatToExpectComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
@@ -269,6 +301,8 @@ registerLocaleData(localePt);
         path: 'meetings/data-dumps',
         component: DataDumpsComponent,
         resolve: {
+          types: TypeResolve,
+          days: DayResolve,
           dataDumps: DataDumpResolve
         },
         pathMatch: 'full',
@@ -277,51 +311,91 @@ registerLocaleData(localePt);
       {
         path: 'meetings/submit-a-correction',
         component: SubmitCorrectionComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'readings/opening-readings',
         component: OpeningReadingsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'readings/closing-readings',
         component: ClosingReadingsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'readings/basic-texts',
         component: BasicTextsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'readings/prayers',
         component: PrayersComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full'
       },
       {
         path: 'support/terms-and-conditions',
         component: TermsAndConditionsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'support/12-step-recovery-guide-privacy-policy',
         component: AndroidTermsAndConditionsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'support/12-step-recovery-guide-health-declaration',
         component: AndroidHealthDeclarationComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'support/frequently-asked-questions',
         component: FrequentlyAskedQuestionsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
         path: 'support/contact-us',
         component: ContactUsComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {
@@ -349,6 +423,10 @@ registerLocaleData(localePt);
       {
         path: 'crowdfunder',
         component: CrowdfunderComponent,
+        resolve: {
+          types: TypeResolve,
+          days: DayResolve,
+        },
         pathMatch: 'full',
       },
       {

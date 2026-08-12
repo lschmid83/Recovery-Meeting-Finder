@@ -4,6 +4,7 @@ import { FormGroup, FormControl } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { IType } from '../type.interface';
 import { IDay } from '../day.interface';
+import { RmfService } from '../rmf.service';
 
 @Component({
   selector: 'app-quick-search',
@@ -33,8 +34,6 @@ export class QuickSearchComponent {
       meetingLocation: new FormControl(''),
       meetingDay: new FormControl(['all']),
     });
-
-    this.isIreland = localStorage.getItem('isIreland');
   }
 
   // Submits form and navigates to the find-a-meeting page.

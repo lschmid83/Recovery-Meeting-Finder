@@ -80,8 +80,6 @@ export class AdvancedSearchComponent {
         }
       }
     });
-
-    this.isIreland = localStorage.getItem('isIreland');
   }
 
   // Check if location is allowed.
