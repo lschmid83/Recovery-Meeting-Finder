@@ -43,7 +43,7 @@
       </button>
       <div id="meeting-search">
         <div class="title"><h2>Find a Meeting</h2></div>
-        <div class="description"><h1>{{isIreland === 'true' ? 'To find meetings near you enter your meeting type and town or city.' : 'To find meetings near you enter your meeting type and postcode or location.'}}</h1></div>
+        <div class="description"><h1>To find meetings near you enter your meeting type and postcode or location.</h1></div>
         <form id="find-meeting-form" [formGroup]="findMeetingForm" (ngSubmit)="onSubmit(findMeetingForm.value)">
           <mat-form-field id="meeting-type-form-field">
             <mat-select id="meeting-type" class="form-select-input" #meetingTypeSelect formControlName="meetingType" disableOptionCentering panelClass="home-select-panel" multiple>
@@ -55,7 +55,7 @@
           </mat-form-field>
           <br />
           <mat-form-field id="meeting-location-form-field">
-            <input matInput id="meeting-location" class="form-text-input" type="text" placeholder="{{isIreland === 'true' ? 'Enter town or city' : 'Enter town or postcode'}}" formControlName="meetingLocation">
+            <input matInput id="meeting-location" class="form-text-input" type="text" placeholder="Enter town or postcode" formControlName="meetingLocation">
             <div class="gps-location-wrapper" (click)="$event.stopPropagation(); getGpsLocation()" *ngIf="gpsEnabled && !isSafari">
               <i id="gps-location-button" class="fa fa-crosshairs" aria-hidden="true"></i>
             </div>

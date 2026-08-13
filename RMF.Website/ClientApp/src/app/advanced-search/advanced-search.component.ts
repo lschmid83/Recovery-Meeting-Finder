@@ -30,7 +30,6 @@ export class AdvancedSearchComponent {
 
   private lat = 0; lng: Number = 0;
   private selectedRegion: string;
-  public isIreland: string = 'false';
 
   // Use ViewChild to set selected options in <select> elements.
   @ViewChild('meetingTypeSelect', { static: false }) meetingTypeSelect: MatSelect;

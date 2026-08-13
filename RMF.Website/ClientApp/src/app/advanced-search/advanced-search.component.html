@@ -32,7 +32,8 @@
           <div id="as-location-wrap">
             <label id="as-where-label" for="where" class="input-label">Where?</label>
             <mat-form-field id="as-meeting-location-form-field">
-              <input matInput id="meeting-location" class="form-text-input" type="text" placeholder="{{isIreland === 'true' ? 'Enter town or city' : 'Enter town or postcode'}}" formControlName="meetingLocation" (keyup)="meetingLocationChange($event)" (paste)="meetingLocationChange($event)">
+              <input matInput id="meeting-location" class="form-text-input" type="text" placeholder="{{
+                     === 'true' ? 'Enter town or city' : 'Enter town or postcode'}}" formControlName="meetingLocation" (keyup)="meetingLocationChange($event)" (paste)="meetingLocationChange($event)">
               <div id="as-gps-location-wrapper" (click)="$event.stopPropagation(); getGpsLocation()" *ngIf="gpsEnabled">
                 <i id="as-gps-location-button" class="fa fa-crosshairs"></i>
               </div>

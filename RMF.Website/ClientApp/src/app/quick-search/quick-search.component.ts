@@ -18,7 +18,6 @@ export class QuickSearchComponent {
   public days: IDay[];
   public quickSearchForm: FormGroup;
   private lat = 0; lng: Number = 0;
-  public isIreland: string = 'false';
   @ViewChild('meetingTypeSelect', { static: false }) meetingTypeSelect: MatSelect;
   @ViewChild('meetingDaySelect', { static: false }) meetingDaySelect: MatSelect;
 

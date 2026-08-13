@@ -35,7 +35,6 @@ export class HomeComponent extends PageWithMainMenu {
   public findMeetingForm: FormGroup;
   public gpsEnabled: Boolean = true;
   public isSafari: Boolean = false;
-  public isIreland: string = 'false';
   private lat = 0; lng: Number = 0;
 
   @ViewChild('meetingTypeSelect', { static: false }) meetingTypeSelect: MatSelect;
