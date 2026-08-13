@@ -53,6 +53,7 @@ namespace RMF.DAL
                 .HasIndex(p => new { p.MeetingId, p.FormatId });
 
             modelBuilder.Entity<Region>()
+			
                 .HasIndex(p => new { p.AreaId, p.CountryId });
         }
         
