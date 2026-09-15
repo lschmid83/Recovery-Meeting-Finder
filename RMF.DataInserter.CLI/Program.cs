@@ -33,7 +33,7 @@ namespace RMF.DataInserter
         private static string LastMonthDataDumpDate = null;
         private const string DbBackupFilePath = @"$installPath\DataDump\rmf.bak";
         private static MeetingContext dbContext = new MeetingContext();
-        private static readonly string[] UseOrganisations = new string[] { "AA", "CA", "NA", "OA" };
+        private static readonly string[] UseOrganisations = new string[] { "AA", "CA", "NA", "OA" }; 
 
         static void Main()
         {
